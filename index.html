@@ -4,184 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SurfWAVE - Divulgation Scientifique IETR</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
     <style>
-        /* Variables de couleurs - Thème Adouci */
-        :root {
-            --bg-color: #1e293b;
-            --text-color: #f8fafc;
-            --primary-cyan: #06b6d4;
-            --primary-green: #10b981;
-            --card-bg: #334155;
-            --hover-glow: rgba(6, 182, 212, 0.4);
+        /* Variables de couleurs - NOUVEAU THEME CLAIR (Blanc/Gris clair) */
+	:root {
+            --bg-color: #f4f6f8; /* Un gris très très clair, doux et légèrement mat */
+            --text-color: #1e293b;
+            --text-muted: #475569;
+            --primary-cyan: #0284c7;
+            --primary-green: #059669;
+            --card-bg: #fcfcfc; /* Un blanc "cassé" imperceptible, juste assez pour ne pas piquer les yeux */
+            --border-color: #e2e8f0;
+            --hover-glow: rgba(2, 132, 199, 0.2);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
 
-        /* En-tête et Navigation */
+        /* En-tête avec image de fond */
         header {
             text-align: center; 
             padding: 40px 20px 20px;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            border-bottom: 2px solid var(--primary-cyan);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            background: url('image (10).jpg') center/cover no-repeat;
+            border-bottom: 3px solid var(--primary-cyan);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             position: relative;
             transition: all 0.3s ease;
         }
 
-        .top-bar {
+        /* Voile blanc semi-transparent pour rendre le texte et les logos lisibles */
+        header::before {
+            content: '';
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255, 0.5);
+            z-index: 0;
         }
+
+        header > * { position: relative; z-index: 1; }
+
+        .top-bar { position: absolute; top: 20px; right: 20px; z-index: 2; }
 
         /* Bouton Langue */
         .lang-btn {
-            background-color: rgba(6, 182, 212, 0.1);
+            background-color: #ffffff;
             color: var(--primary-cyan);
-            border: 1px solid rgba(6, 182, 212, 0.3);
+            border: 1px solid var(--primary-cyan);
             padding: 8px 16px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .lang-btn:hover { background-color: var(--primary-cyan); color: #fff; }
 
-        /* Titre SURFWAVE TEAM */
+	/* Titre SURFWAVE TEAM */
         h1 {
-            font-size: 2.8rem; font-weight: 800; letter-spacing: 2px;
-            margin-top: 10px; margin-bottom: 5px;
+            font-size: 2.8rem; 
+            font-weight: 800; 
+            font-style: italic; /* Style dynamique et élancé */
+            font-family: 'Poppins', 'Montserrat', sans-serif; /* Police moderne et esthétique */
+            letter-spacing: 2px;
+            margin-top: 10px; 
+            margin-bottom: 15px;
             background: -webkit-linear-gradient(45deg, var(--primary-cyan), var(--primary-green));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            /* Contour noir autour des lettres */
+            -webkit-text-stroke: 1.5px #000000;
+            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4)); /* Ombre légère pour accentuer le relief */
         }
 
-        /* Conteneur des logos : gap à 0 pour contrôler précisément via les marges */
+        /* Nouveaux conteneurs de logos en ligne */
         .logos-container {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            gap: 0px; 
-            margin-bottom: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            gap: 15px;
         }
+        .logo-medium { width: 30%; max-width: 220px; height: auto; } /* Gauche (INSA) */
+        .logo-large { width: 35%; max-width: 280px; height: auto; }  /* Centre (IUF) */
+        .logo-small { width: 30%; max-width: 200px; height: auto; }  /* Droite (IETR/OPTRONICAL) */
 
-        /* Logo IUF : Marges négatives puissantes pour annuler ses bords transparents invisibles */
-        .logo-large { 
-            width: 100%; 
-            max-width: 380px; 
-            height: auto;
-            margin: -15px auto -32px auto; /* Rapproche fortement du titre et du logo INSA */
-            transition: all 0.3s ease;
-        }
-
-        /* Logo INSA Rennes */
-        .logo-medium { 
-            width: 100%; 
-            max-width: 240px; 
-            height: auto;
-            margin: 5px auto 12px auto;
-            transition: all 0.3s ease;
-        }
-
-        /* Logo IETR / OPTRONICAL (Taille augmentée) */
-        .logo-small { 
-            width: 100%; 
-            max-width: 220px; /* Augmenté de 160px à 220px */
-            height: auto;
-            margin: 0 auto;
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .logo-large { max-width: 75%; margin: -10px auto -22px auto; }
-            .logo-medium { max-width: 55%; }
-            .logo-small { max-width: 50%; } /* Augmenté de 40% à 50% */
-        }
+        .subtitle { color: var(--text-color); font-weight: 600; font-size: 1.1rem; margin-top: 10px; }
 
         /* Onglets de navigation */
         .nav-tabs {
             display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap;
         }
-
         .tab-btn {
-            background-color: var(--card-bg); color: var(--text-color);
-            border: 1px solid transparent; padding: 12px 24px;
+            background-color: #f1f5f9; color: var(--text-muted);
+            border: 1px solid var(--border-color); padding: 12px 24px;
             border-radius: 8px; cursor: pointer; font-weight: 600;
             transition: all 0.3s ease;
         }
-
+        .tab-btn:hover { background-color: #e2e8f0; }
         .tab-btn.active {
             background-color: var(--primary-cyan); color: #fff;
-            box-shadow: 0 0 15px var(--hover-glow);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 4px 10px var(--hover-glow);
         }
 
-        /* Conteneur principal */
         main { max-width: 1200px; margin: 40px auto 100px; padding: 0 20px; }
-
-        /* Gestion des contenus d'onglets */
         .tab-content { display: none; }
         .tab-content.active { display: block; }
 
-        /* Grilles */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
         .grid-team { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; }
 
-        /* Cartes Ateliers */
+        /* Cartes générales */
         .card {
             background-color: var(--card-bg); border-radius: 12px; padding: 30px;
-            transition: all 0.3s ease; border: 1px solid transparent;
+            transition: all 0.3s ease; border: 1px solid var(--border-color);
             position: relative; overflow: hidden; display: flex; flex-direction: column;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         .card:hover {
-            transform: translateY(-8px); border-color: rgba(6, 182, 212, 0.3);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px); border-color: var(--primary-cyan);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         .card h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--text-color); }
         .badge {
-            align-self: flex-start; padding: 4px 10px; background-color: rgba(6, 182, 212, 0.1);
+            align-self: flex-start; padding: 4px 10px; background-color: rgba(2, 132, 199, 0.1);
             color: var(--primary-cyan); border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 15px;
         }
+
+        /* Scroll Horizontal pour Galerie & Séminaires */
+        .horizontal-scroll {
+            display: flex; overflow-x: auto; gap: 15px; padding: 15px 5px; scrollbar-width: thin; margin-bottom: 20px;
+        }
+        .horizontal-scroll::-webkit-scrollbar { height: 8px; }
+        .horizontal-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
+        
+        .scroll-img {
+            height: 220px; width: auto; border-radius: 8px; object-fit: cover;
+            cursor: pointer; transition: transform 0.3s; border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .scroll-img:hover { transform: scale(1.03); border-color: var(--primary-cyan); }
+        
+        .event-card-cover {
+            flex: 0 0 auto; width: 260px; height: 220px; border-radius: 8px;
+            background: linear-gradient(135deg, #0f766e 0%, #064e3b 100%);
+            color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 20px; cursor: pointer; transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .event-card-cover:hover { transform: scale(1.03); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
         /* Cartes Équipe */
         .member-card {
             background-color: var(--card-bg); border-radius: 16px; padding: 25px 20px;
             text-align: center; width: 280px; border-top: 4px solid var(--primary-cyan);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s;
+            border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
         }
-        .member-card:hover { transform: translateY(-10px); border-top-color: var(--primary-green); }
+        .member-card:hover { transform: translateY(-10px); border-top-color: var(--primary-green); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .photo-container {
             width: 140px; height: 140px; margin: 0 auto 15px; border-radius: 50%;
-            overflow: hidden; border: 3px solid var(--primary-cyan);
+            overflow: hidden; border: 3px solid var(--primary-cyan); background-color: #f1f5f9;
         }
         .photo { width: 100%; height: 100%; object-fit: cover; }
         .role-badge {
-            display: inline-block; background-color: rgba(16, 185, 129, 0.15);
+            display: inline-block; background-color: rgba(5, 150, 105, 0.1);
             color: var(--primary-green); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 10px 0;
         }
 
-        /* Bannière Séminaire */
-        .seminar-banner {
-            background: linear-gradient(90deg, #334155 0%, #1e293b 100%);
-            border-left: 5px solid #f59e0b; padding: 30px; border-radius: 12px; margin-bottom: 40px;
-        }
-
-        /* Boutons de téléchargement */
         .install-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 15px; }
         .install-btn {
-            background-color: rgba(16, 185, 129, 0.1); color: var(--primary-green);
-            border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px; border-radius: 6px; text-align: center; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: block;
+            background-color: rgba(5, 150, 105, 0.05); color: var(--primary-green);
+            border: 1px solid rgba(5, 150, 105, 0.3); padding: 10px; border-radius: 6px; text-align: center; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: block;
         }
         .install-btn:hover { background-color: var(--primary-green); color: #fff; }
 
-        /* Gestion de la langue en CSS pur */
         body.lang-en .fr { display: none !important; }
         body:not(.lang-en) .en { display: none !important; }
 
-        footer { text-align: center; padding: 30px; background-color: #0b1120; color: #64748b; font-size: 0.9rem; }
+        footer { text-align: center; padding: 30px; background-color: #0f172a; color: #94a3b8; font-size: 0.9rem; }
+        footer a { color: var(--primary-cyan); text-decoration: none; font-weight: 600; }
+        footer a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
+
+    <!-- Modal pour afficher les images en plein écran -->
+    <div id="full-image-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 10000; justify-content: center; align-items: center;" onclick="this.style.display='none'">
+        <img id="full-image" src="" style="max-width: 95%; max-height: 95%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    </div>
 
     <header>
         <div class="top-bar">
@@ -191,8 +203,8 @@
         <h1>SURFWAVE TEAM</h1>
 
         <div class="logos-container">
-            <img src="Logo_IUF.png" alt="Logo IUF" class="logo-large">
             <img src="INSA_Rennes.jpg" alt="Logo INSA Rennes" class="logo-medium">
+            <img src="Logo_IUF.png" alt="Logo IUF" class="logo-large">
             <img src="IETR_Logo.png" alt="Logo IETR" class="logo-small" id="main-logo">
         </div>
 
@@ -204,7 +216,7 @@
                 <span class="fr">🏠 Accueil SurfWAVE</span><span class="en">🏠 SurfWAVE Home</span>
             </button>
             <button class="tab-btn" onclick="switchTab('tab-divulgation')">
-                <span class="fr">🔬 Divulgation Scientifique & Séminaires</span><span class="en">🔬 Outreach & Seminars</span>
+                <span class="fr">🔬 Divulgation & Ateliers</span><span class="en">🔬 Outreach & Workshops</span>
             </button>
             <button class="tab-btn" onclick="switchTab('tab-membres')">
                 <span class="fr">👥 Membres de l'équipe</span><span class="en">👥 Team Members</span>
@@ -213,17 +225,18 @@
     </header>
 
     <main>
+        <!-- ONGLET ACCUEIL -->
         <section id="tab-accueil" class="tab-content active">
             <a href="https://www.ietr.fr/en/surfwave-periodic-and-quasi-periodic-surfaces-wave-control-team" target="_blank" style="text-decoration: none; color: inherit; display: block;">
                 <div class="card" style="max-width: 900px; margin: 0 auto; border-left: 4px solid var(--primary-green);">
                     <h2 class="fr">Bienvenue sur l'espace SurfWAVE</h2>
                     <h2 class="en">Welcome to the SurfWAVE Platform</h2>
                     <br>
-                    <p class="fr">
+                    <p class="fr" style="color: var(--text-muted);">
                         L'équipe <strong>SurfWAVE</strong> est un groupe de recherche de pointe rattaché à l'Institut d'Electronique et des Technologies du numéRique (IETR) de l'INSA Rennes.<br><br>
                         Nos activités se concentrent sur l'électromagnétisme, la modélisation d'antennes agiles, les surfaces périodiques et les métamatériaux. À travers le projet <strong>OPTRONICAL</strong>, nous avons à cœur de partager nos découvertes en transformant la recherche de haut niveau en dispositifs pédagogiques accessibles au grand public et aux écoles.
                     </p>
-                    <p class="en">
+                    <p class="en" style="color: var(--text-muted);">
                         The <strong>SurfWAVE</strong> team is an advanced research group operating within the Institute of Electronics and Digital Technologies (IETR) at INSA Rennes.<br><br>
                         Our focus lies in electromagnetics, agile antenna design, periodic surfaces, and metamaterials. Through the <strong>OPTRONICAL</strong> project, we aim to bridge the gap between high-level engineering and public understanding via interactive scientific workshops.
                     </p>
@@ -231,26 +244,76 @@
             </a>
         </section>
 
+        <!-- ONGLET DIVULGATION -->
         <section id="tab-divulgation" class="tab-content">
             
-            <div class="seminar-banner">
-                <span class="badge" style="background-color: rgba(245, 158, 11, 0.1); color: #f59e0b;">Séminaires / Seminars</span>
-                <h2 class="fr">☕ Researchers & Roosters</h2>
-                <h2 class="en">☕ Researchers & Roosters</h2>
-                <p class="fr" style="margin-top: 10px; color: #cbd5e1;">Notre cycle de séminaires matinaux internes pour échanger sur les avancées de la recherche en toute convivialité autour d'un café. (Support PPT et illustrations à venir).</p>
-                <p class="en" style="margin-top: 10px; color: #cbd5e1;">Our informal morning seminar series dedicated to sharing ongoing research breakthroughs over coffee. (PPT presentations & media coming soon).</p>
+            <!-- 1. SECTION RESEARCHERS & ROOSTERS -->
+            <div style="margin-bottom: 40px;">
+                <span class="badge" style="background-color: rgba(245, 158, 11, 0.1); color: #d97706; margin-bottom: 5px;">Séminaires / Seminars</span>
+                <h2 class="fr" style="font-size: 2rem; color: #d97706;">☕ Researchers & Roosters</h2>
+                <h2 class="en" style="font-size: 2rem; color: #d97706;">☕ Researchers & Roosters</h2>
+                <p class="fr" style="color: var(--text-muted); margin-bottom: 10px;">Notre cycle de séminaires matinaux internes. Cliquez sur une image pour l'agrandir.</p>
+                <p class="en" style="color: var(--text-muted); margin-bottom: 10px;">Our morning seminar series. Click an image to expand.</p>
+                
+                <div class="horizontal-scroll">
+                    <img src="img1.jpg" alt="Rooster Logo" class="scroll-img" onclick="openModal(this.src)">
+                    <img src="img4.jpg" alt="Séminaire 09/06/2026" class="scroll-img" onclick="openModal(this.src)">
+                    <img src="img3.jpg" alt="Séminaire 10/03/2026" class="scroll-img" onclick="openModal(this.src)">
+                    <img src="img2.jpg" alt="Séminaire 30/04/2025" class="scroll-img" onclick="openModal(this.src)">
+                </div>
             </div>
 
-            <h2 class="fr" style="text-align: center; font-size: 2rem;">Nos Ateliers Pédagogiques</h2>
-            <h2 class="en" style="text-align: center; font-size: 2rem;">Our Educational Workshops</h2>
+            <!-- 2. SECTION PHOTOS MATERNELLES -->
+            <div style="margin-bottom: 40px;">
+                <span class="badge" style="background-color: rgba(15, 118, 110, 0.1); color: #0f766e; margin-bottom: 5px;">Maternelles / Kids</span>
+                <h2 class="fr" style="font-size: 2rem; color: #0f766e;">📸 Interventions en milieu scolaire</h2>
+                <h2 class="en" style="font-size: 2rem; color: #0f766e;">📸 School Interventions</h2>
+                <p class="fr" style="color: var(--text-muted); margin-bottom: 10px;">Retrouvez les photos de nos ateliers. Cliquez sur une couverture pour dérouler la galerie, puis sur les photos pour les agrandir.</p>
+                <p class="en" style="color: var(--text-muted); margin-bottom: 10px;">Find the pictures from our workshops. Click a cover to unfold the gallery, then on photos to enlarge.</p>
+
+                <div class="horizontal-scroll">
+                    <!-- Bloc Cliquable Oscar Leroux -->
+                    <div class="event-card-cover" onclick="const gal = document.getElementById('maternelle-gallery'); gal.style.display = gal.style.display === 'none' ? 'block' : 'none';">
+                        <span style="font-size: 2.5rem; margin-bottom: 10px;">🏫</span>
+                        <h3 class="fr" style="font-size: 1.2rem; margin-bottom: 5px;">Scientist at Kindergarten</h3>
+                        <h3 class="en" style="font-size: 1.2rem; margin-bottom: 5px;">Scientist at Kindergarten</h3>
+                        <p style="font-size: 0.9rem; color: #99f6e4;">03/07/2026 • Oscar Leroux</p>
+                    </div>
+                    <!-- Place pour ajouter d'autres interventions à l'avenir ici -->
+                </div>
+
+                <!-- Galerie cachée qui s'ouvre au clic -->
+                <div id="maternelle-gallery" style="display: none; margin-top: 15px; background-color: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px dashed #0f766e; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 15px;">
+                        <img src="image (1).png" class="fr" alt="Atelier Oscar Leroux 1" style="width: 100%; height: 220px; object-fit: contain; background-color: #f1f5f9; border-radius: 8px; cursor: pointer; border: 1px solid #e2e8f0;" onclick="openModal(this.src)">
+                        <img src="image (1) - English.png" class="en" alt="Atelier Oscar Leroux 1" style="width: 100%; height: 220px; object-fit: contain; background-color: #f1f5f9; border-radius: 8px; cursor: pointer; border: 1px solid #e2e8f0;" onclick="openModal(this.src)">
+                        <img src="image (2).png" class="fr" alt="Atelier Oscar Leroux 2" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (2) - English.png" class="en" alt="Atelier Oscar Leroux 2" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (3).png" alt="Atelier Oscar Leroux 3" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (4).png" alt="Atelier Oscar Leroux 4" style="width: 100%; height: 220px; object-fit: cover; object-position: top; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (5).png" alt="Atelier Oscar Leroux 5" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (6).png" alt="Atelier Oscar Leroux 6" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (7).png" alt="Atelier Oscar Leroux 7" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (8).png" alt="Atelier Oscar Leroux 8" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (9).jpg" alt="Atelier Oscar Leroux 9" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (10).jpg" alt="Atelier Oscar Leroux 10" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (11).jpg" alt="Atelier Oscar Leroux 11" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="image (12).jpg" alt="Atelier Oscar Leroux 12" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openModal(this.src)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. SECTION FICHES PEDAGOGIQUES -->
+            <h2 class="fr" style="text-align: center; font-size: 2rem; margin-top: 50px;">Nos différentes fiches pédagogiques</h2>
+            <h2 class="en" style="text-align: center; font-size: 2rem; margin-top: 50px;">Our Different Educational Cards</h2>
 
             <div class="grid">
                 <a href="Atelier 1 - Fiche technique.pdf" data-fr="Atelier 1 - Fiche technique.pdf" data-en="Atelier 1 - Fiche Technique - English.pdf" class="dynamic-link" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="card">
                         <span class="badge"><span class="fr">Atelier 1</span><span class="en">Workshop 1</span></span>
                         <h3><span class="fr">Lasers & Ballons</span><span class="en">Lasers & Balloons</span></h3>
-                        <p class="fr"><strong>Optronique & Thermodynamique :</strong> Absorption thermique vs réflexion lumineuse à travers l'expérience chirurgicale du ballon double.</p>
-                        <p class="en"><strong>Optronics & Thermodynamics :</strong> Thermal absorption vs reflection demonstrated via the double-balloon experiment.</p>
+                        <p class="fr" style="color:var(--text-muted);"><strong>Optronique & Thermodynamique :</strong> Absorption thermique vs réflexion lumineuse.</p>
+                        <p class="en" style="color:var(--text-muted);"><strong>Optronics & Thermodynamics :</strong> Thermal absorption vs reflection.</p>
                     </div>
                 </a>
 
@@ -258,8 +321,8 @@
                     <div class="card">
                         <span class="badge"><span class="fr">Atelier 2</span><span class="en">Workshop 2</span></span>
                         <h3><span class="fr">Prisme & Ombres Colorées</span><span class="en">Prism & Colored Shadows</span></h3>
-                        <p class="fr"><strong>Optique Géométrique :</strong> Décomposition spectrale par prisme K9 et synthèse additive RVB pour créer des ombres Cyan, Magenta et Jaune.</p>
-                        <p class="en"><strong>Geometric Optics :</strong> Light dispersion via a K9 prism and RGB additive color mixing.</p>
+                        <p class="fr" style="color:var(--text-muted);"><strong>Optique Géométrique :</strong> Décomposition spectrale par prisme K9 et synthèse RVB.</p>
+                        <p class="en" style="color:var(--text-muted);"><strong>Geometric Optics :</strong> Light dispersion via a K9 prism and RGB color mixing.</p>
                     </div>
                 </a>
 
@@ -267,8 +330,8 @@
                     <div class="card">
                         <span class="badge"><span class="fr">Atelier 3</span><span class="en">Workshop 3</span></span>
                         <h3><span class="fr">Le Train Magnétique</span><span class="en">The Magnetic Train</span></h3>
-                        <p class="fr"><strong>Électromagnétisme :</strong> Moteur homopolaire et Force de Laplace propulsant une pile dans un tunnel en cuivre parfait.</p>
-                        <p class="en"><strong>Electromagnetism :</strong> Homopolar motor utilizing Laplace force inside a perfectly wound copper coil.</p>
+                        <p class="fr" style="color:var(--text-muted);"><strong>Électromagnétisme :</strong> Moteur homopolaire et Force de Laplace.</p>
+                        <p class="en" style="color:var(--text-muted);"><strong>Electromagnetism :</strong> Homopolar motor utilizing Laplace force.</p>
                     </div>
                 </a>
 
@@ -276,8 +339,8 @@
                     <div class="card">
                         <span class="badge"><span class="fr">Atelier 4</span><span class="en">Workshop 4</span></span>
                         <h3><span class="fr">Force Électrostatique</span><span class="en">Electrostatic Force</span></h3>
-                        <p class="fr"><strong>Triboélectricité :</strong> Arrachement d'électrons par friction et lévitation électrostatique de papier de soie vainquant la gravité.</p>
-                        <p class="en"><strong>Triboelectricity :</strong> Electron transfer via friction causing electrostatic levitation.</p>
+                        <p class="fr" style="color:var(--text-muted);"><strong>Triboélectricité :</strong> Arrachement d'électrons et lévitation électrostatique.</p>
+                        <p class="en" style="color:var(--text-muted);"><strong>Triboelectricity :</strong> Electron transfer causing electrostatic levitation.</p>
                     </div>
                 </a>
 
@@ -285,26 +348,27 @@
                     <div class="card">
                         <span class="badge"><span class="fr">Atelier 5</span><span class="en">Workshop 5</span></span>
                         <h3><span class="fr">Téléphone à Lumière</span><span class="en">Light Telephone</span></h3>
-                        <p class="fr"><strong>Optoélectronique :</strong> Modulation audio d'une LED haute vitesse (Li-Fi) et démodulation par photorésistance.</p>
-                        <p class="en"><strong>Optoelectronics :</strong> Audio modulation of a high-speed LED (Li-Fi) and photoresistor demodulation.</p>
+                        <p class="fr" style="color:var(--text-muted);"><strong>Optoélectronique :</strong> Modulation audio d'une LED haute vitesse (Li-Fi).</p>
+                        <p class="en" style="color:var(--text-muted);"><strong>Optoelectronics :</strong> Audio modulation of a high-speed LED (Li-Fi).</p>
                     </div>
                 </a>
 
                 <a href="Atelier 6 - Fiche technique.pdf" data-fr="Atelier 6 - Fiche technique.pdf" data-en="Atelier 6 - Fiche Technique - English.pdf" class="dynamic-link" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="card" style="border-color: var(--primary-green);">
-                        <span class="badge" style="background-color: rgba(16, 185, 129, 0.2); color: var(--primary-green);"><span class="fr">Atelier 6 • Nouveau</span><span class="en">Workshop 6 • New</span></span>
+                        <span class="badge" style="background-color: rgba(5, 150, 105, 0.1); color: var(--primary-green);"><span class="fr">Atelier 6 • Nouveau</span><span class="en">Workshop 6 • New</span></span>
                         <h3><span class="fr">Filtres & Polarisation</span><span class="en">Filters & Polarization</span></h3>
-                        <p class="fr"><strong>Biréfringence & Photoélasticité :</strong> Extinction de la lumière par filtres croisés à 90° et révélation des tensions internes des plastiques.</p>
-                        <p class="en"><strong>Birefringence & Photoelasticity :</strong> Light extinction via 90° crossed polarizers revealing internal physical stress.</p>
+                        <p class="fr" style="color:var(--text-muted);"><strong>Biréfringence & Photoélasticité :</strong> Extinction par filtres croisés à 90°.</p>
+                        <p class="en" style="color:var(--text-muted);"><strong>Birefringence & Photoelasticity :</strong> Light extinction via 90° crossed polarizers.</p>
                     </div>
                 </a>
             </div>
 
-            <div class="card" style="margin-top: 40px; background-color: #243348; border: 1px dashed var(--primary-cyan);">
+            <!-- 4. SECTION MANUELS -->
+            <div class="card" style="margin-top: 40px; background-color: #f8fafc; border: 1px dashed var(--primary-cyan);">
                 <h3 class="fr">⚙️ Manuels d'Installation (Logistique & Montage)</h3>
                 <h3 class="en">⚙️ Setup Manuals (Logistics & Assembly)</h3>
-                <p class="fr" style="color: #94a3b8; font-size: 0.95rem;">Guides pas à pas pour les démonstrateurs et l'alignement des équipements.</p>
-                <p class="en" style="color: #94a3b8; font-size: 0.95rem;">Step-by-step guides for technical setup and equipment alignment.</p>
+                <p class="fr" style="color: var(--text-muted); font-size: 0.95rem;">Guides pas à pas pour les démonstrateurs et l'alignement des équipements.</p>
+                <p class="en" style="color: var(--text-muted); font-size: 0.95rem;">Step-by-step guides for technical setup and equipment alignment.</p>
                 <div class="install-links">
                     <a href="Atelier 1.pdf" data-fr="Atelier 1.pdf" data-en="Atelier 1 - English.pdf" class="install-btn dynamic-link" target="_blank"><span class="fr">Atelier 1</span><span class="en">Workshop 1</span></a>
                     <a href="Atelier 2.pdf" data-fr="Atelier 2.pdf" data-en="Atelier 2 - English.pdf" class="install-btn dynamic-link" target="_blank"><span class="fr">Atelier 2</span><span class="en">Workshop 2</span></a>
@@ -315,226 +379,281 @@
                 </div>
             </div>
 
-            <div class="card" style="margin-top: 30px; background-color: #2e1065; border: 1px solid #a855f7;">
-                <span class="badge" style="background-color: rgba(168, 85, 247, 0.2); color: #e879f9;">Maternelles / Kids</span>
-                <h3 class="fr">🧸 Fiches Pédagogiques (Écoles Maternelles)</h3>
-                <h3 class="en">🧸 Educational Cards (Kindergarten Level)</h3>
-                <p class="fr" style="color: #d8b4fe; font-size: 0.95rem;">Explications vulgarisées, schémas simples et visuels adaptés au très jeune public.</p>
-                <p class="en" style="color: #d8b4fe; font-size: 0.95rem;">Simplified explanations and visual diagrams tailored for young children.</p>
+            <!-- 5. SECTION FICHES MATERNELLES -->
+            <div class="card" style="margin-top: 30px; background-color: #faf5ff; border: 1px solid #a855f7;">
+                <span class="badge" style="background-color: rgba(168, 85, 247, 0.15); color: #9333ea;">Maternelles / Kids</span>
+                <h3 class="fr" style="color: #7e22ce;">🧸 Fiches Pédagogiques (Écoles Maternelles)</h3>
+                <h3 class="en" style="color: #7e22ce;">🧸 Educational Cards (Kindergarten Level)</h3>
+                <p class="fr" style="color: #6b21a8; font-size: 0.95rem;">Explications vulgarisées, schémas simples et visuels adaptés au très jeune public.</p>
+                <p class="en" style="color: #6b21a8; font-size: 0.95rem;">Simplified explanations and visual diagrams tailored for young children.</p>
                 <div class="install-links" style="margin-top: 20px;">
-                    <a href="Fiche 1 - Maternelle.pdf" data-fr="Fiche 1 - Maternelle.pdf" data-en="Fiche 1 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.2); color:#f0abfc; border-color:#c084fc;"><span class="fr">Fiche 1</span><span class="en">Card 1</span></a>
-                    <a href="Fiche 2 - Maternelle.pdf" data-fr="Fiche 2 - Maternelle.pdf" data-en="Fiche 2 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.2); color:#f0abfc; border-color:#c084fc;"><span class="fr">Fiche 2</span><span class="en">Card 2</span></a>
-                    <a href="Fiche 3 - Maternelle.pdf" data-fr="Fiche 3 - Maternelle.pdf" data-en="Fiche 3 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.2); color:#f0abfc; border-color:#c084fc;"><span class="fr">Fiche 3</span><span class="en">Card 3</span></a>
-                    <a href="Fiche 4 - Maternelle.pdf" data-fr="Fiche 4 - Maternelle.pdf" data-en="Fiche 4 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.2); color:#f0abfc; border-color:#c084fc;"><span class="fr">Fiche 4</span><span class="en">Card 4</span></a>
-                    <a href="Fiche 5 - Maternelle.pdf" data-fr="Fiche 5 - Maternelle.pdf" data-en="Fiche 5 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.2); color:#f0abfc; border-color:#c084fc;"><span class="fr">Fiche 5</span><span class="en">Card 5</span></a>
-                    <a href="Fiche 6 - Maternelle.pdf" data-fr="Fiche 6 - Maternelle.pdf" data-en="Fiche 6 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.2); color:#f0abfc; border-color:#c084fc;"><span class="fr">Fiche 6</span><span class="en">Card 6</span></a>
+                    <a href="Fiche 1 - Maternelle.pdf" data-fr="Fiche 1 - Maternelle.pdf" data-en="Fiche 1 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.1); color:#9333ea; border-color:#d8b4fe;"><span class="fr">Fiche 1</span><span class="en">Card 1</span></a>
+                    <a href="Fiche 2 - Maternelle.pdf" data-fr="Fiche 2 - Maternelle.pdf" data-en="Fiche 2 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.1); color:#9333ea; border-color:#d8b4fe;"><span class="fr">Fiche 2</span><span class="en">Card 2</span></a>
+                    <a href="Fiche 3 - Maternelle.pdf" data-fr="Fiche 3 - Maternelle.pdf" data-en="Fiche 3 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.1); color:#9333ea; border-color:#d8b4fe;"><span class="fr">Fiche 3</span><span class="en">Card 3</span></a>
+                    <a href="Fiche 4 - Maternelle.pdf" data-fr="Fiche 4 - Maternelle.pdf" data-en="Fiche 4 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.1); color:#9333ea; border-color:#d8b4fe;"><span class="fr">Fiche 4</span><span class="en">Card 4</span></a>
+                    <a href="Fiche 5 - Maternelle.pdf" data-fr="Fiche 5 - Maternelle.pdf" data-en="Fiche 5 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.1); color:#9333ea; border-color:#d8b4fe;"><span class="fr">Fiche 5</span><span class="en">Card 5</span></a>
+                    <a href="Fiche 6 - Maternelle.pdf" data-fr="Fiche 6 - Maternelle.pdf" data-en="Fiche 6 - Maternelle - English.pdf" class="install-btn dynamic-link" target="_blank" style="background-color:rgba(168,85,247,0.1); color:#9333ea; border-color:#d8b4fe;"><span class="fr">Fiche 6</span><span class="en">Card 6</span></a>
                 </div>
             </div>
-
         </section>
 
+        <!-- ONGLET MEMBRES -->
         <section id="tab-membres" class="tab-content">
-            <h2 class="fr" style="text-align: center; font-size: 2rem;">L'Équipe de Recherche & Stagiaires</h2>
-            <h2 class="en" style="text-align: center; font-size: 2rem;">Research Team & Interns</h2>
+            
+            <!-- Responsable -->
+            <h2 class="fr" style="text-align: center; font-size: 2rem;">L'Équipe de Recherche</h2>
+            <h2 class="en" style="text-align: center; font-size: 2rem;">Research Team</h2>
 
             <div style="display:flex; justify-content:center; margin-top:20px;">
                 <a href="https://www.ietr.fr/maria-garcia-vigueras" target="_blank" style="text-decoration:none; color:inherit;">
-                    <div class="member-card" style="width: 320px; border-top-color: #f59e0b; background-color: #3b2e4a;">
-                        <div class="photo-container" style="border-color: #f59e0b;">
+                    <div class="member-card" style="width: 320px; border-top-color: #d97706; background-color: #fffbeb;">
+                        <div class="photo-container" style="border-color: #d97706;">
                             <img src="Maria.jpg" alt="María García Vigueras" class="photo">
                         </div>
                         <h3>María García Vigueras</h3>
-                        <span class="role-badge" style="background-color: rgba(245, 158, 11, 0.2); color: #f59e0b;"><span class="fr">Responsable d'Équipe / Professeure</span><span class="en">Team Leader / Professor</span></span>
-                        <p class="fr">Pilotage de l'équipe SurfWAVE. Recherche avancée sur les métamatériaux et les surfaces périodiques.</p>
-                        <p class="en">Head of SurfWAVE Team. Advanced research in metamaterials and periodic surfaces.</p>
+                        <span class="role-badge" style="background-color: rgba(245, 158, 11, 0.15); color: #b45309;"><span class="fr">Responsable d'Équipe / Professeure</span><span class="en">Team Leader / Professor</span></span>
+                        <p class="fr" style="color: var(--text-muted);">Pilotage de l'équipe SurfWAVE. Recherche avancée sur les métamatériaux et les surfaces périodiques.</p>
+                        <p class="en" style="color: var(--text-muted);">Head of SurfWAVE Team. Advanced research in metamaterials and periodic surfaces.</p>
                     </div>
                 </a>
             </div>
 
+            <!-- Profs / Chercheurs -->
             <div class="grid-team">
                 <a href="https://www.ietr.fr/raphael-gillard" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="member-card">
                         <div class="photo-container"><img src="R_Gillard.jpg" alt="Raphaël Gillard" class="photo"></div>
                         <h3>Raphaël Gillard</h3>
                         <span class="role-badge"><span class="fr">Professeur / Chercheur</span><span class="en">Professor / Researcher</span></span>
-                        <p class="fr">Expertise en électromagnétisme et antennes à l'INSA Rennes.</p>
-                        <p class="en">Expert in electromagnetics and antenna design at INSA Rennes.</p>
                     </div>
                 </a>
-
                 <a href="https://www.ietr.fr/renaud-loison" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="member-card">
                         <div class="photo-container"><img src="Renaud_Loison.jpg" alt="Renaud Loison" class="photo"></div>
                         <h3>Renaud Loison</h3>
                         <span class="role-badge"><span class="fr">Professeur / Chercheur</span><span class="en">Professor / Researcher</span></span>
-                        <p class="fr">Spécialiste de la conception de systèmes rayonnants.</p>
-                        <p class="en">Specialist in radiating systems and wave engineering.</p>
                     </div>
                 </a>
-
                 <a href="https://www.ietr.fr/en/jorge-ruiz-garcia" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="member-card">
                         <div class="photo-container"><img src="Jorge_Ruiz_Garcia.jpg" alt="Jorge Ruiz García" class="photo"></div>
                         <h3>Jorge Ruiz García</h3>
                         <span class="role-badge"><span class="fr">Chercheur IETR</span><span class="en">IETR Researcher</span></span>
-                        <p class="fr">Modélisation et conception de nouvelles architectures d'antennes.</p>
-                        <p class="en">Modeling and design of novel antenna architectures.</p>
                     </div>
                 </a>
-
                 <a href="https://www.ietr.fr/erwan-fourn" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="member-card">
                         <div class="photo-container"><img src="Erwan_Fourn.jpg" alt="Erwan Fourn" class="photo"></div>
                         <h3>Erwan Fourn</h3>
                         <span class="role-badge"><span class="fr">Professeur / Chercheur</span><span class="en">Professor / Researcher</span></span>
-                        <p class="fr">Développement de dispositifs agiles et technologies de communication.</p>
-                        <p class="en">Development of agile devices and communication tech.</p>
                     </div>
                 </a>
             </div>
 
-            <h3 class="fr" style="text-align: center; margin-top: 50px; color: var(--primary-cyan);">Doctorants & Stagiaires</h3>
-            <h3 class="en" style="text-align: center; margin-top: 50px; color: var(--primary-cyan);">PhD Students & Interns</h3>
+            <!-- Doctorants & Stagiaires -->
+            <h3 class="fr" style="text-align: center; margin-top: 50px; color: var(--primary-cyan); font-size: 1.8rem;">Doctorants & Stagiaires</h3>
+            <h3 class="en" style="text-align: center; margin-top: 50px; color: var(--primary-cyan); font-size: 1.8rem;">PhD Students & Interns</h3>
 
             <div class="grid-team">
                 <a href="https://www.linkedin.com/in/selim-bircan/" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="member-card" style="border-top-color: var(--primary-green);">
-                        <div class="photo-container" style="border-color: var(--primary-green);">
-                            <img src="Selim.jpg" alt="Selim Bircan" class="photo">
-                        </div>
+                        <div class="photo-container" style="border-color: var(--primary-green);"><img src="Selim.jpg" alt="Selim Bircan" class="photo"></div>
                         <h3>Selim Bircan</h3>
-                        <span class="role-badge" style="color:#10b981;"><span class="fr">Stagiaire Ingénieur / OPTRONICAL</span><span class="en">Engineering Intern / OPTRONICAL</span></span>
-                        <p class="fr">Conception et développement des démonstrateurs d'optique et de la plateforme web.</p>
-                        <p class="en">Design and development of educational optical demonstrators and web platform.</p>
+                        <span class="role-badge" style="color:#059669; background-color: rgba(5, 150, 105, 0.1);"><span class="fr">Stagiaire Ingénieur</span><span class="en">Engineering Intern</span></span>
                     </div>
                 </a>
-
                 <div class="member-card" style="border-top-color: var(--primary-cyan);">
-                    <div class="photo-container" style="background-color: #334155;">
-                        <span style="font-size: 4rem; line-height: 140px;">👨‍🎓</span>
-                    </div>
+                    <div class="photo-container" style="border-color: var(--primary-cyan);"><span style="font-size: 4rem; line-height: 140px;">👨‍🎓</span></div>
                     <h3>Tom Guitton</h3>
-                    <span class="role-badge" style="color:var(--primary-cyan);"><span class="fr">Stagiaire de Seconde (Lille)</span><span class="en">High School Intern (Lille)</span></span>
-                    <p class="fr">Assistance au montage technique des ateliers et co-animation à l'école maternelle.</p>
-                    <p class="en">Technical assembly assistance and co-hosting at the local kindergarten.</p>
+                    <span class="role-badge" style="color:var(--primary-cyan); background-color: rgba(2, 132, 199, 0.1);"><span class="fr">Stagiaire de Seconde</span><span class="en">High School Intern</span></span>
                 </div>
-
+                <!-- Nouveaux ajouts Doctorants/Stagiaires -->
+		<a href="https://www.linkedin.com/in/erwan-rahault/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #a855f7;">
+                        <div class="photo-container" style="border-color: #a855f7;"><img src="Erwan_Rahault.jpg" alt="Erwan Rahault" class="photo"></div>
+                        <h3>Erwan Rahault</h3>
+                        <span class="role-badge" style="color:#9333ea; background-color: rgba(168, 85, 247, 0.1);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/ggarciacontreras/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #a855f7;">
+                        <div class="photo-container" style="border-color: #a855f7;"><img src="Gines.jpg" alt="Ginés García Contreras" class="photo"></div>
+                        <h3>Ginés García Contreras</h3>
+                        <span class="role-badge" style="color:#9333ea; background-color: rgba(168, 85, 247, 0.1);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/t%C3%A9o-bulteau-2243261b6/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #a855f7;">
+                        <div class="photo-container" style="border-color: #a855f7;"><img src="Teo.jpg" alt="Téo Bulteau" class="photo"></div>
+                        <h3>Téo Bulteau</h3>
+                        <span class="role-badge" style="color:#9333ea; background-color: rgba(168, 85, 247, 0.1);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/valentin-louren%C3%A7o-martins-485890212/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: var(--primary-green);">
+                        <div class="photo-container" style="border-color: var(--primary-green);"><img src="Valentin.jpg" alt="Valentin Lourenço Martins" class="photo"></div>
+                        <h3>Valentin Lourenço Martins</h3>
+                        <span class="role-badge" style="color:#059669; background-color: rgba(5, 150, 105, 0.1);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/mats-kohler/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: var(--primary-green);">
+                        <div class="photo-container" style="border-color: var(--primary-green);"><img src="Mats.jpg" alt="Mats Kohler" class="photo"></div>
+                        <h3>Mats Kohler</h3>
+                        <span class="role-badge" style="color:#059669; background-color: rgba(5, 150, 105, 0.1);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
+                    </div>
+                </a>
+                <!-- Suite existants -->
                 <a href="https://www.linkedin.com/in/eloi-fresnel-051524240/" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="member-card" style="border-top-color: var(--primary-cyan);">
-                        <div class="photo-container" style="border-color: var(--primary-cyan);">
-                            <img src="Eloi.jpg" alt="Eloi Fresnel" class="photo">
-                        </div>
+                        <div class="photo-container" style="border-color: var(--primary-cyan);"><img src="Eloi.jpg" alt="Eloi Fresnel" class="photo"></div>
                         <h3>Eloi Fresnel</h3>
-                        <span class="role-badge" style="color:var(--primary-cyan); background-color: rgba(6, 182, 212, 0.15);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
-                        <p class="fr">Membre de l'équipe de recherche SurfWAVE.</p>
-                        <p class="en">SurfWAVE research team member.</p>
+                        <span class="role-badge" style="color:var(--primary-cyan); background-color: rgba(2, 132, 199, 0.1);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
                     </div>
                 </a>
-
                 <a href="https://www.linkedin.com/in/estelle-yvana-abate/" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="member-card" style="border-top-color: var(--primary-green);">
-                        <div class="photo-container" style="border-color: var(--primary-green);">
-                            <img src="Estelle.jpg" alt="Estelle Eyenga Abate" class="photo">
-                        </div>
+                        <div class="photo-container" style="border-color: var(--primary-green);"><img src="Estelle.jpg" alt="Estelle Eyenga Abate" class="photo"></div>
                         <h3>Estelle Eyenga Abate</h3>
-                        <span class="role-badge" style="color:var(--primary-green); background-color: rgba(16, 185, 129, 0.15);"><span class="fr">Doctorante IETR</span><span class="en">IETR PhD Student</span></span>
-                        <p class="fr">Membre de l'équipe de recherche SurfWAVE.</p>
-                        <p class="en">SurfWAVE research team member.</p>
+                        <span class="role-badge" style="color:var(--primary-green); background-color: rgba(5, 150, 105, 0.1);"><span class="fr">Doctorante IETR</span><span class="en">IETR PhD Student</span></span>
                     </div>
                 </a>
-
                 <a href="https://www.linkedin.com/in/yuneeb-n/" target="_blank" style="text-decoration:none; color:inherit;">
-                    <div class="member-card" style="border-top-color: #f59e0b;">
-                        <div class="photo-container" style="border-color: #f59e0b;">
-                            <img src="Yuneeb.jpg" alt="Yuneeb Niazi" class="photo">
-                        </div>
+                    <div class="member-card" style="border-top-color: #d97706;">
+                        <div class="photo-container" style="border-color: #d97706;"><img src="Yuneeb.jpg" alt="Yuneeb Niazi" class="photo"></div>
                         <h3>Yuneeb Niazi</h3>
-                        <span class="role-badge" style="color:#f59e0b; background-color:rgba(245, 158, 11, 0.15);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
-                        <p class="fr">Membre de l'équipe de recherche SurfWAVE.</p>
-                        <p class="en">SurfWAVE research team member.</p>
+                        <span class="role-badge" style="color:#b45309; background-color:rgba(245, 158, 11, 0.1);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
                     </div>
                 </a>
-
                 <a href="https://www.linkedin.com/in/ramy-bouderbal/" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="member-card" style="border-top-color: #a855f7;">
-                        <div class="photo-container" style="border-color: #a855f7;">
-                            <img src="Ramy.jpg" alt="Ramy Bouderbal" class="photo">
-                        </div>
+                        <div class="photo-container" style="border-color: #a855f7;"><img src="Ramy.jpg" alt="Ramy Bouderbal" class="photo"></div>
                         <h3>Ramy Bouderbal</h3>
-                        <span class="role-badge" style="color:#e879f9; background-color:rgba(168, 85, 247, 0.15);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
-                        <p class="fr">Membre de l'équipe de recherche SurfWAVE.</p>
-                        <p class="en">SurfWAVE research team member.</p>
+                        <span class="role-badge" style="color:#9333ea; background-color:rgba(168, 85, 247, 0.1);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
                     </div>
                 </a>
-
                 <a href="https://www.ietr.fr/teo-nespoulet" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="member-card" style="border-top-color: var(--primary-cyan);">
-                        <div class="photo-container" style="background-color: #334155; border-color: var(--primary-cyan);">
-                            <span style="font-size: 4rem; line-height: 140px;">👨‍🎓</span>
-                        </div>
+                        <div class="photo-container" style="border-color: var(--primary-cyan);"><span style="font-size: 4rem; line-height: 140px;">👨‍🎓</span></div>
                         <h3>Téo Nespoulet</h3>
-                        <span class="role-badge" style="color:var(--primary-cyan); background-color: rgba(6, 182, 212, 0.15);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
-                        <p class="fr">Membre de l'équipe de recherche SurfWAVE.</p>
-                        <p class="en">SurfWAVE research team member.</p>
+                        <span class="role-badge" style="color:var(--primary-cyan); background-color: rgba(2, 132, 199, 0.1);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
                     </div>
                 </a>
-
-                <a href="https://www.linkedin.com/in/thomas-uguen/" target="_blank" style="text-decoration:none; color:inherit;">
-                    <div class="member-card" style="border-top-color: var(--primary-green);">
-                        <div class="photo-container" style="border-color: var(--primary-green);">
-                            <img src="Thomas.jpg" alt="Thomas Uguen" class="photo">
-                        </div>
-                        <h3>Thomas Uguen</h3>
-                        <span class="role-badge" style="color:var(--primary-green); background-color: rgba(16, 185, 129, 0.15);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
-                        <p class="fr">Membre de l'équipe de recherche SurfWAVE.</p>
-                        <p class="en">SurfWAVE research team member.</p>
-                    </div>
-                </a>
-
                 <a href="https://www.linkedin.com/in/ikram-dendani-945115176/?skipRedirect=true" target="_blank" style="text-decoration:none; color:inherit;">
-                    <div class="member-card" style="border-top-color: #f59e0b;">
-                        <div class="photo-container" style="border-color: #f59e0b;">
-                            <img src="Ikram.jpg" alt="Ikram Dendani" class="photo">
-                        </div>
+                    <div class="member-card" style="border-top-color: #d97706;">
+                        <div class="photo-container" style="border-color: #d97706;"><img src="Ikram.jpg" alt="Ikram Dendani" class="photo"></div>
                         <h3>Ikram Dendani</h3>
-                        <span class="role-badge" style="color:#f59e0b; background-color:rgba(245, 158, 11, 0.15);"><span class="fr">Doctorante IETR</span><span class="en">IETR PhD Student</span></span>
-                        <p class="fr">Membre de l'équipe de recherche SurfWAVE.</p>
-                        <p class="en">SurfWAVE research team member.</p>
+                        <span class="role-badge" style="color:#b45309; background-color:rgba(245, 158, 11, 0.1);"><span class="fr">Doctorante IETR</span><span class="en">IETR PhD Student</span></span>
                     </div>
                 </a>
-
                 <a href="https://www.linkedin.com/in/ngouana/" target="_blank" style="text-decoration:none; color:inherit;">
                     <div class="member-card" style="border-top-color: #a855f7;">
-                        <div class="photo-container" style="border-color: #a855f7;">
-                            <img src="Gildas.jpg" alt="Gildas Ngouana Melachi" class="photo">
-                        </div>
+                        <div class="photo-container" style="border-color: #a855f7;"><img src="Gildas.jpg" alt="Gildas Ngouana Melachi" class="photo"></div>
                         <h3>Gildas Ngouana Melachi</h3>
-                        <span class="role-badge" style="color:#e879f9; background-color:rgba(168, 85, 247, 0.15);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
-                        <p class="fr">Membre de l'équipe de recherche SurfWAVE.</p>
-                        <p class="en">SurfWAVE research team member.</p>
+                        <span class="role-badge" style="color:#9333ea; background-color:rgba(168, 85, 247, 0.1);"><span class="fr">Doctorant IETR</span><span class="en">IETR PhD Student</span></span>
                     </div>
                 </a>
             </div>
 
+            <!-- Post-doctorants & Anciens Étudiants -->
+            <h3 class="fr" style="text-align: center; margin-top: 50px; color: var(--primary-cyan); font-size: 1.8rem;">Post-doctorants & Anciens Membres</h3>
+            <h3 class="en" style="text-align: center; margin-top: 50px; color: var(--primary-cyan); font-size: 1.8rem;">Post-docs & Alumni</h3>
+            
+            <div class="grid-team">
+                <a href="https://www.linkedin.com/in/thomas-uguen/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #ef4444;">
+                        <div class="photo-container" style="border-color: #ef4444;"><img src="Thomas.jpg" alt="Thomas Uguen" class="photo"></div>
+                        <h3>Thomas Uguen</h3>
+                        <span class="role-badge" style="color:#dc2626; background-color: rgba(239, 68, 68, 0.1);"><span class="fr">Post-doctorant IETR</span><span class="en">IETR Post-doc</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/carlos-molero-jim%C3%A9nez-720517118/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #ef4444;">
+                        <div class="photo-container" style="border-color: #ef4444;"><img src="Carlos.jpg" alt="Carlos Molero Jiménez" class="photo"></div>
+                        <h3>Carlos Molero Jiménez</h3>
+                        <span class="role-badge" style="color:#dc2626; background-color: rgba(239, 68, 68, 0.1);"><span class="fr">Post-doctorant IETR</span><span class="en">IETR Post-doc</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/haris-stoumpos-ba882640/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #ef4444;">
+                        <div class="photo-container" style="border-color: #ef4444;"><img src="Haris.jpg" alt="Haris Stoumpos" class="photo"></div>
+                        <h3>Haris Stoumpos</h3>
+                        <span class="role-badge" style="color:#dc2626; background-color: rgba(239, 68, 68, 0.1);"><span class="fr">Post-doctorant IETR</span><span class="en">IETR Post-doc</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/aurelie-dorle/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #ef4444;">
+                        <div class="photo-container" style="border-color: #ef4444;"><img src="Aurelie.png" alt="Aurélie Dorlé" class="photo"></div>
+                        <h3>Aurélie Dorlé</h3>
+                        <span class="role-badge" style="color:#dc2626; background-color: rgba(239, 68, 68, 0.1);"><span class="fr">Post-doctorante IETR</span><span class="en">IETR Post-doc</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/antoine-calleau/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #ef4444;">
+                        <div class="photo-container" style="border-color: #ef4444;"><img src="Antoine.jpg" alt="Antoine Calleau" class="photo"></div>
+                        <h3>Antoine Calleau</h3>
+                        <span class="role-badge" style="color:#dc2626; background-color: rgba(239, 68, 68, 0.1);"><span class="fr">Post-doctorant IETR</span><span class="en">IETR Post-doc</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/dbmteleco/?locale=fr" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #ef4444;">
+                        <div class="photo-container" style="border-color: #ef4444;"><img src="Diego.jpg" alt="Diego Bermúdez Martín" class="photo"></div>
+                        <h3>Diego Bermúdez Martín</h3>
+                        <span class="role-badge" style="color:#dc2626; background-color: rgba(239, 68, 68, 0.1);"><span class="fr">Post-doctorant IETR</span><span class="en">IETR Post-doc</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/samara-gharbieh-3ba67086/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #ef4444;">
+                        <div class="photo-container" style="border-color: #ef4444;"><img src="Samara.jpg" alt="Samara Gharbieh" class="photo"></div>
+                        <h3>Samara Gharbieh</h3>
+                        <span class="role-badge" style="color:#dc2626; background-color: rgba(239, 68, 68, 0.1);"><span class="fr">Post-doctorante IETR</span><span class="en">IETR Post-doc</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/andrea-guarriello-1139414b/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #ef4444;">
+                        <div class="photo-container" style="border-color: #ef4444;"><img src="Andrea.jpg" alt="Andrea Guarriello" class="photo"></div>
+                        <h3>Andrea Guarriello</h3>
+                        <span class="role-badge" style="color:#dc2626; background-color: rgba(239, 68, 68, 0.1);"><span class="fr">Post-doctorant IETR</span><span class="en">IETR Post-doc</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/paul-le-bihan-74836613b/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #ef4444;">
+                        <div class="photo-container" style="border-color: #ef4444;"><img src="Paul.jpg" alt="Paul Le Bihan" class="photo"></div>
+                        <h3>Paul Le Bihan</h3>
+                        <span class="role-badge" style="color:#dc2626; background-color: rgba(239, 68, 68, 0.1);"><span class="fr">Post-doctorant IETR</span><span class="en">IETR Post-doc</span></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/remaahmid/" target="_blank" style="text-decoration:none; color:inherit;">
+                    <div class="member-card" style="border-top-color: #64748b;">
+                        <div class="photo-container" style="border-color: #64748b;"><img src="Rema.jpg" alt="Rema Ahmid" class="photo"></div>
+                        <h3>Rema Ahmid</h3>
+                        <span class="role-badge" style="color:#475569; background-color: rgba(100, 116, 139, 0.1);"><span class="fr">Ancienne Étudiante / Master Project</span><span class="en">Alumni / Master Project</span></span>
+                    </div>
+                </a>
+            </div>
         </section>
     </main>
 
     <footer>
         <p class="fr">© 2026 Équipe SurfWAVE - IETR / INSA Rennes. Plateforme OPTRONICAL développée par Selim BIRCAN.</p>
         <p class="en">© 2026 SurfWAVE Team - IETR / INSA Rennes. OPTRONICAL Platform developed by Selim BIRCAN.</p>
+        <p class="fr" style="margin-top: 10px;">N'hésitez pas à nous contacter pour plus d'informations ou collaborations à l'adresse suivante : <a href="mailto:Maria.Garcia-Vigueras@insa-rennes.fr">Maria.Garcia-Vigueras@insa-rennes.fr</a>.</p>
+        <p class="en" style="margin-top: 10px;">Feel free to contact us for more information or collaborations at the following address: <a href="mailto:Maria.Garcia-Vigueras@insa-rennes.fr">Maria.Garcia-Vigueras@insa-rennes.fr</a>.</p>
     </footer>
 
     <script>
+        function openModal(src) {
+            document.getElementById('full-image').src = src;
+            document.getElementById('full-image-modal').style.display = 'flex';
+        }
+
         function switchTab(tabId) {
-            // Cacher tous les onglets
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
             
-            // Afficher l'onglet cliqué
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
 
-            // Changement dynamique du logo (uniquement sur le petit logo du bas)
             const logo = document.getElementById('main-logo');
             if(tabId === 'tab-divulgation') {
                 logo.src = 'OPTRONICAL_Logo.png';
@@ -556,7 +675,6 @@
                 btn.innerHTML = '🇬🇧 English';
             }
 
-            // Mise à jour dynamique des liens PDF
             document.querySelectorAll('.dynamic-link').forEach(link => {
                 link.href = isEnglish ? link.getAttribute('data-en') : link.getAttribute('data-fr');
             });
