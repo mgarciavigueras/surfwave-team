@@ -188,6 +188,40 @@
         footer a:hover { text-decoration: underline; }
     </style>
 </head>
+
+
+<script>
+fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:TON_ID_HAL&wt=json&fl=title_s,authFullName_s,producedDateY_i,uri_s&rows=10")
+.then(response => response.json())
+.then(data => {
+
+    let html = "<ul>";
+
+    data.response.docs.forEach(pub => {
+
+        html += `
+        <li style="margin-bottom:15px;">
+            <strong>${pub.title_s}</strong><br>
+            ${pub.authFullName_s ? pub.authFullName_s.join(", ") : ""}
+            (${pub.producedDateY_i})
+            <br>
+            <a href="${pub.uri_s}" target="_blank"
+            style="color:var(--primary-cyan); text-decoration:underline;">
+            View in HAL
+            </a>
+        </li>
+        `;
+
+    });
+
+    html += "</ul>";
+
+    document.getElementById("hal-publications").innerHTML = html;
+
+});
+</script>
+
+
 <body>
 
     <!-- Modal pour afficher les images en plein écran -->
@@ -240,6 +274,11 @@
         <span class="fr">👥 Membres de l'équipe</span>
         <span class="en">👥 Team Members</span>
     </button>
+
+<button class="tab-btn" onclick="switchTab('tab-recherche')">
+    <span class="fr">🔬 Recherche</span>
+    <span class="en">🔬 Research</span>
+</button>
 </div>
 
 </header>
@@ -1072,6 +1111,55 @@ and
                 </a>
             </div>
         </section>
+
+<!-- ONGLET RECHERCHE -->
+<section id="tab-recherche" class="tab-content">
+
+    <div style="max-width:1100px; margin:0 auto;">
+
+        <h2 class="fr" style="color:var(--primary-cyan); margin-bottom:20px;">
+            Recherche
+        </h2>
+
+        <h2 class="en" style="color:var(--primary-cyan); margin-bottom:20px;">
+            Research
+        </h2>
+
+
+        <p class="fr" style="color:var(--text-muted); line-height:1.5;">
+            Les activités de recherche de l'équipe <strong>SurfWAVE</strong> portent sur les surfaces périodiques et quasi-périodiques, le contrôle des ondes électromagnétiques et leurs applications, notamment dans les domaines spatial, radar et des télécommunications.
+        </p>
+
+        <p class="en" style="color:var(--text-muted); line-height:1.5;">
+            The <strong>SurfWAVE</strong> research activities focus on periodic and quasi-periodic surfaces, electromagnetic wave control and their applications, particularly in the fields of space, radar and telecommunications.
+        </p>
+
+
+        <!-- PUBLICATIONS HAL -->
+        <div style="margin-top:40px;">
+
+            <h3 class="fr" style="color:var(--primary-cyan);">
+                Publications scientifiques
+            </h3>
+
+            <h3 class="en" style="color:var(--primary-cyan);">
+                Scientific publications
+            </h3>
+
+            <div id="hal-publications"
+                 style="margin-top:20px; color:var(--text-muted);">
+                Chargement des publications...
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
     </main>
 
     <footer>
