@@ -191,23 +191,22 @@
 
 
 <script>
-fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:TON_ID_HAL&wt=json&fl=title_s,authFullName_s,producedDateY_i,uri_s&rows=10")
+
+fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigueras&wt=json&fl=title_s,year_i,docType_s,uri_s&rows=10&sort=producedDate_tdate%20desc")
 .then(response => response.json())
 .then(data => {
 
-    let html = "<ul>";
+    let html = "<ul style='padding-left:25px;'>";
 
     data.response.docs.forEach(pub => {
 
         html += `
-        <li style="margin-bottom:15px;">
-            <strong>${pub.title_s}</strong><br>
-            ${pub.authFullName_s ? pub.authFullName_s.join(", ") : ""}
-            (${pub.producedDateY_i})
-            <br>
-            <a href="${pub.uri_s}" target="_blank"
-            style="color:var(--primary-cyan); text-decoration:underline;">
-            View in HAL
+        <li style="margin-bottom:12px;">
+            <strong>${pub.year_i || ""}</strong> —
+            <a href="${pub.uri_s || '#'}"
+               target="_blank"
+               style="color:var(--primary-cyan); text-decoration:underline;">
+               ${pub.title_s}
             </a>
         </li>
         `;
@@ -218,9 +217,15 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:TON_ID_HAL&wt=json
 
     document.getElementById("hal-publications").innerHTML = html;
 
-});
-</script>
+})
+.catch(error => {
 
+    document.getElementById("hal-publications").innerHTML =
+    "Publications currently unavailable.";
+
+});
+
+</script>
 
 <body>
 
@@ -277,8 +282,8 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:TON_ID_HAL&wt=json
 
 
 <button class="tab-btn" onclick="switchTab('tab-recherche')">
-    <span class="fr">🔬 Recherche</span>
-    <span class="en">🔬 Research</span>
+    <span class="fr">🔬 Mes recherches</span>
+    <span class="en">🔬 My research</span>
 </button>
 </div>
 
@@ -1129,23 +1134,16 @@ and
 
 
         <p class="fr" style="color:var(--text-muted); line-height:1.5;">
-            Mes activités de recherche portent sur la conception et le contrôle des ondes électromagnétiques,
-            avec un intérêt particulier pour les surfaces périodiques et quasi-périodiques, les antennes avancées
-            et leurs applications dans les domaines spatial, radar et des télécommunications.
+            Mes activités de recherche portent sur la conception d'antennes avancées et de surfaces périodiques ou quasi-périodiques pour le contrôle des ondes électromagnétiques, avec des applications dans les domaines spatial, radar et des télécommunications.
             <br><br>
-            À l'interface entre recherche fondamentale, ingénierie et applications, mes travaux visent à développer
-            des solutions innovantes pour les systèmes électromagnétiques du futur, tout en maintenant un lien fort
-            avec la formation des ingénieur·es et la transmission des connaissances.
+            Je m'intéresse également aux nouvelles technologies de fabrication pour les systèmes radiofréquences, notamment l'impression 3D d'antennes et leur intégration dans des architectures innovantes.
         </p>
 
+
         <p class="en" style="color:var(--text-muted); line-height:1.5;">
-            My research activities focus on the design and control of electromagnetic waves,
-            with particular interest in periodic and quasi-periodic surfaces, advanced antennas,
-            and their applications in space, radar and telecommunications.
+            My research activities focus on the design of advanced antennas and periodic or quasi-periodic surfaces for electromagnetic wave control, with applications in space, radar and telecommunications.
             <br><br>
-            At the interface between fundamental research, engineering and applications, my work aims at developing
-            innovative solutions for future electromagnetic systems, while maintaining a strong connection with
-            engineering education and knowledge transfer.
+            I am also interested in emerging manufacturing technologies for radio-frequency systems, particularly 3D-printed antennas and their integration into innovative architectures.
         </p>
 
 
@@ -1160,12 +1158,14 @@ and
                 Scientific publications
             </h3>
 
+
             <div id="hal-publications"
                  style="margin-top:20px; color:var(--text-muted);">
                 Chargement des publications...
             </div>
 
         </div>
+
 
     </div>
 
@@ -1246,5 +1246,6 @@ and
             });
         }
     </script>
+
 </body>
 </html>
