@@ -625,11 +625,12 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
     <span class="en">
         Participation in <em>Researchers at Kindergarten</em>, delivering six outreach workshops on light and on electric and magnetic fields for children aged 4 to 6.
-        <a href="#tab-divulgation"
-           onclick="switchTab('tab-divulgation');"
-           style="color:var(--primary-cyan); text-decoration:underline; white-space:nowrap;">
-            See the intervention
-        </a>.
+        <a href="#maternelles"
+   onclick="switchTab('tab-divulgation'); setTimeout(() => document.getElementById('maternelles').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);"
+   style="color:var(--primary-cyan); text-decoration:underline; white-space:nowrap;">
+    <span class="fr">Voir l'intervention</span>
+    <span class="en">See the intervention</span>
+</a>
     </span>
 
 </li>
@@ -937,8 +938,9 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
                 </div>
             </div>
 
-            <!-- 2. SECTION PHOTOS MATERNELLES -->
-            <div style="margin-bottom: 40px;">
+<!-- 2. SECTION PHOTOS MATERNELLES -->
+<div id="maternelles" style="margin-bottom: 40px;">
+
                 <span class="badge" style="background-color: rgba(15, 118, 110, 0.1); color: #0f766e; margin-bottom: 5px;">Maternelles / Kids</span>
                 <h2 class="fr" style="font-size: 2rem; color: #0f766e;">📸 Interventions en milieu scolaire</h2>
                 <h2 class="en" style="font-size: 2rem; color: #0f766e;">📸 School Interventions</h2>
