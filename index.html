@@ -363,18 +363,18 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         <img id="full-image" src="" style="max-width: 95%; max-height: 95%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
     </div>
 
-   <header>
+<header>
     <div class="top-bar">
         <button class="lang-btn" onclick="toggleLang()" id="langBtn">🇬🇧 English</button>
     </div>
     
     <h1>María García Vigueras</h1>
 
-    <p class="subtitle fr" style="font-size:1.15rem; font-weight:500; margin-top:-8px; margin-bottom:22px; color:var(--text-muted);">
+    <p class="subtitle fr" style="font-size:0.98rem; font-weight:500; margin-top:-5px; margin-bottom:10px; color:var(--text-muted);">
         Professeure des Universités à l'INSA Rennes · Responsable de l'équipe SurfWAVE
     </p>
 
-    <p class="subtitle en" style="font-size:1.15rem; font-weight:500; margin-top:-8px; margin-bottom:22px; color:var(--text-muted);">
+    <p class="subtitle en" style="font-size:0.98rem; font-weight:500; margin-top:-5px; margin-bottom:10px; color:var(--text-muted);">
         Professor at INSA Rennes · Head of the SurfWAVE Research Team
     </p>
 
@@ -384,38 +384,37 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         <img src="IETR_Logo.png" alt="Logo IETR" class="logo-small" id="main-logo">
     </div>
 
-    <p class="subtitle fr">
+    <p class="subtitle fr" style="font-size:0.82rem; margin-top:3px; margin-bottom:6px; color:var(--text-muted);">
         INSA Rennes / Laboratoire IETR – Recherche et pédagogie en ondes électromagnétiques
     </p>
 
-    <p class="subtitle en">
+    <p class="subtitle en" style="font-size:0.82rem; margin-top:3px; margin-bottom:6px; color:var(--text-muted);">
         INSA Rennes / IETR Laboratory – Research and Education in Electromagnetic Waves
     </p>
 
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('tab-accueil')">
+            <span class="fr">🏠 Accueil & Nouveautés</span>
+            <span class="en">🏠 Home & News</span>
+        </button>
 
-<div class="nav-tabs">
-    <button class="tab-btn active" onclick="switchTab('tab-accueil')">
-        <span class="fr">🏠 Accueil & Nouveautés</span>
-        <span class="en">🏠 Home & News</span>
-    </button>
+        <button class="tab-btn" onclick="switchTab('tab-recherche')">
+            <span class="fr">🔬 Recherche</span>
+            <span class="en">🔬 Research</span>
+        </button>
 
-    <button class="tab-btn" onclick="switchTab('tab-recherche')">
-        <span class="fr">🔬 Recherche</span>
-        <span class="en">🔬 Research</span>
-    </button>
+        <button class="tab-btn" onclick="switchTab('tab-membres')">
+            <span class="fr">👥 Groupe SurfWAVE</span>
+            <span class="en">👥 SurfWAVE Team</span>
+        </button>
 
-    <button class="tab-btn" onclick="switchTab('tab-membres')">
-        <span class="fr">👥 Groupe SurfWAVE</span>
-        <span class="en">👥 SurfWAVE Team</span>
-    </button>
-
-    <button class="tab-btn" onclick="switchTab('tab-divulgation')">
-        <span class="fr">🚀 Science & Société</span>
-        <span class="en">🚀 Outreach</span>
-    </button>
-</div>
-
+        <button class="tab-btn" onclick="switchTab('tab-divulgation')">
+            <span class="fr">🚀 Science & Société</span>
+            <span class="en">🚀 Outreach</span>
+        </button>
+    </div>
 </header>
+   
 
 <main>
 
