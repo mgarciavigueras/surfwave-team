@@ -148,16 +148,15 @@
         /* En-tête avec image de fond */
 header {
     text-align: center;
-height: auto;
-min-height: 0;
-padding: 20px 20px 12px;
-background: url('portada4.jpg') center center / 100% auto no-repeat; 
-   border-bottom: 3px solid var(--primary-cyan);
+    height: 50vh;
+    min-height: 420px;
+    padding: 20px 20px 12px;
+    background: url('portada.jpg') center center / 100% auto no-repeat;
+    border-bottom: 3px solid var(--primary-cyan);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     position: relative;
     transition: all 0.3s ease;
 }
-
         /* Voile blanc semi-transparent pour rendre le texte et les logos lisibles */
         header::before {
             content: '';
@@ -368,8 +367,6 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
     </div>
 
 <header>
-<img src="portada4.jpg" alt="" class="header-image">
-
     <div class="top-bar">
         <button class="lang-btn" onclick="toggleLang()" id="langBtn">🇬🇧 English</button>
     </div>
