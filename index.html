@@ -583,6 +583,27 @@ footer a:hover {
         plausible.init()
     </script>
 
+<style>
+    /* Supprime les espacements en haut */
+    header, main, .tab-content, #tab-accueil, #tab-accueil > div {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    header, .nav-tabs, .logos-container {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    /* Cache les paragraphes vides qui créent de l'espace */
+    .tab-content p:empty {
+        display: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    /* Premier paragraphe collé en haut */
+    #tab-accueil p:first-of-type {
+        margin-top: 0 !important;
+    }
+</style>
 </head>
 
 
