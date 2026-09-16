@@ -157,6 +157,16 @@ header {
     position: relative;
     transition: all 0.3s ease;
 }
+
+/* Version mobile */
+@media (max-width: 550px) {
+    header {
+        aspect-ratio: auto;
+        min-height: 0;
+        padding: 12px 8px 10px;
+        background: url('portada-mobile.jpg') center top / 100% auto no-repeat;
+    }
+}
         /* Voile blanc semi-transparent pour rendre le texte et les logos lisibles */
         header::before {
             content: '';
