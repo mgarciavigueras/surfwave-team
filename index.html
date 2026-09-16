@@ -365,57 +365,65 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         <img id="full-image" src="" style="max-width: 95%; max-height: 95%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
     </div>
 
-   <header>
+<header>
+
     <div class="top-bar">
         <button class="lang-btn" onclick="toggleLang()" id="langBtn">🇬🇧 English</button>
     </div>
-    
-    <h1>María García Vigueras</h1>
 
-    <p class="subtitle fr" style="font-size:1.15rem; font-weight:500; margin-top:-8px; margin-bottom:22px; color:var(--text-muted);">
-        Professeure des Universités à l'INSA Rennes · Responsable de l'équipe SurfWAVE
+    <h1>María García-Vigueras</h1>
+
+    <p class="subtitle fr" style="font-size:1.1rem; font-weight:500; margin-top:-10px; margin-bottom:10px; color:var(--text-muted);">
+        Professeure · Membre de l'IUF · Responsable de l'équipe SurfWAVE
     </p>
 
-    <p class="subtitle en" style="font-size:1.15rem; font-weight:500; margin-top:-8px; margin-bottom:22px; color:var(--text-muted);">
-        Professor at INSA Rennes · Head of the SurfWAVE Research Team
+    <p class="subtitle en" style="font-size:1.1rem; font-weight:500; margin-top:-10px; margin-bottom:10px; color:var(--text-muted);">
+        Professor · IUF Member · Head of SurfWAVE group
     </p>
 
-    <div class="logos-container">
+    <div class="logos-container" style="margin:10px auto;">
         <img src="INSA_Rennes.jpg" alt="Logo INSA Rennes" class="logo-medium">
         <img src="Logo_IUF.png" alt="Logo IUF" class="logo-large">
         <img src="IETR_Logo.png" alt="Logo IETR" class="logo-small" id="main-logo">
     </div>
 
-    <p class="subtitle fr">
-        INSA Rennes / Laboratoire IETR – Recherche et pédagogie en ondes électromagnétiques
+    <p class="subtitle fr" style="font-size:0.95rem; font-weight:500; margin-top:5px; margin-bottom:2px; color:var(--text-muted);">
+        Électromagnétisme · Antennes · Spatial & Observation de la Terre
     </p>
 
-    <p class="subtitle en">
-        INSA Rennes / IETR Laboratory – Research and Education in Electromagnetic Waves
+    <p class="subtitle en" style="font-size:0.95rem; font-weight:500; margin-top:5px; margin-bottom:2px; color:var(--text-muted);">
+        Electromagnetics · Antennas · Space & Earth Observation
     </p>
 
+    <p class="subtitle fr" style="font-size:0.9rem; font-weight:400; margin-top:2px; margin-bottom:8px; color:var(--text-muted);">
+        Pédagogie · Transition socio-environnementale
+    </p>
 
-<div class="nav-tabs">
-    <button class="tab-btn active" onclick="switchTab('tab-accueil')">
-        <span class="fr">🏠 Accueil & Nouveautés</span>
-        <span class="en">🏠 Home & News</span>
-    </button>
+    <p class="subtitle en" style="font-size:0.9rem; font-weight:400; margin-top:2px; margin-bottom:8px; color:var(--text-muted);">
+        Pedagogy · Socio-environmental transition
+    </p>
 
-    <button class="tab-btn" onclick="switchTab('tab-recherche')">
-        <span class="fr">🔬 Recherche</span>
-        <span class="en">🔬 Research</span>
-    </button>
+    <div class="nav-tabs" style="margin-top:10px;">
+        <button class="tab-btn active" onclick="switchTab('tab-accueil')">
+            <span class="fr">🏠 Accueil & Nouveautés</span>
+            <span class="en">🏠 Home & News</span>
+        </button>
 
-    <button class="tab-btn" onclick="switchTab('tab-membres')">
-        <span class="fr">👥 Groupe SurfWAVE</span>
-        <span class="en">👥 SurfWAVE Team</span>
-    </button>
+        <button class="tab-btn" onclick="switchTab('tab-recherche')">
+            <span class="fr">🔬 Recherche</span>
+            <span class="en">🔬 Research</span>
+        </button>
 
-    <button class="tab-btn" onclick="switchTab('tab-divulgation')">
-        <span class="fr">🚀 Science & Société</span>
-        <span class="en">🚀 Outreach</span>
-    </button>
-</div>
+        <button class="tab-btn" onclick="switchTab('tab-membres')">
+            <span class="fr">👥 Groupe SurfWAVE</span>
+            <span class="en">👥 SurfWAVE Team</span>
+        </button>
+
+        <button class="tab-btn" onclick="switchTab('tab-divulgation')">
+            <span class="fr">🚀 Divulgation & Ateliers</span>
+            <span class="en">🚀 Outreach & Workshops</span>
+        </button>
+    </div>
 
 </header>
 
