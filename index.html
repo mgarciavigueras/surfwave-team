@@ -621,26 +621,40 @@ footer a:hover {
     </script>
 
 <style>
-    /* Supprime les espacements en haut */
-    header, main, .tab-content, #tab-accueil, #tab-accueil > div {
+    /* Supprime les espacements indésirables en haut */
+    header,
+    main,
+    .tab-content,
+    #tab-accueil {
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
-    header, .nav-tabs, .logos-container {
+
+    /* Espace contrôlé avant le texte de présentation */
+    #tab-accueil > div {
+        padding-top: 15px !important;
+    }
+
+    header,
+    .nav-tabs,
+    .logos-container {
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
+
     /* Cache les paragraphes vides qui créent de l'espace */
     .tab-content p:empty {
         display: none !important;
         margin: 0 !important;
         padding: 0 !important;
     }
-    /* Premier paragraphe collé en haut */
+
+    /* Le premier paragraphe commence normalement */
     #tab-accueil p:first-of-type {
         margin-top: 0 !important;
     }
 </style>
+
 </head>
 
 
@@ -772,8 +786,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
         <!-- ==================== PROFILE ==================== -->
 <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.45; margin:0 0 8px 0;">
-    Je suis <strong>Professeure des universités à
-    <a href="https://www.insa-rennes.fr/" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">INSA Rennes</a></strong>,
+    Je suis <strong>Professeure des universités à l'<a href="https://www.insa-rennes.fr/" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">INSA Rennes</a></strong>,
     membre de l'<strong>Institut Universitaire de France
     <a href="https://www.iufrance.fr/" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">(IUF)</a></strong>
     et responsable de l’équipe de recherche <strong>SurfWAVE</strong> à l’IETR.
