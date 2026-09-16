@@ -162,17 +162,18 @@ header {
 @media (max-width: 550px) {
     header {
         aspect-ratio: auto;
-        min-height: 50vh;
+        min-height: 0;
         padding: 12px 8px 10px;
-background: url('portada-mobile.jpg') center top / 100% auto no-repeat;
+        background: url('portada-mobile.jpg') center top / 100% auto no-repeat;
     }
 
-    /* On mobile, keep only the name, logos and navigation */
     .subtitle.fr,
     .subtitle.en {
         display: none;
     }
-}        /* Voile blanc semi-transparent pour rendre le texte et les logos lisibles */
+}
+
+        /* Voile blanc semi-transparent pour rendre le texte et les logos lisibles */
         header::before {
             content: '';
             position: absolute;
