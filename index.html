@@ -558,8 +558,8 @@ footer a:hover {
     /* Bouton FR / EN : en haut à droite */
     header .top-bar {
         position: absolute;
-        top: 12px;
-        right: 8px;
+        top: 3px;
+        right: 2px;
         left: auto;
         z-index: 5;
     }
@@ -567,6 +567,39 @@ footer a:hover {
     /* Logos */
     .logos-container {
         margin-top: 10px;
+    }
+
+    /* Onglets compacts sur mobile : uniquement les icônes */
+    .nav-tabs {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 4px;
+        margin-top: 8px !important;
+    }
+
+    .nav-tabs .tab-btn {
+        flex: 1;
+        padding: 7px 4px;
+        font-size: 1.25rem;
+        line-height: 1;
+    }
+
+    .nav-tabs .tab-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .nav-tabs .tab-icon {
+        display: inline-block;
+        font-size: 1.25rem;
     }
 }
 
@@ -693,27 +726,41 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         <img src="IETR_Logo.png" alt="Logo IETR" class="logo-small" id="main-logo">
     </div>
 
-    <div class="nav-tabs" style="margin-top:10px;">
-        <button class="tab-btn active" onclick="switchTab('tab-accueil')">
-            <span class="fr">🏠 Accueil & Nouveautés</span>
-            <span class="en">🏠 Home & News</span>
-        </button>
+<div class="nav-tabs" style="margin-top:10px;">
 
-        <button class="tab-btn" onclick="switchTab('tab-recherche')">
-            <span class="fr">🔬 Recherche</span>
-            <span class="en">🔬 Research</span>
-        </button>
+    <button class="tab-btn active" onclick="switchTab('tab-accueil')" type="button">
+        <span class="tab-icon" aria-hidden="true">🏠</span>
+        <span class="tab-label">
+            <span class="fr">Accueil</span>
+            <span class="en">Home</span>
+        </span>
+    </button>
 
-        <button class="tab-btn" onclick="switchTab('tab-membres')">
-            <span class="fr">👥 Groupe SurfWAVE</span>
-            <span class="en">👥 SurfWAVE Team</span>
-        </button>
+    <button class="tab-btn" onclick="switchTab('tab-recherche')" type="button">
+        <span class="tab-icon" aria-hidden="true">🚀</span>
+        <span class="tab-label">
+            <span class="fr">Recherche</span>
+            <span class="en">Research</span>
+        </span>
+    </button>
 
-        <button class="tab-btn" onclick="switchTab('tab-divulgation')">
-            <span class="fr">🚀 Divulgation & Ateliers</span>
-            <span class="en">🚀 Outreach & Workshops</span>
-        </button>
-    </div>
+    <button class="tab-btn" onclick="switchTab('tab-membres')" type="button">
+        <span class="tab-icon" aria-hidden="true">🌍</span>
+        <span class="tab-label">
+            <span class="fr">Communauté</span>
+            <span class="en">Community</span>
+        </span>
+    </button>
+
+    <button class="tab-btn" onclick="switchTab('tab-divulgation')" type="button">
+        <span class="tab-icon" aria-hidden="true">👩‍🔬</span>
+        <span class="tab-label">
+            <span class="fr">Éducation &amp; Divulgation</span>
+            <span class="en">Education &amp; Outreach</span>
+        </span>
+    </button>
+
+</div>
 
 </header>
 <main>
