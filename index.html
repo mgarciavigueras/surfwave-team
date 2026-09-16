@@ -146,15 +146,16 @@
         body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
 
         /* En-tête avec image de fond */
-        header {
-            text-align: center; 
-            padding: 40px 20px 20px;
-            background: url('image (10).jpg') center/cover no-repeat;
-            border-bottom: 3px solid var(--primary-cyan);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: relative;
-            transition: all 0.3s ease;
-        }
+header {
+    text-align: center;
+    min-height: 33vh;
+    padding: 18px 20px 12px;
+    background: url('image (10).jpg') center 40% / cover no-repeat;
+    border-bottom: 3px solid var(--primary-cyan);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    transition: all 0.3s ease;
+}
 
         /* Voile blanc semi-transparent pour rendre le texte et les logos lisibles */
         header::before {
