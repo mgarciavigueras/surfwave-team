@@ -110,23 +110,43 @@
 
 /* Mobile */
 
-@media (max-width: 900px) {
-    .research-axes-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .research-axis[open] {
-        grid-column: 1 / -1;
-    }
-}
-
+```css
 @media (max-width: 550px) {
-    .research-axes-grid {
-        grid-template-columns: 1fr;
+
+    header {
+        aspect-ratio: auto;
+        min-height: 0;
+        padding: 12px 8px 10px;
+        background: url('portada-mobile.jpg') center top / 100% auto no-repeat;
     }
 
-    .research-axis[open] {
-        grid-column: auto;
+    /* En mobile, on cache les lignes descriptives */
+    .subtitle.fr,
+    .subtitle.en {
+        display: none;
+    }
+
+    /* Bouton FR / EN : en haut à droite,
+       sans influencer la position des autres éléments */
+    .top-bar {
+        position: absolute;
+        top: 38px;
+        right: 8px;
+        z-index: 5;
+    }
+
+    /* Nom : aligné à gauche et compact */
+    h1 {
+        margin-top: 12px;
+        margin-bottom: 2px;
+        line-height: 0.95;
+        text-align: left;
+        padding-left: 8px;
+    }
+
+    /* Logos */
+    .logos-container {
+        margin-top: 10px;
     }
 }
 
