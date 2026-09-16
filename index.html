@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
 
     <style>
+
 .research-axes-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -108,64 +110,35 @@
 }
 
 
-/* Mobile */
+/* Variables de couleurs - NOUVEAU THEME CLAIR */
 
-```css
-@media (max-width: 550px) {
-
-    header {
-        aspect-ratio: auto;
-        min-height: 0;
-        padding: 12px 8px 10px;
-        background: url('portada-mobile.jpg') center top / 100% auto no-repeat;
-    }
-
-    /* En mobile, on cache les lignes descriptives */
-    .subtitle.fr,
-    .subtitle.en {
-        display: none;
-    }
-
-    /* Bouton FR / EN : en haut à droite,
-       sans influencer la position des autres éléments */
-    .top-bar {
-        position: absolute;
-        top: 38px;
-        right: 8px;
-        z-index: 5;
-    }
-
-    /* Nom : aligné à gauche et compact */
-    h1 {
-        margin-top: 12px;
-        margin-bottom: 2px;
-        line-height: 0.95;
-        text-align: left;
-        padding-left: 8px;
-    }
-
-    /* Logos */
-    .logos-container {
-        margin-top: 10px;
-    }
+:root {
+    --bg-color: #f4f6f8;
+    --text-color: #1e293b;
+    --text-muted: #475569;
+    --primary-cyan: #0284c7;
+    --primary-green: #059669;
+    --card-bg: #fcfcfc;
+    --border-color: #e2e8f0;
+    --hover-glow: rgba(2, 132, 199, 0.2);
 }
 
-        /* Variables de couleurs - NOUVEAU THEME CLAIR (Blanc/Gris clair) */
-	:root {
-            --bg-color: #f4f6f8; /* Un gris très très clair, doux et légèrement mat */
-            --text-color: #1e293b;
-            --text-muted: #475569;
-            --primary-cyan: #0284c7;
-            --primary-green: #059669;
-            --card-bg: #fcfcfc; /* Un blanc "cassé" imperceptible, juste assez pour ne pas piquer les yeux */
-            --border-color: #e2e8f0;
-            --hover-glow: rgba(2, 132, 199, 0.2);
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
 
-        /* En-tête avec image de fond */
+
+/* En-tête avec image de fond */
+
 header {
     text-align: center;
     aspect-ratio: 2390 / 742;
@@ -178,7 +151,385 @@ header {
     transition: all 0.3s ease;
 }
 
+
+/* Voile blanc semi-transparent */
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 0;
+}
+
+header > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Bouton de langue */
+
+.top-bar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.lang-btn {
+    background-color: #ffffff;
+    color: var(--primary-cyan);
+    border: 1px solid var(--primary-cyan);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lang-btn:hover {
+    background-color: var(--primary-cyan);
+    color: #fff;
+}
+
+
+/* Maria GARCIA VIGUERAS */
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    font-style: italic;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    margin-top: -5px;
+    margin-bottom: 7px;
+    background: -webkit-linear-gradient(45deg, var(--primary-cyan), var(--primary-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.5px #000000;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.4));
+}
+
+
+/* Nouveaux conteneurs de logos en ligne */
+
+.logos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 20px auto;
+    gap: 15px;
+}
+
+.logo-medium {
+    width: 30.8%;
+    max-width: 209px;
+    height: auto;
+}
+
+.logo-large {
+    width: 28.5%;
+    max-width: 228px;
+    height: auto;
+}
+
+.logo-small {
+    width: 21.6%;
+    max-width: 158px;
+    height: auto;
+}
+
+.subtitle {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+
+/* Onglets de navigation */
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: #f1f5f9;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.tab-btn.active {
+    background-color: var(--primary-cyan);
+    color: #fff;
+    border-color: var(--primary-cyan);
+    box-shadow: 0 4px 10px var(--hover-glow);
+}
+
+
+/* Contenu principal */
+
+main {
+    max-width: 1200px;
+    margin: 40px auto 100px;
+    padding: 0 20px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.grid-team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+
+/* Cartes générales */
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-cyan);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.badge {
+    align-self: flex-start;
+    padding: 4px 10px;
+    background-color: rgba(2, 132, 199, 0.1);
+    color: var(--primary-cyan);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+
+/* Scroll Horizontal pour Galerie & Séminaires */
+
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 15px 5px;
+    scrollbar-width: thin;
+    margin-bottom: 20px;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+}
+
+.scroll-img {
+    height: 220px;
+    width: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.scroll-img:hover {
+    transform: scale(1.03);
+    border-color: var(--primary-cyan);
+}
+
+.event-card-cover {
+    flex: 0 0 auto;
+    width: 260px;
+    height: 220px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #0f766e 0%, #064e3b 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.event-card-cover:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+/* Cartes Équipe */
+
+.member-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    width: 280px;
+    border-top: 4px solid var(--primary-cyan);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    border-top-color: var(--primary-green);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.photo-container {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-cyan);
+    background-color: #f1f5f9;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.role-badge {
+    display: inline-block;
+    background-color: rgba(5, 150, 105, 0.1);
+    color: var(--primary-green);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.install-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.install-btn {
+    background-color: rgba(5, 150, 105, 0.05);
+    color: var(--primary-green);
+    border: 1px solid rgba(5, 150, 105, 0.3);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: block;
+}
+
+.install-btn:hover {
+    background-color: var(--primary-green);
+    color: #fff;
+}
+
+
+/* Langues */
+
+body.lang-en .fr {
+    display: none !important;
+}
+
+body:not(.lang-en) .en {
+    display: none !important;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #0f172a;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--primary-cyan);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
 @media (max-width: 550px) {
+
     header {
         aspect-ratio: auto;
         min-height: 0;
@@ -186,183 +537,52 @@ header {
         background: url('portada-mobile.jpg') center top / 100% auto no-repeat;
     }
 
+    /* Cacher les lignes descriptives sur mobile */
     .subtitle.fr,
     .subtitle.en {
         display: none;
     }
 
-    .top-bar {
+    /* Nom à gauche */
+    header h1 {
+        margin-top: -5px;
+        margin-bottom: 2px;
+        line-height: 0.95;
+        text-align: left;
+        padding-left: 8px;
+    }
+
+    /* Bouton FR / EN à droite */
+    header .top-bar {
         position: absolute;
-        top: 4px;
-        right: 4px;
+        top: 45px;
+        right: 8px;
+        left: auto;
         z-index: 5;
     }
 
-h1 {
-    margin-top: 25px;
-    margin-bottom: 2px;
-    line-height: 0.95;
+    /* Logos */
+    .logos-container {
+        margin-top: 10px;
+    }
 }
-}
 
-        /* Voile blanc semi-transparent pour rendre le texte et les logos lisibles */
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255, 255, 255, 0.5);
-            z-index: 0;
-        }
-
-        header > * { position: relative; z-index: 1; }
-
-        .top-bar { position: absolute; top: 20px; right: 20px; z-index: 2; }
-
-        /* Bouton Langue */
-        .lang-btn {
-            background-color: #ffffff;
-            color: var(--primary-cyan);
-            border: 1px solid var(--primary-cyan);
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .lang-btn:hover { background-color: var(--primary-cyan); color: #fff; }
-
-	/* Maria GARCIA VIGUERAS */
-h1 {
-    font-size: 2.8rem; 
-    font-weight: 800; 
-    font-style: italic;
-    font-family: 'Poppins', 'Montserrat', sans-serif;
-    letter-spacing: 2px;
-    margin-top: -5px; 
-    margin-bottom: 7px;
-    background: -webkit-linear-gradient(45deg, var(--primary-cyan), var(--primary-green));
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1.5px #000000;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.4));
-}
-        /* Nouveaux conteneurs de logos en ligne */
-        .logos-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 900px;
-            margin: 20px auto;
-            gap: 15px;
-        }
-.logo-medium { width:30.8%; max-width:209px; height:auto; }
-.logo-large  { width:28.5%; max-width:228px; height:auto; }
-.logo-small  { width:21.6%; max-width:158px; height:auto; }
-        .subtitle { color: var(--text-color); font-weight: 600; font-size: 1.1rem; margin-top: 10px; }
-
-        /* Onglets de navigation */
-        .nav-tabs {
-            display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap;
-        }
-        .tab-btn {
-            background-color: #f1f5f9; color: var(--text-muted);
-            border: 1px solid var(--border-color); padding: 12px 24px;
-            border-radius: 8px; cursor: pointer; font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .tab-btn:hover { background-color: #e2e8f0; }
-        .tab-btn.active {
-            background-color: var(--primary-cyan); color: #fff;
-            border-color: var(--primary-cyan);
-            box-shadow: 0 4px 10px var(--hover-glow);
-        }
-
-        main { max-width: 1200px; margin: 40px auto 100px; padding: 0 20px; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
-        .grid-team { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; }
-
-        /* Cartes générales */
-        .card {
-            background-color: var(--card-bg); border-radius: 12px; padding: 30px;
-            transition: all 0.3s ease; border: 1px solid var(--border-color);
-            position: relative; overflow: hidden; display: flex; flex-direction: column;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .card:hover {
-            transform: translateY(-5px); border-color: var(--primary-cyan);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        .card h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--text-color); }
-        .badge {
-            align-self: flex-start; padding: 4px 10px; background-color: rgba(2, 132, 199, 0.1);
-            color: var(--primary-cyan); border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 15px;
-        }
-
-        /* Scroll Horizontal pour Galerie & Séminaires */
-        .horizontal-scroll {
-            display: flex; overflow-x: auto; gap: 15px; padding: 15px 5px; scrollbar-width: thin; margin-bottom: 20px;
-        }
-        .horizontal-scroll::-webkit-scrollbar { height: 8px; }
-        .horizontal-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
-        
-        .scroll-img {
-            height: 220px; width: auto; border-radius: 8px; object-fit: cover;
-            cursor: pointer; transition: transform 0.3s; border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .scroll-img:hover { transform: scale(1.03); border-color: var(--primary-cyan); }
-        
-        .event-card-cover {
-            flex: 0 0 auto; width: 260px; height: 220px; border-radius: 8px;
-            background: linear-gradient(135deg, #0f766e 0%, #064e3b 100%);
-            color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; padding: 20px; cursor: pointer; transition: transform 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .event-card-cover:hover { transform: scale(1.03); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-
-        /* Cartes Équipe */
-        .member-card {
-            background-color: var(--card-bg); border-radius: 16px; padding: 25px 20px;
-            text-align: center; width: 280px; border-top: 4px solid var(--primary-cyan);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s;
-            border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
-        }
-        .member-card:hover { transform: translateY(-10px); border-top-color: var(--primary-green); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .photo-container {
-            width: 140px; height: 140px; margin: 0 auto 15px; border-radius: 50%;
-            overflow: hidden; border: 3px solid var(--primary-cyan); background-color: #f1f5f9;
-        }
-        .photo { width: 100%; height: 100%; object-fit: cover; }
-        .role-badge {
-            display: inline-block; background-color: rgba(5, 150, 105, 0.1);
-            color: var(--primary-green); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 10px 0;
-        }
-
-        .install-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 15px; }
-        .install-btn {
-            background-color: rgba(5, 150, 105, 0.05); color: var(--primary-green);
-            border: 1px solid rgba(5, 150, 105, 0.3); padding: 10px; border-radius: 6px; text-align: center; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: block;
-        }
-        .install-btn:hover { background-color: var(--primary-green); color: #fff; }
-
-        body.lang-en .fr { display: none !important; }
-        body:not(.lang-en) .en { display: none !important; }
-
-        footer { text-align: center; padding: 30px; background-color: #0f172a; color: #94a3b8; font-size: 0.9rem; }
-        footer a { color: var(--primary-cyan); text-decoration: none; font-weight: 600; }
-        footer a:hover { text-decoration: underline; }
     </style>
-<!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-XFtaS9PEgF1K6owR8dSIY.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-</script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+
+    <script async src="https://plausible.io/js/pa-XFtaS9PEgF1K6owR8dSIY.js"></script>
+
+    <script>
+        window.plausible = window.plausible || function() {
+            (plausible.q = plausible.q || []).push(arguments)
+        },
+        plausible.init = plausible.init || function(i) {
+            plausible.o = i || {}
+        };
+
+        plausible.init()
+    </script>
 
 </head>
 
@@ -403,6 +623,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 });
 
 </script>
+
 
 <body>
 
@@ -484,33 +705,12 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
     <!-- ==================== PROFILE ==================== -->
 
     <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.45; margin:0 0 8px 0;">
+    <strong>Professeure des universités à <a href="https://www.insa-rennes.fr/index.html" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">INSA Rennes</a></strong>, membre de l'<strong>Institut Universitaire de France <a href="https://www.iufrance.fr/" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">IUF</a></strong> et responsable de l'équipe <strong>SurfWAVE</strong> (IETR), j'enseigne et je mène des recherches en électromagnétisme, antennes et systèmes RF pour l'espace, le radar et les télécommunications. Mon engagement s'étend au-delà de la recherche : je m'investis pour promouvoir la <strong>diversité</strong> dans les sciences et l'ingénierie, notamment <strong>auprès des femmes</strong>, et pour intégrer les enjeux de la <strong>transition socio-environnementale</strong> dans la formation des ingénieur·es. J'accorde aussi une place importante à la <strong>divulgation scientifique</strong>, en particulier <strong>auprès des jeunes enfants</strong>, pour susciter des vocations et rendre les STEM plus accessibles.
+</p>
 
-        Je suis <strong>Professeure à <a href="https://www.insa-rennes.fr/index.html"
-        target="_blank"
-        style="color:var(--primary-cyan); text-decoration:underline;">
-        INSA Rennes</a></strong>, chercheuse à l'<strong>IETR</strong> et membre de l'<strong>Institut Universitaire de France <a href="https://www.iufrance.fr/"
-        target="_blank"
-        style="color:var(--primary-cyan); text-decoration:underline;">
-        IUF</a></strong>.
-        Mes recherches portent sur l'<strong>électromagnétisme</strong>, les <strong>antennes</strong> et les <strong>dispositifs innovants</strong> pour les applications spatiales, radar et de télécommunication.
-
-    </p>
-
-    <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.45; margin:0 0 8px 0;">
-
-        Ingénieure en télécommunications et titulaire d'un <strong>master en pédagogie</strong>, j'ai commencé mon parcours comme <strong>enseignante de mathématiques</strong> dans le secondaire en Espagne.
-        Cette double formation m'a permis de réunir mes deux passions : la <strong>recherche</strong> et la <strong>transmission des connaissances</strong>.
-        Arrivée à l'<strong>INSA Rennes</strong> en 2015, j'ai rejoint l'<strong>IETR</strong> et j'anime l'équipe de recherche <strong>SurfWAVE</strong> depuis 2019.
-
-    </p>
-
-    <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.45; margin:0 0 10px 0;">
-
-        À travers mes activités de recherche, d'enseignement et d'encadrement, je cherche à créer un environnement fondé sur la <strong>curiosité</strong>, la <strong>bienveillance</strong> et la <strong>collaboration</strong>.
-        Au fil des années, j'ai pris conscience de l'importance de promouvoir la <strong>diversité</strong> dans la science et l'ingénierie.
-        Cette conviction guide ma façon de travailler, de diriger mon équipe et de participer à des initiatives favorisant une recherche plus inclusive, au service de <strong>technologies responsables</strong> capables de préserver la richesse et la diversité de notre planète.
-
-    </p>
+<p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.45; margin:0 0 8px 0;">
+    I am a <strong>professor at <a href="https://www.insa-rennes.fr/index.html" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">INSA Rennes</a></strong>, member of the <strong>Institut Universitaire de France <a href="https://www.iufrance.fr/" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">IUF</a></strong> and head of the <strong>SurfWAVE</strong> team (IETR), where I teach and conduct research on electromagnetics, antennas and RF systems for space, radar and telecommunications. My commitment goes beyond research: I work to promote <strong>diversity</strong> in science and engineering, particularly <strong>among women</strong>, and to integrate <strong>socio-environmental transition</strong> issues into engineering education. I also place a strong emphasis on <strong>science outreach</strong>, especially <strong>with young children</strong>, to spark curiosity and make STEM more accessible.
+</p>
 
 
     <p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.45; margin:0 0 8px 0;">
