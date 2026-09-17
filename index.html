@@ -1003,7 +1003,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
             NewSpace
         </a>
         — <strong>Article de vulgarisation</strong> dans <em>INTERFACE INSA Alumni</em>,
-        présentant les enjeux du NewSpace et les activités de recherche de l’équipe SurfWAVE
+        présentant les enjeux du NewSpace et nos activités de recherche 
         dans le domaine des antennes et des applications spatiales.
     </p>
 
@@ -1014,7 +1014,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
             NewSpace
         </a>
         — <strong>Outreach article</strong> in <em>INTERFACE INSA Alumni</em>,
-        presenting the challenges of NewSpace and SurfWAVE’s research activities
+        presenting the challenges of NewSpace and iyr research activities
         in antennas and space applications.
     </p>
 
@@ -1279,340 +1279,417 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 <!-- ------------------->
 <!-- ONGLET Community -->
 <!-- ------------------->
-
 <section id="tab-membres" class="tab-content">
 
 <style>
 .community-team {
-    margin: 12px 0 6px 0 !important;
+    margin: 18px 0 10px 0 !important;
     padding: 0 !important;
     width: 100%;
 }
 
+/* Expandable green heading */
 .community-team > summary {
-    display: block !important;
-    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
     width: 100% !important;
-    margin: 0 !important;
+    margin: 0 0 12px 0 !important;
     padding: 0 !important;
-    text-align: left !important;
-    line-height: 1.2 !important;
     cursor: pointer;
-    font-size: 1.17rem !important;
-    font-weight: 600 !important;
-    color: var(--primary-green) !important;
     list-style: none !important;
+
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    color: var(--primary-green) !important;
 }
 
-.community-team > summary::marker {
-    display: none !important;
-}
-
+/* Hide browser default arrow */
 .community-team > summary::-webkit-details-marker {
-    display: none !important;
+    display: none;
 }
 
+/* Green expandable arrow */
 .community-team > summary::before {
-    content: "›";
-    display: inline-block;
-    margin-right: 6px;
-    font-size: 1rem;
-    font-weight: 600;
+    content: "▶";
+    font-size: 0.8rem;
     color: var(--primary-green);
-    transition: transform 0.15s ease;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
 }
 
+/* Rotate arrow when open */
 .community-team[open] > summary::before {
     transform: rotate(90deg);
 }
 
-.team-content {
-    display: block !important;
-    margin: 0 !important;
-    padding: 5px 0 6px 18px !important;
-    text-align: left !important;
+/* Introduction */
+.team-intro {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 0 14px 0 !important;
 }
 
-/* Petites cartes discrètes pour les membres SurfWAVE */
+/* Current team */
 .team-content .grid-team {
-    gap: 12px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 8px !important;
 }
 
 .team-content .member-card {
-    padding: 10px !important;
+    width: 140px !important;
+    padding: 9px 7px !important;
     border-radius: 8px !important;
 }
 
 .team-content .photo-container {
-    width: 70px !important;
-    height: 70px !important;
-    margin: 0 auto 8px auto !important;
+    width: 62px !important;
+    height: 62px !important;
+    margin: 0 auto 6px !important;
 }
 
 .team-content .photo {
-    width: 70px !important;
-    height: 70px !important;
+    width: 62px !important;
+    height: 62px !important;
 }
 
 .team-content .member-card h3 {
-    font-size: 0.9rem !important;
-    margin: 4px 0 !important;
+    font-size: 0.82rem !important;
+    line-height: 1.2 !important;
+    margin: 3px 0 !important;
 }
 
 .team-content .role-badge {
-    font-size: 0.72rem !important;
-    padding: 3px 6px !important;
+    font-size: 0.66rem !important;
+    line-height: 1.2 !important;
+    padding: 3px 5px !important;
+    margin: 5px 0 0 0 !important;
 }
 
+/* Former members */
+.past-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 4px;
+    padding: 0;
+}
+
+.past-members a {
+    display: inline-block;
+    padding: 5px 9px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: #f8fafc;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.78rem;
+    line-height: 1.2;
+    transition: all 0.2s ease;
+}
+
+.past-members a:hover {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+    background: rgba(5, 150, 105, 0.06);
+}
+
+@media (max-width: 600px) {
+
+    .community-team > summary {
+        font-size: 1.7rem !important;
+    }
+
+    .team-content .grid-team {
+        gap: 8px !important;
+    }
+
+    .team-content .member-card {
+        width: 130px !important;
+    }
+}
 </style>
+
 
 <div style="max-width:1100px; margin:15px auto 0 auto;">
 
-<details class="community-team">
+    <details class="community-team">
 
-    <summary>
-        <span class="fr">
-            Équipe de recherche SurfWAVE
-        </span>
+        <summary>
+            <span class="fr">Groupe SurfWAVE</span>
+            <span class="en">SurfWAVE Team</span>
+        </summary>
 
-        <span class="en">
-            SurfWAVE Research Team
-        </span>
-    </summary>
 
-    <div class="team-content">
+        <div class="team-content">
 
-        <p class="fr research-text" style="margin:4px 0 10px 0;">
-            SurfWAVE est une équipe de recherche de l’IETR, rattachée à l’INSA Rennes.
-            Nos travaux portent sur les ondes électromagnétiques, les surfaces périodiques
-            et quasi-périodiques, ainsi que sur la conception et le contrôle de dispositifs
-            pour des applications spatiales, radar et télécommunications.
-        </p>
+            <!-- Introduction -->
+            <p class="fr team-intro">
+                En tant que responsable de l'équipe de recherche SurfWAVE, je suis chargée d'animer une équipe au sein de l'<strong>IETR</strong> à l'<strong>INSA Rennes</strong>, en accompagnant les chercheurs, enseignants-chercheurs, ingénieurs et doctorants qui contribuent à nos activités de recherche et de formation. L'équipe travaille autour des <strong>ondes électromagnétiques</strong>, des <strong>surfaces périodiques et quasi-périodiques</strong>, ainsi que de la conception et du contrôle de dispositifs pour des applications <strong>spatiales, radar et télécommunications</strong>.
+            </p>
 
-        <p class="en research-text" style="margin:4px 0 10px 0;">
-            SurfWAVE is a research team within IETR, affiliated with INSA Rennes.
-            Our work focuses on electromagnetic waves, periodic and quasi-periodic surfaces,
-            and the design and control of devices for space, radar and telecommunications applications.
-        </p>
+            <p class="en team-intro">
+                As head of the SurfWAVE research team, I lead a research group within <strong>IETR</strong> at <strong>INSA Rennes</strong>, bringing together researchers, academics, research engineers and PhD students involved in our research and educational activities. The team works on <strong>electromagnetic waves</strong>, <strong>periodic and quasi-periodic surfaces</strong>, and the design and control of devices for <strong>space, radar and telecommunications</strong> applications.
+            </p>
 
-        <div class="grid-team">
 
-            <a href="https://www.ietr.fr/erwan-fourn"
-               target="_blank"
-               style="text-decoration:none; color:inherit;">
+            <!-- Current members -->
+            <div class="grid-team">
+
+
+                <!-- Erwan Fourn -->
                 <div class="member-card">
+
                     <div class="photo-container">
-                        <img src="erwan_fourn.jpg" alt="Erwan Fourn" class="photo">
+                        <img src="erwan_fourn.jpg"
+                             alt="Erwan Fourn"
+                             class="photo">
                     </div>
-                    <h3>Erwan Fourn</h3>
-                    <span class="role-badge">
-                        <span class="fr">Maître de Conférences</span>
-                        <span class="en">Associate Professor</span>
-                    </span>
-                </div>
-            </a>
 
-            <a href="https://www.ietr.fr/raphael-gillard"
-               target="_blank"
-               style="text-decoration:none; color:inherit;">
-                <div class="member-card">
-                    <div class="photo-container">
-                        <img src="r_gillard.jpg" alt="Raphaël Gillard" class="photo">
-                    </div>
-                    <h3>Raphaël Gillard</h3>
-                    <span class="role-badge">
-                        <span class="fr">Professeur</span>
-                        <span class="en">Professor</span>
-                    </span>
-                </div>
-            </a>
-
-            <a href="https://www.ietr.fr/renaud-loison"
-               target="_blank"
-               style="text-decoration:none; color:inherit;">
-                <div class="member-card">
-                    <div class="photo-container">
-                        <img src="renaud_loison.jpg" alt="Renaud Loison" class="photo">
-                    </div>
-                    <h3>Renaud Loison</h3>
-                    <span class="role-badge">
-                        <span class="fr">Professeur</span>
-                        <span class="en">Professor</span>
-                    </span>
-                </div>
-            </a>
-
-            <a href="https://www.linkedin.com/in/lucaspoloeng/"
-               target="_blank"
-               style="text-decoration:none; color:inherit;">
-                <div class="member-card">
-                    <div class="photo-container">
-                        <img src="Lucas.jpg" alt="Lucas Polo López" class="photo">
-                    </div>
-                    <h3>Lucas Polo López</h3>
-                    <span class="role-badge">
-                        <span class="fr">Ingénieur de Recherche · membre associé</span>
-                        <span class="en">Research Engineer · associated member</span>
-                    </span>
-                </div>
-            </a>
-
-            <a href="https://www.ietr.fr/en/jorge-ruiz-garcia"
-               target="_blank"
-               style="text-decoration:none; color:inherit;">
-                <div class="member-card">
-                    <div class="photo-container">
-                        <img src="jorge_ruiz_garcia.jpg" alt="Jorge Ruiz García" class="photo">
-                    </div>
-                    <h3>Jorge Ruiz García</h3>
-                    <span class="role-badge">
-                        <span class="fr">Enseignant-Chercheur</span>
-                        <span class="en">Associate Professor</span>
-                    </span>
-                </div>
-            </a>
-
-            <div class="member-card">
-                <div class="photo-container">
-                    <img src="Lise.jpg" alt="Lise Trégloze" class="photo">
-                </div>
-
-                <h3>
-                    <a href="https://www.linkedin.com/in/lise-tregloze-171594226/"
-                       target="_blank"
-                       style="text-decoration:none; color:inherit;">
-                        Lise Trégloze
-                    </a>
-                </h3>
-
-                <span class="role-badge">
-
-                    <span class="fr">
-                        Ingénieure pédagogique ·
-                        <a href="https://cread.recherche.univ-rennes2.fr/cread"
-                           target="_blank"
-                           style="color:var(--primary-green); text-decoration:underline;">
-                            Chercheuse CREAD associée
+                    <h3>
+                        <a href="https://www.ietr.fr/erwan-fourn"
+                           target="_blank">
+                            Erwan Fourn
                         </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Maître de Conférences
                     </span>
 
-                    <span class="en">
-                        Associate Researcher ·
-                        <a href="https://cread.recherche.univ-rennes2.fr/cread"
-                           target="_blank"
-                           style="color:var(--primary-green); text-decoration:underline;">
-                            PhD student at CREAD
+                    <span class="role-badge en">
+                        Associate Professor
+                    </span>
+
+                </div>
+
+
+                <!-- Raphaël Gillard -->
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="r_gillard.jpg"
+                             alt="Raphaël Gillard"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.ietr.fr/raphael-gillard"
+                           target="_blank">
+                            Raphaël Gillard
                         </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Professeur
                     </span>
 
-                </span>
+                    <span class="role-badge en">
+                        Professor
+                    </span>
+
+                </div>
+
+
+                <!-- Renaud Loison -->
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="renaud_loison.jpg"
+                             alt="Renaud Loison"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.ietr.fr/renaud-loison"
+                           target="_blank">
+                            Renaud Loison
+                        </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Professeur
+                    </span>
+
+                    <span class="role-badge en">
+                        Professor
+                    </span>
+
+                </div>
+
+
+                <!-- Lucas Polo López -->
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="Lucas.jpg"
+                             alt="Lucas Polo López"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.linkedin.com/in/lucaspoloeng/"
+                           target="_blank">
+                            Lucas Polo López
+                        </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Ingénieur de Recherche · membre associé
+                    </span>
+
+                    <span class="role-badge en">
+                        Research Engineer · associated member
+                    </span>
+
+                </div>
+
+
+                <!-- Jorge Ruiz García -->
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="jorge_ruiz_garcia.jpg"
+                             alt="Jorge Ruiz García"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.ietr.fr/en/jorge-ruiz-garcia"
+                           target="_blank">
+                            Jorge Ruiz García
+                        </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Enseignant-Chercheur
+                    </span>
+
+                    <span class="role-badge en">
+                        Associate Professor
+                    </span>
+
+                </div>
+
+
+                <!-- Lise Trégloze -->
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="Lise.jpg"
+                             alt="Lise Trégloze"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.linkedin.com/in/lise-tregloze-171594226/"
+                           target="_blank">
+                            Lise Trégloze
+                        </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Ingénieure pédagogique · Chercheuse CREAD associée
+                    </span>
+
+                    <span class="role-badge en">
+                        Associate Researcher · PhD student at CREAD
+                    </span>
+
+                </div>
+
             </div>
-	</div>
-<!-- Past members -->
-<h4 style="margin:18px 0 6px 0; color:var(--primary-green);">
-    <span class="fr">Anciens membres</span>
-    <span class="en">Past members</span>
-</h4>
-
-<div class="past-members">
-
-    <span>
-        <a href="https://www.linkedin.com/in/lisa-berretti-35461b163/"
-           target="_blank">
-            Lisa Berretti
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/thomas-uguen/"
-           target="_blank">
-            Thomas Uguen
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/carlos-molero-jim%C3%A9nez-720517118/"
-           target="_blank">
-            Carlos Molero Jiménez
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/haris-stoumpos-ba882640/"
-           target="_blank">
-            Charalampos (Haris) Stoumpos
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/aurelie-dorle/"
-           target="_blank">
-            Aurélie Dorlé
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/antoine-calleau/"
-           target="_blank">
-            Antoine Calleau
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/dbmteleco/?locale=fr"
-           target="_blank">
-            Diego Bermúdez Martín
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/samara-gharbieh-3ba67086/"
-           target="_blank">
-            Samara Gharbieh
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/andrea-guarriello-1139414b/"
-           target="_blank">
-            Andrea Guarriello
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/paul-le-bihan-74836613b/"
-           target="_blank">
-            Paul Le Bihan
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/remaahmid/"
-           target="_blank">
-            Rema Ahmid
-        </a>
-    </span>
-
-    <span>
-        <a href="https://www.linkedin.com/in/matthieu-elineau/"
-           target="_blank">
-            Matthieu Elineau
-        </a>
-    </span>
 
 
+            <!-- Former members -->
 
+            <h4 class="fr"
+                style="font-size:1.05rem; margin:22px 0 8px 0; color:var(--text-color);">
+                Anciens membres
+            </h4>
+
+            <h4 class="en"
+                style="font-size:1.05rem; margin:22px 0 8px 0; color:var(--text-color);">
+                Former members
+            </h4>
+
+
+            <div class="past-members">
+
+                <a href="https://www.linkedin.com/in/lisa-berretti/"
+                   target="_blank">
+                    Lisa Berretti
+                </a>
+
+                <a href="https://www.linkedin.com/in/thomas-uguen/"
+                   target="_blank">
+                    Thomas Uguen
+                </a>
+
+                <a href="https://www.linkedin.com/in/carlos-molero-jimenez/"
+                   target="_blank">
+                    Carlos Molero Jiménez
+                </a>
+
+                <a href="https://www.linkedin.com/in/charalampos-stoumpos/"
+                   target="_blank">
+                    Charalampos (Haris) Stoumpos
+                </a>
+
+                <a href="https://www.linkedin.com/in/aurelie-dorle/"
+                   target="_blank">
+                    Aurélie Dorlé
+                </a>
+
+                <a href="https://www.linkedin.com/in/antoine-calleau/"
+                   target="_blank">
+                    Antoine Calleau
+                </a>
+
+                <a href="https://www.linkedin.com/in/diego-bermudez-martin/"
+                   target="_blank">
+                    Diego Bermúdez Martín
+                </a>
+
+                <a href="https://www.linkedin.com/in/samara-gharbieh/"
+                   target="_blank">
+                    Samara Gharbieh
+                </a>
+
+                <a href="https://www.linkedin.com/in/andrea-guarriello/"
+                   target="_blank">
+                    Andrea Guarriello
+                </a>
+
+                <a href="https://www.linkedin.com/in/paul-le-bihan/"
+                   target="_blank">
+                    Paul Le Bihan
+                </a>
+
+                <a href="https://www.linkedin.com/in/rema-ahmid/"
+                   target="_blank">
+                    Rema Ahmid
+                </a>
+
+                <a href="https://www.linkedin.com/in/matthieu-elineau/"
+                   target="_blank">
+                    Matthieu Elineau
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
-
-</details>
+    </details>
 
 </div>
 
-
-        </section>
+</section>
 
 <!-- ========================================================== -->
 <!-- ============ STYLE RECHERCHE — ACCORDÉONS =============== -->
