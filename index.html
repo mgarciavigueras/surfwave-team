@@ -1261,9 +1261,65 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
             </div>
         </section>
 
+<!-- ------------------->
 <!-- ONGLET Community -->
+<!-- ------------------->
 
 <section id="tab-membres" class="tab-content">
+
+<style>
+.community-team {
+    margin: 12px 0 6px 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
+.community-team > summary {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    line-height: 1.2 !important;
+    cursor: pointer;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: var(--primary-green) !important;
+    list-style: none !important;
+}
+
+.community-team > summary::marker {
+    display: none !important;
+}
+
+.community-team > summary::-webkit-details-marker {
+    display: none !important;
+}
+
+.community-team > summary::before {
+    content: "›";
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    transition: transform 0.15s ease;
+}
+
+.community-team[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.team-content {
+    display: block !important;
+    margin: 0 !important;
+    padding: 5px 0 6px 18px !important;
+    text-align: left !important;
+}
+</style>
+
+<div style="max-width:1100px; margin:15px auto 0 auto;">
 
 <details class="community-team">
 
@@ -1277,13 +1333,52 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         </span>
     </summary>
 
-    <div class="team-content">
+<div class="team-content">
 
-        <!-- Les membres seront ajoutés ici -->
+    <p class="fr" style="margin:0 0 3px 0; color:var(--text-muted); font-size:1rem;">
+        <strong>Erwan Fourn</strong> — Maître de Conférences
+    </p>
 
-    </div>
+    <p class="en" style="margin:0 0 3px 0; color:var(--text-muted); font-size:1rem;">
+        <strong>Erwan Fourn</strong> — Associate Professor
+    </p>
 
+    <p class="fr" style="margin:0 0 3px 0; color:var(--text-muted); font-size:1rem;">
+        <strong>Raphaël Gillard</strong> — Professeur des Universités
+    </p>
+
+    <p class="en" style="margin:0 0 3px 0; color:var(--text-muted); font-size:1rem;">
+        <strong>Raphaël Gillard</strong> — Full Professor
+    </p>
+
+    <p class="fr" style="margin:0 0 3px 0; color:var(--text-muted); font-size:1rem;">
+        <strong>Renaud Loison</strong> — Professeur des Universités
+    </p>
+
+    <p class="en" style="margin:0 0 3px 0; color:var(--text-muted); font-size:1rem;">
+        <strong>Renaud Loison</strong> — Full Professor
+    </p>
+
+    <p class="fr" style="margin:0 0 3px 0; color:var(--text-muted); font-size:1rem;">
+        <strong>Lucas Polo López</strong> — Ingénieur de Recherche · membre associé
+    </p>
+
+    <p class="en" style="margin:0 0 3px 0; color:var(--text-muted); font-size:1rem;">
+        <strong>Lucas Polo López</strong> — Research Engineer · associated member
+    </p>
+
+    <p class="fr" style="margin:0 0 3px 0; color:var(--text-muted); font-size:1rem;">
+        <strong>Jorge Ruiz García</strong> — Enseignant-Chercheur
+    </p>
+
+    <p class="en" style="margin:0 0 3px 0; color:var(--text-muted); font-size:1rem;">
+        <strong>Jorge Ruiz García</strong> — Associate Professor
+    </p>
+
+</div>
 </details>
+</div>
+
 
 
 
