@@ -725,7 +725,6 @@ main {
     background-color: var(--primary-green);
     color: #fff;
 }
-
 /* =========================================================
    14. COMMUNITY
    ========================================================= */
@@ -733,44 +732,38 @@ main {
 .community-container {
     width: 100%;
     max-width: 1100px;
-
     margin: 15px auto 0 auto;
-
     box-sizing: border-box;
 }
+
+
+/* ---------------------------------------------------------
+   Scientific community expandable section
+   --------------------------------------------------------- */
 
 .community-team {
     margin: 18px 0 10px 0;
     padding: 0;
-
     width: 100%;
 }
 
-/* Expandable green heading */
 .community-team > summary {
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     width: 100%;
-
     margin: 0 0 12px 0;
     padding: 0;
 
     cursor: pointer;
-
     list-style: none;
 
     font-size: 2rem;
     font-weight: 600;
     line-height: 1.2;
-
     color: var(--primary-green);
 }
 
-/* Hide browser default arrow */
 .community-team > summary::marker {
     display: none;
     content: "";
@@ -780,132 +773,95 @@ main {
     display: none;
 }
 
-/* Green expandable arrow */
 .community-team > summary::before {
     content: "▶";
-
     font-size: 0.8rem;
-
     color: var(--primary-green);
-
     transition: transform 0.2s ease;
-
     flex-shrink: 0;
 }
 
-/* Rotate arrow when open */
 .community-team[open] > summary::before {
     transform: rotate(90deg);
 }
-
-
-/* Community team content */
 
 .community-team .team-content {
     width: 100%;
 }
 
 
-/* Compact team grid */
+/* ---------------------------------------------------------
+   Current team members
+   --------------------------------------------------------- */
 
-.community-team .grid-team {
+.community-container .grid-team {
     display: flex;
-
-    flex-wrap: wrap;
-
+    flex-wrap: nowrap;
     justify-content: center;
-
-    gap: 10px;
-
+    gap: 8px;
     margin-top: 8px;
-
     width: 100%;
 }
 
-
-/* Compact member cards */
-
-.community-team .member-card {
+.community-container .member-card {
     width: 140px;
+    max-width: 140px;
+    flex: 0 0 140px;
 
-    max-width: 100%;
-
-    padding: 9px 7px;
-
-    border-radius: 8px;
+    padding: 7px 5px;
+    border-radius: 7px;
+    box-sizing: border-box;
 }
 
-
-/* Compact member photos */
-
-.community-team .photo-container {
-    width: 62px;
-    height: 62px;
-
-    margin: 0 auto 6px;
+.community-container .photo-container {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 5px;
 }
 
-.community-team .photo {
-    width: 62px;
-    height: 62px;
+.community-container .photo {
+    width: 60px;
+    height: 60px;
 }
 
-
-/* Compact member names */
-
-.community-team .member-card h3 {
-    font-size: 0.82rem;
-
-    line-height: 1.2;
-
+.community-container .member-card h3 {
+    font-size: 0.78rem;
+    line-height: 1.15;
     margin: 3px 0;
 }
 
-
-/* Compact member roles */
-
-.community-team .role-badge {
-    font-size: 0.66rem;
-
-    line-height: 1.2;
-
-    padding: 3px 5px;
-
-    margin: 5px 0 0 0;
+.community-container .role-badge {
+    font-size: 0.62rem;
+    line-height: 1.15;
+    padding: 2px 4px;
+    margin: 4px 0 0 0;
 }
 
 
-/* Former members */
+/* ---------------------------------------------------------
+   Former members
+   --------------------------------------------------------- */
 
 .past-members {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 7px;
-
     margin-top: 4px;
-
     padding: 0;
 }
 
 .past-members a {
     display: inline-block;
-
     padding: 5px 9px;
 
     border: 1px solid var(--border-color);
-
     border-radius: 999px;
 
     background: #f8fafc;
-
     color: var(--text-muted);
 
     text-decoration: none;
-
     font-size: 0.78rem;
-
     line-height: 1.2;
 
     transition: all 0.2s ease;
@@ -913,14 +869,14 @@ main {
 
 .past-members a:hover {
     color: var(--primary-green);
-
     border-color: var(--primary-green);
-
     background: rgba(5, 150, 105, 0.06);
 }
 
 
-/* Community-specific responsive adjustment */
+/* ---------------------------------------------------------
+   Community responsive adjustment
+   --------------------------------------------------------- */
 
 @media (max-width: 600px) {
 
@@ -928,16 +884,16 @@ main {
         font-size: 1.7rem;
     }
 
-    .community-team .grid-team {
+    .community-container .grid-team {
         gap: 8px;
     }
 
-    .community-team .member-card {
+    .community-container .member-card {
         width: 130px;
+        max-width: 130px;
+        flex: 0 0 130px;
     }
 }
-
-
 /* =========================================================
    14. LANGUAGES
    ========================================================= */
@@ -2789,7 +2745,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
     <p class="en intro-text">
         As head of the SurfWAVE research team, I lead a research group within <strong>IETR</strong> at <strong>INSA Rennes</strong>, bringing together researchers, academics, research engineers and PhD students involved in our research and educational activities. The team works on <strong>electromagnetic waves</strong>, <strong>periodic and quasi-periodic surfaces</strong>, and the design and control of devices for <strong>space, radar and telecommunications</strong> applications.
-    </p>
+
 
 
     <!-- Current members -->
