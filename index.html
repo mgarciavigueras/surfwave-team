@@ -43,8 +43,8 @@
 
 .meta-text {
     color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.2;
+    font-size: 1rem;
+    line-height: 1.3;
     margin: 0 0 4px 0;
 }
 
@@ -53,6 +53,13 @@
     font-size: 0.9rem;
     line-height: 1.1;
     margin: 0 0 3px 0;
+}
+
+.heading-text {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin: 4px 0 4px 0;
+    color: var(--primary-green);
 }
 
 
@@ -850,11 +857,6 @@ footer a:hover {
 .research-link {
     color: var(--primary-cyan);
     text-decoration: underline;
-}
-
-.research-heading {
-    margin: 4px 0 6px 0;
-    color: var(--primary-green);
 }
 
 .research-intro-text {
@@ -1756,13 +1758,13 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
     <div>
 
-        <h4 class="research-heading">
+        <h4 class="heading-text">
             <span class="fr">Recherche</span>
             <span class="en">Research</span>
         </h4>
 
         <!-- FR -->
-        <p class="fr research-text research-intro-text">
+    <p class="fr intro-text">
             Mes recherches portent sur le <strong>contrôle des ondes électromagnétiques</strong>
             et la conception d’<strong>antennes et de systèmes RF</strong>, avec un intérêt particulier
             pour les applications spatiales, le radar et l’observation de la Terre.
@@ -1772,11 +1774,16 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
             Je m’intéresse ainsi à une conception plus responsable des dispositifs et de leurs ressources,
             en m’appuyant sur de nouveaux concepts de la physique des ondes et des métamatériaux,
             ainsi que sur de nouvelles techniques de fabrication qui peuvent aussi contribuer à
-            <strong>démocratiser l’utilisation de ces technologies</strong>.
+            <strong>démocratiser l’utilisation de ces technologies</strong>. Ces travaux ont menés en collaboration avec des partenaires academiques et industriels et ont donné lieu à plusieurs publications et brevets. Voir la liste complète des publications
+    <a href="https://scholar.google.com/citations?hl=fr&amp;user=-Ab2kz8AAAAJ"
+       target="_blank"
+       class="research-link">
+        ici
+    </a>.
         </p>
 
         <!-- EN -->
-        <p class="en research-text research-intro-text">
+    <p class="fr intro-text">
             My research focuses on <strong>electromagnetic wave control</strong> and the design of
             <strong>antennas and RF systems</strong>, with a particular interest in space, radar and
             Earth observation applications.
@@ -1784,17 +1791,12 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
             applications together within a single system and adapt over time to changing societal needs.
             I therefore explore more responsible approaches to the design and use of resources,
             drawing on new concepts in wave physics and metamaterials, as well as new manufacturing
-            techniques that can also help <strong>democratize the use of these technologies</strong>.
-        </p>
-
-        <p class="fr research-note">
-            Une partie de ces travaux est menée avec des partenaires industriels et a donné lieu
-            à plusieurs brevets, notamment autour d’antennes intelligentes, modulables et reprogrammables.
-        </p>
-
-        <p class="en research-note">
-            Part of this work is carried out with industrial partners and has led to several patents,
-            including work on smart, reconfigurable and remotely programmable antennas.
+            techniques that can also help <strong>democratize the use of these technologies</strong>. Our work is carried out in collaboration with academic and industrial partners and has led to publications and patents. The complete publication list is 
+    <a href="https://scholar.google.com/citations?hl=fr&amp;user=-Ab2kz8AAAAJ"
+       target="_blank"
+       class="research-link">
+        here
+    </a>.
         </p>
 
     </div>
@@ -1824,7 +1826,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
                 <!-- ==================== DESCRIPTION ==================== -->
 
-                <p class="fr research-text research-description">
+                <p class="fr meta-text">
                     Je développe des <strong>surfaces capables de contrôler les ondes électromagnétiques</strong>
                     et d’apporter de nouvelles fonctionnalités aux antennes et systèmes RF :
                     contrôle du faisceau, de la polarisation, du filtrage fréquentiel ou encore
@@ -1836,7 +1838,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
                     l’<strong>Universidad de Granada</strong> et l’<strong>Universidad de Sevilla</strong>.
                 </p>
 
-                <p class="en research-text research-description">
+                <p class="fr meta-text">
                     I develop <strong>surfaces that can control electromagnetic waves</strong>
                     and bring new functionalities to antennas and RF systems, including beam control,
                     polarization manipulation, frequency filtering and improved radiation performance.
