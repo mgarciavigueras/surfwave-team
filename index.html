@@ -34,6 +34,37 @@
 }
 
 
+
+/* =========================================================
+   1. VARIABLES and TYPOGRAPHY / TEXT STYLES
+   ========================================================= */
+
+:root {
+    --bg-color: #f4f6f8;
+    --text-color: #1e293b;
+    --text-muted: #475569;
+    --primary-cyan: #0284c7;
+    --primary-green: #059669;
+    --card-bg: #fcfcfc;
+    --border-color: #e2e8f0;
+    --hover-glow: rgba(2, 132, 199, 0.2);
+}
+
+.intro-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.45;
+    margin: 10px 0;
+}
+
+.compact-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.3;
+    margin: 4px 0 6px 0;
+}
+
+
 /* =========================================================
    2. GENERAL
    ========================================================= */
@@ -957,7 +988,10 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
 <main>
 
+<!-------------------->
 <!-- ONGLET ACCUEIL -->
+<!-------------------->
+
 
 <section id="tab-accueil" class="tab-content active" style="padding-top:0; margin-top:0;">
 
@@ -965,27 +999,28 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
     <!-- ==================== PROFILE ==================== -->
 
-    <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.45; margin:0 0 8px 0;">
+    <p class="fr intro-text">
         Je suis Professeure des Universités à l’INSA Rennes, membre de l’IUF et responsable de l’équipe SurfWAVE à l’IETR.
-    Je travaille sur les antennes et systèmes électromagnétiques pour le spatial et l’observation de la Terre,
-    avec des partenaires académiques, industriels, le CNES et l’ESA.
+        Je travaille sur les antennes et systèmes électromagnétiques pour le spatial et l’observation de la Terre,
+        avec des partenaires académiques, industriels, le CNES et l’ESA.
     </p>
 
-<p class="fr" style="color:var(--text-muted); font-size:0.95rem; line-height:1.3; margin:4px 0 10px 0;">
-    IUF · Responsable SurfWAVE · Collaborations ESA/CNES · Brevets avec des partenaires industriels ·
-    Prix Valorisation 2025 · TREMPLIN / IRIS-E
-</p>
+    <p class="fr compact-text">
+        IUF · Responsable SurfWAVE · Collaborations ESA/CNES · Brevets avec des partenaires industriels ·
+        Prix Valorisation 2025 · TREMPLIN / IRIS-E
+    </p>
 
-    <p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.45; margin:0 0 8px 0;">
+    <p class="en intro-text">
         I am a Full Professor at INSA Rennes, an IUF member and Head of the SurfWAVE research team at IETR.
-    I work on antennas and electromagnetic systems for space and Earth observation,
-    with academic and industrial partners, CNES and ESA.
+        I work on antennas and electromagnetic systems for space and Earth observation,
+        with academic and industrial partners, CNES and ESA.
     </p>
 
-<p class="en" style="color:var(--text-muted); font-size:0.95rem; line-height:1.3; margin:4px 0 10px 0;">
-    IUF · Head of SurfWAVE · ESA/CNES collaborations · Patents with industrial partners ·
-    2025 Innovation Valorization Award · TREMPLIN / IRIS-E
-</p>
+    <p class="en compact-text">
+        IUF · Head of SurfWAVE · ESA/CNES collaborations · Patents with industrial partners ·
+        2025 Innovation Valorization Award · TREMPLIN / IRIS-E
+    </p>
+
 
     <!-- ==================== UPCOMING ACTIVITIES ==================== -->
 
@@ -996,39 +1031,42 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
     <h4 class="en" style="margin:12px 0 6px 0; color:var(--primary-green);">
         Upcoming Activities
     </h4>
-<p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
-    🔭 <strong>1er octobre 2026</strong> — 
-    « Pouvons-nous partager le ciel ? »,
-    <strong>Village des Sciences de l’INSA Rennes</strong> ·
-    11h–11h30, Amphi M'Hamed Drissi ·
-    élèves de Premières et Terminales du lycée Bréquigny
-</p>
 
-<p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
-    🔭 <strong>1 October 2026</strong> — 
-    “Can We Share the Sky?”,
-    <strong>INSA Rennes Science Village</strong> ·
-    11:00–11:30, Amphi M'Hamed Drissi ·
-    Première and Terminale students from Lycée Bréquigny
-</p>
-
-    <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
-        ✨ <a href="https://womeninstem.fr/" target="_blank"
-               style="color:var(--primary-cyan); text-decoration:underline;">
-                European Women in STEM Award
-            </a>
-            — <strong> Nominée </strong>
+    <p class="fr compact-text">
+        🔭 <strong>1er octobre 2026</strong> — 
+        « Pouvons-nous partager le ciel ? »,
+        <strong>Village des Sciences de l’INSA Rennes</strong> ·
+        11h–11h30, Amphi M'Hamed Drissi ·
+        élèves de Premières et Terminales du lycée Bréquigny
     </p>
 
-    <p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
-        ✨<a href="https://womeninstem.fr/" target="_blank"
-               style="color:var(--primary-cyan); text-decoration:underline;">
-                European Women in STEM Award
-            </a>
-            — <strong> Nominated</strong>
+    <p class="en compact-text">
+        🔭 <strong>1 October 2026</strong> — 
+        “Can We Share the Sky?”,
+        <strong>INSA Rennes Science Village</strong> ·
+        11:00–11:30, Amphi M'Hamed Drissi ·
+        Première and Terminale students from Lycée Bréquigny
     </p>
 
-    <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
+    <p class="fr compact-text">
+        ✨
+        <a href="https://womeninstem.fr/" target="_blank"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            European Women in STEM Award
+        </a>
+        — <strong>Nominée</strong>
+    </p>
+
+    <p class="en compact-text">
+        ✨
+        <a href="https://womeninstem.fr/" target="_blank"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            European Women in STEM Award
+        </a>
+        — <strong>Nominated</strong>
+    </p>
+
+    <p class="fr compact-text">
         <a href="https://www.eumw.eu/" target="_blank"
            style="color:var(--primary-cyan); text-decoration:underline;">
             European Microwave Week 2026
@@ -1037,7 +1075,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         <em>« Current Trends in MMW and THz Components »</em>.
     </p>
 
-    <p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
+    <p class="en compact-text">
         <a href="https://www.eumw.eu/" target="_blank"
            style="color:var(--primary-cyan); text-decoration:underline;">
             European Microwave Week 2026
@@ -1046,7 +1084,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         <em>“Current Trends in MMW and THz Components”</em>.
     </p>
 
-    <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
+    <p class="fr compact-text">
         <a href="https://atpi.eventsair.com/44thesaantennaworkshop"
            target="_blank"
            style="color:var(--primary-cyan); text-decoration:underline;">
@@ -1057,7 +1095,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         (avec Esteban Menargues, SWISSto12).
     </p>
 
-    <p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
+    <p class="en compact-text">
         <a href="https://atpi.eventsair.com/44thesaantennaworkshop"
            target="_blank"
            style="color:var(--primary-cyan); text-decoration:underline;">
@@ -1088,7 +1126,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         2026
     </h5>
 
-    <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
+    <p class="fr compact-text">
         <a href="https://memento.epfl.ch/event/from-research-to-space-experiences-connecting-acad/"
            target="_blank"
            style="color:var(--primary-cyan); text-decoration:underline;">
@@ -1099,7 +1137,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         consacré aux expériences de collaboration entre recherche académique et industrie dans le domaine spatial.
     </p>
 
-    <p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
+    <p class="en compact-text">
         <a href="https://memento.epfl.ch/event/from-research-to-space-experiences-connecting-acad/"
            target="_blank"
            style="color:var(--primary-cyan); text-decoration:underline;">
@@ -1110,7 +1148,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         sharing experiences of collaboration between academia and industry in the space sector.
     </p>
 
-    <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
+    <p class="fr compact-text">
         <a href="#maternalles"
            style="color:var(--primary-cyan); text-decoration:underline;">
             Researchers at Kindergarten
@@ -1119,7 +1157,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         autour de la lumière et des champs électriques et magnétiques, auprès d’enfants de 4 à 6 ans.
     </p>
 
-    <p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
+    <p class="en compact-text">
         <a href="#maternalles"
            style="color:var(--primary-cyan); text-decoration:underline;">
             Researchers at Kindergarten
@@ -1128,51 +1166,51 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         introducing children aged 4–6 to light and electric and magnetic fields.
     </p>
 
-<p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 5px 0;">
-    <a href="https://doi.org/10.1109/ACCESS.2026.3666568"
-       target="_blank"
-       style="color:var(--primary-cyan); text-decoration:underline;">
-        Article Water Radar
-    </a>
-    — Publication dans <em>IEEE Access</em> de travaux sur un
-    <strong>réseau d’antennes à ondes de fuite à double polarisation</strong>
-    pour l’instrument radar aéroporté <strong>HOMARDS</strong>,
-    développé avec le <strong>CNES, l’IFREMER et l’ONERA</strong>,
-    dans le cadre de la télédétection de l’eau et de la mission ODYSEA.
-</p>
+    <p class="fr compact-text">
+        <a href="https://doi.org/10.1109/ACCESS.2026.3666568"
+           target="_blank"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            Article Water Radar
+        </a>
+        — Publication dans <em>IEEE Access</em> de travaux sur un
+        <strong>réseau d’antennes à ondes de fuite à double polarisation</strong>
+        pour l’instrument radar aéroporté <strong>HOMARDS</strong>,
+        développé avec le <strong>CNES, l’IFREMER et l’ONERA</strong>,
+        dans le cadre de la télédétection de l’eau et de la mission ODYSEA.
+    </p>
 
-<p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 5px 0;">
-    <a href="https://doi.org/10.1109/ACCESS.2026.3666568"
-       target="_blank"
-       style="color:var(--primary-cyan); text-decoration:underline;">
-        Water Radar paper
-    </a>
-    — Publication in <em>IEEE Access</em> of work on a
-    <strong>dual-polarized leaky-wave antenna array</strong>
-    for the airborne <strong>HOMARDS</strong> radar instrument,
-    developed with <strong>CNES, IFREMER and ONERA</strong>,
-    for water remote sensing and the ODYSEA mission.
-</p>
+    <p class="en compact-text">
+        <a href="https://doi.org/10.1109/ACCESS.2026.3666568"
+           target="_blank"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            Water Radar paper
+        </a>
+        — Publication in <em>IEEE Access</em> of work on a
+        <strong>dual-polarized leaky-wave antenna array</strong>
+        for the airborne <strong>HOMARDS</strong> radar instrument,
+        developed with <strong>CNES, IFREMER and ONERA</strong>,
+        for water remote sensing and the ODYSEA mission.
+    </p>
 
-    <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
+    <p class="fr compact-text">
         <a href="ArticleSurfWAVEInterface156.pdf"
            target="_blank"
            style="color:var(--primary-cyan); text-decoration:underline;">
             NewSpace
         </a>
         — <strong>Article de vulgarisation</strong> dans <em>INTERFACE INSA Alumni</em>,
-        présentant les enjeux du NewSpace et nos activités de recherche 
+        présentant les enjeux du NewSpace et nos activités de recherche
         dans le domaine des antennes et des applications spatiales.
     </p>
 
-    <p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
+    <p class="en compact-text">
         <a href="ArticleSurfWAVEInterface156.pdf"
            target="_blank"
            style="color:var(--primary-cyan); text-decoration:underline;">
             NewSpace
         </a>
         — <strong>Outreach article</strong> in <em>INTERFACE INSA Alumni</em>,
-        presenting the challenges of NewSpace and iyr research activities
+        presenting the challenges of NewSpace and our research activities
         in antennas and space applications.
     </p>
 
@@ -1181,80 +1219,79 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         2025
     </h5>
 
-   <p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
-    ✨
-    <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
-       target="_blank"
-       style="color:var(--primary-cyan); text-decoration:underline;">
-        Trophées Valorisation 2025
-    </a>
-    — <strong>Lauréate du prix Numérique – électronique, photonique, IA et cyber</strong>,
-    pour les travaux sur des antennes intelligentes, modulables et reprogrammables à distance.
-</p>
+    <p class="fr compact-text">
+        ✨
+        <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
+           target="_blank"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            Trophées Valorisation 2025
+        </a>
+        — <strong>Lauréate du prix Numérique – électronique, photonique, IA et cyber</strong>,
+        pour les travaux sur des antennes intelligentes, modulables et reprogrammables à distance.
+    </p>
 
-<p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:0 0 3px 0;">
-    ✨
-    <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
-       target="_blank"
-       style="color:var(--primary-cyan); text-decoration:underline;">
-        2025 Innovation Valorization Awards
-    </a>
-    — <strong>Recipient of the Digital – Electronics, Photonics, AI and Cybersecurity Award</strong>,
-    for research on smart, modular and remotely reconfigurable antennas.
-</p>
+    <p class="en compact-text">
+        ✨
+        <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
+           target="_blank"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            2025 Innovation Valorization Awards
+        </a>
+        — <strong>Recipient of the Digital – Electronics, Photonics, AI and Cybersecurity Award</strong>,
+        for research on smart, modular and remotely reconfigurable antennas.
+    </p>
 
-<p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:3px 0 0 0;">
-    ♀️
-    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11128930"
-       target="_blank"
-       style="color:var(--primary-cyan); text-decoration:underline;">
-        <em>The Place I Want to Be</em>
-    </a>
-    — Invitée par l’éditrice de la rubrique <strong>Women in Engineering</strong> de
-    <strong>IEEE Antennas and Propagation Magazine</strong>, j’ai eu le plaisir d’écrire
-    cette réflexion personnelle sur le métier de chercheuse, les rencontres qui nous façonnent
-    et les valeurs qui donnent du sens à notre parcours.
-</p>
+    <p class="fr compact-text">
+        ♀️
+        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11128930"
+           target="_blank"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            <em>The Place I Want to Be</em>
+        </a>
+        — Invitée par l’éditrice de la rubrique <strong>Women in Engineering</strong> de
+        <strong>IEEE Antennas and Propagation Magazine</strong>, j’ai eu le plaisir d’écrire
+        cette réflexion personnelle sur le métier de chercheuse, les rencontres qui nous façonnent
+        et les valeurs qui donnent du sens à notre parcours.
+    </p>
 
-<p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:3px 0 0 0;">
-    ♀️
-    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11128930"
-       target="_blank"
-       style="color:var(--primary-cyan); text-decoration:underline;">
-        <em>The Place I Want to Be</em>
-    </a>
-    — Invited by the editor of the <strong>Women in Engineering</strong> column of
-    <strong>IEEE Antennas and Propagation Magazine</strong>, I had the pleasure of writing
-    this personal reflection on being a researcher, the people who shape our journey,
-    and the values that give meaning to our work.
-</p>
+    <p class="en compact-text">
+        ♀️
+        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11128930"
+           target="_blank"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            <em>The Place I Want to Be</em>
+        </a>
+        — Invited by the editor of the <strong>Women in Engineering</strong> column of
+        <strong>IEEE Antennas and Propagation Magazine</strong>, I had the pleasure of writing
+        this personal reflection on being a researcher, the people who shape our journey,
+        and the values that give meaning to our work.
+    </p>
 
-<p class="fr" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:5px 0 35px 0;">
-    📡
-    <a href="https://doi.org/10.1109/LAWP.2024.3511433"
-       target="_blank"
-       style="color:var(--primary-cyan); text-decoration:underline;">
-        Dual-Polarized Spaceborne Phased Arrays
-    </a>
-    — <strong>Réseaux d’antennes phasées à haute efficacité</strong>
-    développés en collaboration avec l’<strong>ESA</strong>,
-    pour des applications spatiales en orbite basse.
-</p>
+    <p class="fr compact-text" style="margin:5px 0 35px 0;">
+        📡
+        <a href="https://doi.org/10.1109/LAWP.2024.3511433"
+           target="_blank"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            Dual-Polarized Spaceborne Phased Arrays
+        </a>
+        — <strong>Réseaux d’antennes phasées à haute efficacité</strong>
+        développés en collaboration avec l’<strong>ESA</strong>,
+        pour des applications spatiales en orbite basse.
+    </p>
 
-<p class="en" style="color:var(--text-muted); font-size:1rem; line-height:1.25; margin:5px 0 35px 0;">
-    📡
-    <a href="https://doi.org/10.1109/LAWP.2024.3511433"
-       target="_blank"
-       style="color:var(--primary-cyan); text-decoration:underline;">
-        Dual-Polarized Spaceborne Phased Arrays
-    </a>
-    — <strong>Highly efficient phased arrays</strong>
-    developed in collaboration with <strong>ESA</strong>,
-    for low Earth orbit space applications.
-</p>
+    <p class="en compact-text" style="margin:5px 0 35px 0;">
+        📡
+        <a href="https://doi.org/10.1109/LAWP.2024.3511433"
+           target="_blank"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            Dual-Polarized Spaceborne Phased Arrays
+        </a>
+        — <strong>Highly efficient phased arrays</strong>
+        developed in collaboration with <strong>ESA</strong>,
+        for low Earth orbit space applications.
+    </p>
 
 </div>
-
 </section>
 
       <!-- ONGLET ÉDUCATION & DIVULGATION -->
