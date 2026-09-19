@@ -36,19 +36,8 @@
 
 
 /* =========================================================
-   1. VARIABLES and TYPOGRAPHY / TEXT STYLES
+   1. TYPOGRAPHY / TEXT STYLES
    ========================================================= */
-
-:root {
-    --bg-color: #f4f6f8;
-    --text-color: #1e293b;
-    --text-muted: #475569;
-    --primary-cyan: #0284c7;
-    --primary-green: #059669;
-    --card-bg: #fcfcfc;
-    --border-color: #e2e8f0;
-    --hover-glow: rgba(2, 132, 199, 0.2);
-}
 
 .intro-text {
     color: var(--text-muted);
@@ -74,12 +63,18 @@
 /* =========================================================
    2. GENERAL
    ========================================================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -104,6 +99,8 @@ body {
    ========================================================= */
 
 header {
+    width: 100%;
+    max-width: 100%;
     text-align: center;
     aspect-ratio: 2390 / 742;
     min-height: 0;
@@ -763,7 +760,15 @@ footer a:hover {
 
 @media (max-width: 550px) {
 
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+    }
+
     header {
+        width: 100%;
+        max-width: 100%;
         aspect-ratio: auto;
         min-height: 0;
         padding: 12px 8px 10px;
