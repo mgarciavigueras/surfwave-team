@@ -13,13 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
 
 
-<!-- =========================================================
-     BEGIN GLOBAL STYLE
-     ========================================================= -->
-<style>
-
 /* =========================================================
-   1. VARIABLES
+   GLOBAL STYLE
    ========================================================= */
 
 :root {
@@ -32,7 +27,6 @@
     --border-color: #e2e8f0;
     --hover-glow: rgba(2, 132, 199, 0.2);
 }
-
 
 
 /* =========================================================
@@ -60,9 +54,11 @@
     margin: 0 0 3px 0;
 }
 
+
 /* =========================================================
    2. GENERAL
    ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -70,13 +66,13 @@
     font-family: 'Inter', sans-serif;
 }
 
-
 html,
 body {
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -85,41 +81,46 @@ body {
     line-height: 1.2;
 }
 
-/* CONTENEUR DES ONGLETS */
-
-.tab-content {
-    margin: 0;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-}
-
-
 
 /* =========================================================
    3. HEADER
    ========================================================= */
 
 header {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
     text-align: center;
+
     aspect-ratio: 2390 / 742;
     min-height: 0;
+
     padding: 20px 20px 12px;
+
     background: url('portada4.jpg') center top / 100% auto no-repeat;
+
     border-bottom: 3px solid var(--primary-cyan);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
     position: relative;
     transition: all 0.3s ease;
+
+    /* Empêche un élément interne de créer un débordement */
+    overflow: hidden;
 }
 
 header::before {
     content: '';
     position: absolute;
+
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+
     background: rgba(255, 255, 255, 0.5);
+
     z-index: 0;
 }
 
@@ -129,29 +130,43 @@ header > *:not(.top-bar) {
 }
 
 
-
 /* =========================================================
    4. LANGUAGE BUTTON
    ========================================================= */
 
 .top-bar {
     position: absolute;
+
     top: 20px;
-    left: auto;
     right: 20px;
+
     z-index: 2;
+
+    box-sizing: border-box;
 }
 
 .lang-btn {
     background-color: #ffffff;
     color: var(--primary-cyan);
+
     border: 1px solid var(--primary-cyan);
+
     padding: 8px 16px;
+
     border-radius: 20px;
+
     cursor: pointer;
+
     font-weight: 600;
+
     transition: all 0.3s;
+
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    box-sizing: border-box;
+
+    /* Sécurité pour éviter un débordement */
+    max-width: calc(100vw - 40px);
 }
 
 .lang-btn:hover {
@@ -161,22 +176,36 @@ header > *:not(.top-bar) {
 
 
 /* =========================================================
-   5. HEADER TITLE + LOGOS
+   5. HEADER TITLE
    ========================================================= */
 
 h1 {
     font-size: 2.8rem;
+
     font-weight: 800;
     font-style: italic;
+
     font-family: 'Poppins', 'Montserrat', sans-serif;
+
     letter-spacing: 2px;
+
     margin-top: -5px;
     margin-bottom: 7px;
-    background: -webkit-linear-gradient(45deg, var(--primary-cyan), var(--primary-green));
+
+    background: -webkit-linear-gradient(
+        45deg,
+        var(--primary-cyan),
+        var(--primary-green)
+    );
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
     -webkit-text-stroke: 1.5px #000000;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.4));
+
+    filter: drop-shadow(
+        0px 2px 4px rgba(0,0,0,0.4)
+    );
 }
 
 header h1 {
@@ -184,62 +213,104 @@ header h1 {
     margin-top: 0 !important;
 }
 
+
+/* =========================================================
+   6. LOGOS
+   ========================================================= */
+
 .logos-container {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
+
+    width: 100%;
     max-width: 900px;
+
     margin: 20px auto;
+
+    padding: 0 10px;
+
     gap: 15px;
+
+    box-sizing: border-box;
 }
 
 .logo-medium {
     width: 30.8%;
     max-width: 209px;
     height: auto;
+    box-sizing: border-box;
 }
 
 .logo-large {
     width: 28.5%;
     max-width: 228px;
     height: auto;
+    box-sizing: border-box;
 }
 
 .logo-small {
     width: 21.6%;
     max-width: 158px;
     height: auto;
+    box-sizing: border-box;
+}
+
+.logo-medium,
+.logo-large,
+.logo-small {
+    max-width: 100%;
 }
 
 .subtitle {
     color: var(--text-color);
+
     font-weight: 600;
     font-size: 1.1rem;
+
     margin-top: 10px;
+
+    max-width: 100%;
 }
 
 
 /* =========================================================
-   6. NAVIGATION
+   7. NAVIGATION
    ========================================================= */
 
 .nav-tabs {
     display: flex;
+
     justify-content: center;
+
     gap: 15px;
+
     margin-top: 25px;
+
     flex-wrap: wrap;
+
+    max-width: 100%;
 }
 
 .tab-btn {
     background-color: #f1f5f9;
+
     color: var(--text-muted);
+
     border: 1px solid var(--border-color);
+
     padding: 12px 24px;
+
     border-radius: 8px;
+
     cursor: pointer;
+
     font-weight: 600;
+
     transition: all 0.3s ease;
+
+    box-sizing: border-box;
 }
 
 .tab-btn:hover {
@@ -248,98 +319,195 @@ header h1 {
 
 .tab-btn.active {
     background-color: var(--primary-cyan);
+
     color: #fff;
+
     border-color: var(--primary-cyan);
-    box-shadow: 0 4px 10px var(--hover-glow);
+
+    box-shadow:
+        0 4px 10px var(--hover-glow);
 }
 
 
 /* =========================================================
-   7. MAIN CONTENT
+   8. MAIN CONTENT
    ========================================================= */
 
 main {
-    max-width: 1200px;
-    margin: 40px auto 100px;
-    padding: 0 20px;
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 30px auto 80px !important;
+
+    padding: 0 15px;
+
+    box-sizing: border-box;
 }
+
+
+/* =========================================================
+   9. TAB CONTENT
+   ========================================================= */
 
 .tab-content {
     display: none;
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    box-sizing: border-box;
 }
 
 .tab-content.active {
     display: block;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
 
-.grid-team {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+/*
+   Tous les conteneurs directs des onglets
+   restent centrés et ne dépassent pas la largeur prévue.
+*/
+
+.tab-content > div {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    box-sizing: border-box;
 }
 
 
 /* =========================================================
-   8. GENERAL CARDS
+   10. GRID
+   ========================================================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 30px;
+
+    margin-top: 30px;
+
+    width: 100%;
+}
+
+.grid-team {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-top: 30px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   11. GENERAL CARDS
    ========================================================= */
 
 .card {
     background-color: var(--card-bg);
+
     border-radius: 12px;
+
     padding: 30px;
+
     transition: all 0.3s ease;
+
     border: 1px solid var(--border-color);
+
     position: relative;
+
     overflow: hidden;
+
     display: flex;
+
     flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+
+    box-shadow:
+        0 4px 6px rgba(0,0,0,0.05);
+
+    width: 100%;
+
+    box-sizing: border-box;
 }
 
 .card:hover {
     transform: translateY(-5px);
+
     border-color: var(--primary-cyan);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
     font-size: 1.5rem;
+
     margin-bottom: 10px;
+
     color: var(--text-color);
 }
 
 .badge {
     align-self: flex-start;
+
     padding: 4px 10px;
-    background-color: rgba(2, 132, 199, 0.1);
+
+    background-color:
+        rgba(2, 132, 199, 0.1);
+
     color: var(--primary-cyan);
+
     border-radius: 20px;
+
     font-size: 0.8rem;
+
     font-weight: 600;
+
     margin-bottom: 15px;
 }
 
 
 /* =========================================================
-   9. GALLERY / HORIZONTAL SCROLL
+   12. GALLERY / HORIZONTAL SCROLL
    ========================================================= */
 
 .horizontal-scroll {
     display: flex;
+
     overflow-x: auto;
+
     gap: 15px;
+
     padding: 15px 5px;
+
     scrollbar-width: thin;
+
     margin-bottom: 20px;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
 }
 
 .horizontal-scroll::-webkit-scrollbar {
@@ -348,118 +516,200 @@ main {
 
 .horizontal-scroll::-webkit-scrollbar-thumb {
     background-color: #cbd5e1;
+
     border-radius: 10px;
 }
 
 .scroll-img {
     height: 220px;
+
     width: auto;
+
+    max-width: none;
+
     border-radius: 8px;
+
     object-fit: cover;
+
     cursor: pointer;
+
     transition: transform 0.3s;
+
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+
+    box-shadow:
+        0 4px 6px rgba(0,0,0,0.05);
 }
 
 .scroll-img:hover {
     transform: scale(1.03);
+
     border-color: var(--primary-cyan);
 }
 
 .event-card-cover {
     flex: 0 0 auto;
+
     width: 260px;
     height: 220px;
+
     border-radius: 8px;
-    background: linear-gradient(135deg, #0f766e 0%, #064e3b 100%);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f766e 0%,
+            #064e3b 100%
+        );
+
     color: white;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
+
     text-align: center;
+
     padding: 20px;
+
     cursor: pointer;
+
     transition: transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    box-shadow:
+        0 4px 6px rgba(0,0,0,0.1);
 }
 
 .event-card-cover:hover {
     transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.2);
 }
 
 
 /* =========================================================
-   10. TEAM
+   13. TEAM
    ========================================================= */
 
 .member-card {
     background-color: var(--card-bg);
+
     border-radius: 16px;
+
     padding: 25px 20px;
+
     text-align: center;
+
     width: 280px;
+
+    max-width: 100%;
+
     border-top: 4px solid var(--primary-cyan);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.05);
+
     transition: transform 0.3s;
+
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+
+    box-sizing: border-box;
 }
 
 .member-card:hover {
     transform: translateY(-10px);
+
     border-top-color: var(--primary-green);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.1);
 }
 
 .photo-container {
     width: 140px;
     height: 140px;
+
     margin: 0 auto 15px;
+
     border-radius: 50%;
+
     overflow: hidden;
+
     border: 3px solid var(--primary-cyan);
+
     background-color: #f1f5f9;
 }
 
 .photo {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
 .role-badge {
     display: inline-block;
-    background-color: rgba(5, 150, 105, 0.1);
+
+    background-color:
+        rgba(5, 150, 105, 0.1);
+
     color: var(--primary-green);
+
     padding: 4px 12px;
+
     border-radius: 20px;
+
     font-size: 0.8rem;
+
     font-weight: 600;
+
     margin: 10px 0;
 }
 
 .install-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(150px, 1fr));
+
     gap: 10px;
+
     margin-top: 15px;
+
+    width: 100%;
 }
 
 .install-btn {
-    background-color: rgba(5, 150, 105, 0.05);
+    background-color:
+        rgba(5, 150, 105, 0.05);
+
     color: var(--primary-green);
-    border: 1px solid rgba(5, 150, 105, 0.3);
+
+    border:
+        1px solid rgba(5, 150, 105, 0.3);
+
     padding: 10px;
+
     border-radius: 6px;
+
     text-align: center;
+
     text-decoration: none;
+
     font-size: 0.85rem;
+
     font-weight: 600;
+
     display: block;
+
+    box-sizing: border-box;
 }
 
 .install-btn:hover {
@@ -469,7 +719,7 @@ main {
 
 
 /* =========================================================
-   11. LANGUAGES
+   14. LANGUAGES
    ========================================================= */
 
 body.lang-en .fr {
@@ -482,20 +732,26 @@ body:not(.lang-en) .en {
 
 
 /* =========================================================
-   12. FOOTER
+   15. FOOTER
    ========================================================= */
 
 footer {
     text-align: center;
+
     padding: 30px;
+
     background-color: #0f172a;
+
     color: #94a3b8;
+
     font-size: 0.9rem;
 }
 
 footer a {
     color: var(--primary-cyan);
+
     text-decoration: none;
+
     font-weight: 600;
 }
 
@@ -505,32 +761,38 @@ footer a:hover {
 
 
 /* =========================================================
-   13. RESEARCH
+   16. RESEARCH
    ========================================================= */
 
 .research-axis {
     margin: 0 0 5px 0 !important;
     padding: 0 !important;
+
     width: 100%;
 }
 
 .research-axis > summary {
     display: block !important;
+
     box-sizing: border-box !important;
 
     width: 100% !important;
+
     min-height: 0 !important;
     height: auto !important;
 
     margin: 0 !important;
+
     padding: 2px 6px !important;
 
     text-align: left !important;
+
     line-height: 1.15 !important;
 
     cursor: pointer;
 
     font-size: 0.95rem !important;
+
     font-weight: 600 !important;
 
     color: var(--text-color) !important;
@@ -549,25 +811,35 @@ footer a:hover {
 
 .research-axis > summary .axis-icon {
     display: inline-block !important;
+
     margin-right: 5px !important;
+
     vertical-align: middle !important;
 }
 
 .research-axis > summary .fr,
 .research-axis > summary .en {
     text-align: left !important;
+
     margin: 0 !important;
     padding: 0 !important;
 }
 
 .research-axis > summary::before {
     content: "›";
+
     display: inline-block;
+
     margin-right: 5px;
+
     font-size: 0.9rem;
+
     font-weight: 600;
+
     line-height: 1;
+
     color: var(--text-muted);
+
     transition: transform 0.15s ease;
 }
 
@@ -577,8 +849,12 @@ footer a:hover {
 
 .research-axis > .axis-content {
     display: block !important;
+
     margin: 0 !important;
-    padding: 3px 8px 6px 28px !important;
+
+    padding:
+        3px 8px 6px 28px !important;
+
     text-align: left !important;
 }
 
@@ -588,25 +864,33 @@ footer a:hover {
 
 .research-text {
     color: var(--text-muted);
+
     font-size: 1rem;
+
     line-height: 1.45;
 }
 
 .research-work {
     color: var(--text-muted);
+
     font-size: 0.95rem;
+
     line-height: 1.4;
 }
 
 .research-link {
     color: var(--primary-cyan);
+
     text-decoration: underline;
 }
 
 .axis-subtitle {
     margin: 8px 0 4px 0;
+
     color: var(--text-color);
+
     font-size: 0.95rem;
+
     font-weight: 600;
 }
 
@@ -620,24 +904,33 @@ footer a:hover {
 
 .publications a {
     color: var(--primary-cyan);
+
     text-decoration: underline;
+
     margin-left: 4px;
 }
 
 
 /* =========================================================
-   14. EDUCATION & OUTREACH
+   17. EDUCATION & OUTREACH
    ========================================================= */
 
 .education-intro {
-    max-width: 1100px;
+    width: 100%;
+    max-width: 1050px;
+
     margin: 0 auto 18px auto;
+
+    box-sizing: border-box;
 }
 
 .education-intro p {
     color: var(--text-muted);
+
     font-size: 1rem;
+
     line-height: 1.45;
+
     margin: 0 0 10px 0;
 }
 
@@ -647,32 +940,44 @@ footer a:hover {
 
 .education-section-title {
     margin: 0 0 8px 0;
+
     font-size: 1.4rem;
+
     color: var(--text-color);
 }
 
 .education-section-text {
     color: var(--text-muted);
+
     margin: 0 0 10px 0;
 }
 
 
 /* =========================================================
-   15. TREMPLIN
+   18. TREMPLIN
    ========================================================= */
 
 .tremplin-details {
     width: 100%;
+
     margin-top: 25px;
+
     background: var(--card-bg);
+
     border: 1px solid var(--border-color);
+
     border-radius: 12px;
+
     overflow: hidden;
+
     transition: all 0.25s ease;
+
+    box-sizing: border-box;
 }
 
 .tremplin-details:hover {
     border-color: var(--primary-cyan);
+
     transform: translateY(-2px);
 }
 
@@ -682,19 +987,30 @@ footer a:hover {
 
 .tremplin-summary {
     min-height: 105px;
+
     padding: 16px 10px;
+
     cursor: pointer;
+
     list-style: none;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
+
     font-weight: 600;
+
     color: var(--text-color);
+
     line-height: 1.25;
+
+    box-sizing: border-box;
 }
 
 .tremplin-summary::-webkit-details-marker {
@@ -707,31 +1023,44 @@ footer a:hover {
 
 .tremplin-summary::after {
     content: "＋";
+
     margin-top: 8px;
+
     font-size: 1rem;
+
     color: var(--primary-cyan);
 }
 
-.tremplin-details[open] .tremplin-summary::after {
+.tremplin-details[open]
+.tremplin-summary::after {
     content: "−";
 }
 
 .tremplin-title {
     font-size: 1.05rem;
+
     font-weight: 600;
+
     line-height: 1.3;
 }
 
 .tremplin-content {
     padding: 5px 22px 22px;
+
     border-top: 1px solid var(--border-color);
+
     color: var(--text-muted);
+
     line-height: 1.6;
+
+    box-sizing: border-box;
 }
 
 .tremplin-content h3 {
     margin: 18px 0 6px 0;
+
     color: var(--text-color);
+
     font-size: 1rem;
 }
 
@@ -741,23 +1070,34 @@ footer a:hover {
 
 .summit-photos {
     display: flex;
+
     gap: 8px;
+
     margin-top: 10px;
+
     overflow-x: auto;
     overflow-y: hidden;
+
     padding-bottom: 2px;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
 }
 
 .summit-photos img {
     height: 130px;
+
     width: auto;
+
     display: block;
+
     flex: 0 0 auto;
 }
 
 
 /* =========================================================
-   16. MOBILE
+   19. MOBILE
    ========================================================= */
 
 @media (max-width: 550px) {
@@ -766,15 +1106,23 @@ footer a:hover {
     body {
         width: 100%;
         max-width: 100%;
+
+        overflow-x: hidden;
     }
 
     header {
         width: 100%;
         max-width: 100%;
+
         aspect-ratio: auto;
+
         min-height: 0;
+
         padding: 12px 8px 10px;
-        background: url('portada-mobile.jpg') center top / 100% auto no-repeat;
+
+        background:
+            url('portada-mobile.jpg')
+            center top / 100% auto no-repeat;
     }
 
     .subtitle.fr,
@@ -784,62 +1132,94 @@ footer a:hover {
 
     header h1 {
         margin-top: 60px;
+
         margin-bottom: 2px;
+
         line-height: 0.95;
+
         text-align: center;
+
         padding-left: 0;
     }
 
     header .top-bar {
         position: absolute;
+
         top: 3px;
         right: 2px;
         left: auto;
+
         z-index: 5;
     }
 
     .logos-container {
+        width: 100%;
+
         margin-top: 15px;
+
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     .nav-tabs {
         display: flex;
+
         justify-content: space-around;
+
         align-items: center;
+
         gap: 4px;
+
         margin-top: 8px !important;
+
+        width: 100%;
     }
 
     .nav-tabs .tab-btn {
         flex: 1;
+
         padding: 7px 4px;
+
         font-size: 1.25rem;
+
         line-height: 1;
+
+        min-width: 0;
     }
 
     .nav-tabs .tab-label {
         position: absolute;
+
         width: 1px;
         height: 1px;
+
         padding: 0;
         margin: -1px;
+
         overflow: hidden;
+
         clip: rect(0, 0, 0, 0);
+
         white-space: nowrap;
+
         border: 0;
     }
 
     .nav-tabs .tab-icon {
         display: inline-block;
+
         font-size: 1.25rem;
     }
 
+
     /* Espacements généraux */
+
     header,
     main,
     .tab-content,
     #tab-accueil {
         margin-top: 0 !important;
+
         padding-top: 0 !important;
     }
 
@@ -851,11 +1231,13 @@ footer a:hover {
     .nav-tabs,
     .logos-container {
         margin-bottom: 0 !important;
+
         padding-bottom: 0 !important;
     }
 
     .tab-content p:empty {
         display: none !important;
+
         margin: 0 !important;
         padding: 0 !important;
     }
@@ -863,18 +1245,74 @@ footer a:hover {
     #tab-accueil p:first-of-type {
         margin-top: 0 !important;
     }
+
+    /*
+       On conserve une largeur adaptée à l'écran
+       pour le contenu mobile.
+    */
+
+    main {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding-left: 8px;
+        padding-right: 8px;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .tab-content,
+    .tab-content > div {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
-main {
-    margin-left: auto !important;
-    margin-right: auto !important;
+
+/* =========================================================
+   20. FINAL SAFETY RULES
+   ========================================================= */
+
+/*
+   Empêche les éléments textuels très longs,
+   liens ou contenus embarqués de créer une
+   largeur supérieure à celle du conteneur.
+*/
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    max-width: 100%;
 }
 
-</style>
+img,
+video,
+iframe {
+    max-width: 100%;
+}
 
-<!-- =========================================================
-     END GLOBAL STYLE
-     ========================================================= -->
+pre,
+code {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+
+
 
     <!-- Privacy-friendly analytics by Plausible -->
 
@@ -1341,2163 +1779,6 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 </div>
 
 </section>
-
-
-
-      <!-- ONGLET ÉDUCATION & DIVULGATION -->
-<section id="tab-divulgation" class="tab-content">
-
-    <div style="max-width:1100px; margin:0 auto;">
-
-
-        <!-- INTRODUCTION -->
-        <div class="education-intro">
-
-            <p class="fr">
-                Pour moi, <strong>la recherche</strong>, <strong>l'enseignement</strong>
-                et le <strong>dialogue avec la société</strong> sont indissociables.
-                La recherche nourrit mon enseignement, l'enseignement nourrit ma recherche,
-                et tous deux trouvent leur prolongement dans des actions destinées à partager
-                les connaissances au-delà du monde académique.
-            </p>
-
-            <p class="en">
-                To me, <strong>research</strong>, <strong>teaching</strong>,
-                and <strong>engagement with society</strong> are inseparable.
-                Research enriches my teaching, teaching enriches my research,
-                and both extend beyond academia through activities that share
-                knowledge with society.
-            </p>
-
-        </div>
-
-
-        <!-- =====================================================
-             LIGNE DE DEUX COLONNES
-             ===================================================== -->
-<details class="tremplin-details">
-
-    <summary class="tremplin-summary">
-
-        <span class="tremplin-title fr">
-
-
-                        <span class="fr">
-                            Innovation pédagogique · TREMPLIN
-                        </span>
-
-                        <span class="en">
-                            Educational innovation · TREMPLIN
-                        </span>
-
-                    </span>
-
-                </summary>
-
-
-                <!-- CONTENU DU BOUTON -->
-
-                <div class="tremplin-content">
-
-                     <p class="fr research-text">
-                        TREMPLIN est un projet d’innovation pédagogique financé par 
-<a href="https://iris-e.univ-rennes.fr/" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">IRIS-E</a> 
-que je porte avec 
-<strong><a href="https://www.ens-rennes.fr/annuaire/rozenn-texier-picard" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">Rozenn Texier Picard</a></strong> 
-(professeure de Mathématiques Appliquées à l'ENS Rennes) et 
-<strong><a href="https://lfpc.univ-rennes2.fr/membres/clement-mabi" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">Clément Mabi</a></strong> 
-(directeur du laboratoire de sociologie 
-<a href="https://lfpc.univ-rennes2.fr/" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">LFPC</a>) 
-comme co-porteurs, et <strong>Lise Trégloze</strong>, 
-chercheuse en sciences de l’éducation, recrutée dans le projet comme ingénieure pédagogique. 
-C’est un projet transformateur et multidisciplinaire qui me tient à cœur. 
-Il souhaite créer une communauté d’enseignants-chercheurs, d’étudiants et d’associations locales, 
-pour expérimenter dans un espace sécurisé, avec l’objectif de transformer les pratiques 
-en école d’ingénieurs afin d’intégrer la transition socio-environnementale.
-                    </p>
-
-                    <p class="en research-text">
-                        TREMPLIN is a pedagogical innovation project funded by 
-<a href="https://iris-e.univ-rennes.fr/" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">IRIS-E</a>, 
-which I lead with 
-<strong><a href="https://www.ens-rennes.fr/annuaire/rozenn-texier-picard" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">Rozenn Texier Picard</a></strong> 
-(Professor of Applied Mathematics at ENS Rennes) and 
-<strong><a href="https://lfpc.univ-rennes2.fr/membres/clement-mabi" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">Clément Mabi</a></strong> 
-(Director of the 
-<a href="https://lfpc.univ-rennes2.fr/" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">LFPC</a> 
-Sociology Laboratory) as co-leaders, and <strong>Lise Trégloze</strong>, 
-a researcher in education sciences, recruited for the project as a pedagogical engineer. 
-It is a transformative and multidisciplinary project that matters deeply to me. 
-It aims to create a community of teacher-researchers, students, and local associations, 
-to experiment in a safe space, with the goal of transforming practices 
-in engineering schools to integrate the socio-environmental transition.
-                    </p>
-
-
-                    <p class="fr research-text">
-                        <strong> <a href="https://fr.higher-education-summit.com/"
-                           target="_blank"
-                           style="color:var(--primary-cyan); text-decoration:underline;">
-                            Higher Education Summit 2026
-                        </a>: Nous avons présenté le premiers résultats dans un forum international.
-                    </p>
-
-                    <p class="en research-text">
-                        <strong> <a href="https://fr.higher-education-summit.com/"
-                           target="_blank"
-                           style="color:var(--primary-cyan); text-decoration:underline;">
-                            Higher Education Summit 2026
-                        </a>: We presented our first results in an international forum.
-                    </p>
-
-
-                    <div class="summit-photos">
-
-                        <img src="Higher_Education_Summit_1.jpg"
-                             alt="Higher Education Summit 2026">
-
-                        <img src="Higher_Education_Summit_1c1.jpg"
-                             alt="Higher Education Summit 2026">
-
-                        <img src="Higher_Education_Summit_2.jpg"
-                             alt="Higher Education Summit 2026">
-
-                        <img src="Higher_Education_Summit_3.jpg"
-                             alt="Higher Education Summit 2026">
-
-                    </div>
-
-            </details>
-
-
-            <!-- COLONNE 2 : VIDE POUR L'INSTANT -->
-
-            <div></div>
-
-        </div>
-
-
-        <!-- =====================================================
-             RESEARCHERS & ROOSTERS
-             ===================================================== -->
-
-        <div class="education-section">
-
-            <span class="badge">
-                <span class="fr">Animation scientifique</span>
-                <span class="en">Scientific community</span>
-            </span>
-
-            <h2 class="education-section-title">
-                ☕ Researchers & Roosters
-            </h2>
-
-            <p class="fr education-section-text">
-                Un cycle de rencontres et de séminaires pour faire vivre
-                les échanges au sein du collectif de recherche.
-            </p>
-
-            <p class="en education-section-text">
-                A series of meetings and seminars bringing the research
-                community together.
-            </p>
-
-            <div class="horizontal-scroll">
-
-                <a href="RandR.pdf"
-                   target="_blank"
-                   class="fr">
-
-                    <img src="img1.jpg"
-                         alt="Researchers & Roosters"
-                         class="scroll-img">
-
-                </a>
-
-                <a href="RandR_en.pdf"
-                   target="_blank"
-                   class="en">
-
-                    <img src="img1.jpg"
-                         alt="Researchers & Roosters"
-                         class="scroll-img">
-
-                </a>
-
-                <img src="img4.jpg"
-                     alt="Seminar 09/06/2026"
-                     class="scroll-img"
-                     onclick="openModal(this.src)">
-
-                <img src="img3.jpg"
-                     alt="Seminar 10/03/2026"
-                     class="scroll-img"
-                     onclick="openModal(this.src)">
-
-                <img src="img2.jpg"
-                     alt="Seminar 30/04/2025"
-                     class="scroll-img"
-                     onclick="openModal(this.src)">
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================================
-             INTERVENTIONS EN MATERNELLE
-             ===================================================== -->
-
-        <div id="maternelles" class="education-section">
-
-            <span class="badge">
-                <span class="fr">Divulgation scientifique</span>
-                <span class="en">Science outreach</span>
-            </span>
-
-            <h2 class="education-section-title">
-                <span class="fr">📸 Interventions en milieu scolaire</span>
-                <span class="en">📸 School Interventions</span>
-            </h2>
-
-            <p class="fr education-section-text">
-                Des interventions et ateliers pour faire découvrir les sciences
-                aux plus jeunes.
-            </p>
-
-            <p class="en education-section-text">
-                Activities and workshops introducing science to young children.
-            </p>
-
-
-            <div class="horizontal-scroll">
-
-                <div class="event-card-cover"
-                     onclick="
-                        const gal = document.getElementById('maternelle-gallery');
-                        gal.style.display =
-                        gal.style.display === 'none' ? 'block' : 'none';
-                     ">
-
-                    <span style="font-size:2.5rem; margin-bottom:10px;">
-                        🏫
-                    </span>
-
-                    <h3 style="font-size:1.2rem; margin-bottom:5px;">
-                        Scientist at Kindergarten
-                    </h3>
-
-                    <p style="font-size:0.9rem; color:#99f6e4;">
-                        03/07/2026 · Oscar Leroux
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Galerie -->
-
-            <div id="maternelle-gallery"
-                 style="
-                    display:none;
-                    margin-top:15px;
-                    background-color:var(--card-bg);
-                    padding:20px;
-                    border-radius:12px;
-                    border:1px dashed var(--primary-green);
-                 ">
-
-                <div style="
-                    display:grid;
-                    grid-template-columns:
-                    repeat(auto-fit, minmax(min(100%,300px),1fr));
-                    gap:15px;
-                ">
-
-                    <img src="image (1).png"
-                         class="fr"
-                         alt="Atelier Oscar Leroux 1"
-                         style="width:100%; height:220px; object-fit:contain; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (1) - English.png"
-                         class="en"
-                         alt="Workshop Oscar Leroux 1"
-                         style="width:100%; height:220px; object-fit:contain; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (2).png"
-                         class="fr"
-                         alt="Atelier Oscar Leroux 2"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (2) - English.png"
-                         class="en"
-                         alt="Workshop Oscar Leroux 2"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (3).png"
-                         alt="Atelier Oscar Leroux 3"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (4).png"
-                         alt="Atelier Oscar Leroux 4"
-                         style="width:100%; height:220px; object-fit:cover; object-position:top; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (5).png"
-                         alt="Atelier Oscar Leroux 5"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (6).png"
-                         alt="Atelier Oscar Leroux 6"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (7).png"
-                         alt="Atelier Oscar Leroux 7"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (8).png"
-                         alt="Atelier Oscar Leroux 8"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (9).jpg"
-                         alt="Atelier Oscar Leroux 9"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (10).jpg"
-                         alt="Atelier Oscar Leroux 10"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (11).jpg"
-                         alt="Atelier Oscar Leroux 11"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                    <img src="image (12).jpg"
-                         alt="Atelier Oscar Leroux 12"
-                         style="width:100%; height:220px; object-fit:cover; cursor:pointer;"
-                         onclick="openModal(this.src)">
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================================
-             FICHES PÉDAGOGIQUES
-             ===================================================== -->
-
-        <div class="education-section">
-
-            <h2 class="fr education-section-title">
-                Nos différentes fiches pédagogiques
-            </h2>
-
-            <h2 class="en education-section-title">
-                Our Educational Resources
-            </h2>
-
-
-            <div class="grid">
-
-                <a href="Atelier 1 - Fiche technique.pdf"
-                   data-fr="Atelier 1 - Fiche technique.pdf"
-                   data-en="Atelier 1 - Fiche Technique - English.pdf"
-                   class="dynamic-link"
-                   target="_blank"
-                   style="text-decoration:none; color:inherit;">
-
-                    <div class="card">
-
-                        <span class="badge">
-                            <span class="fr">Atelier 1</span>
-                            <span class="en">Workshop 1</span>
-                        </span>
-
-                        <h3>
-                            <span class="fr">Lasers & Ballons</span>
-                            <span class="en">Lasers & Balloons</span>
-                        </h3>
-
-                        <p class="fr">
-                            <strong>Optronique & Thermodynamique :</strong>
-                            Absorption thermique vs réflexion lumineuse.
-                        </p>
-
-                        <p class="en">
-                            <strong>Optronics & Thermodynamics:</strong>
-                            Thermal absorption vs reflection.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <a href="Atelier 2 - Fiche technique.pdf"
-                   data-fr="Atelier 2 - Fiche technique.pdf"
-                   data-en="Atelier 2 - Fiche Technique - English.pdf"
-                   class="dynamic-link"
-                   target="_blank"
-                   style="text-decoration:none; color:inherit;">
-
-                    <div class="card">
-
-                        <span class="badge">
-                            <span class="fr">Atelier 2</span>
-                            <span class="en">Workshop 2</span>
-                        </span>
-
-                        <h3>
-                            <span class="fr">Prisme & Ombres Colorées</span>
-                            <span class="en">Prism & Colored Shadows</span>
-                        </h3>
-
-                        <p class="fr">
-                            <strong>Optique Géométrique :</strong>
-                            Décomposition spectrale par prisme K9 et synthèse RVB.
-                        </p>
-
-                        <p class="en">
-                            <strong>Geometric Optics:</strong>
-                            Light dispersion via a K9 prism and RGB color mixing.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <a href="Atelier 3 - Fiche technique.pdf"
-                   data-fr="Atelier 3 - Fiche technique.pdf"
-                   data-en="Atelier 3 - Fiche Technique - English.pdf"
-                   class="dynamic-link"
-                   target="_blank"
-                   style="text-decoration:none; color:inherit;">
-
-                    <div class="card">
-
-                        <span class="badge">
-                            <span class="fr">Atelier 3</span>
-                            <span class="en">Workshop 3</span>
-                        </span>
-
-                        <h3>
-                            <span class="fr">Le Train Magnétique</span>
-                            <span class="en">The Magnetic Train</span>
-                        </h3>
-
-                        <p class="fr">
-                            <strong>Électromagnétisme :</strong>
-                            Moteur homopolaire et Force de Laplace.
-                        </p>
-
-                        <p class="en">
-                            <strong>Electromagnetism:</strong>
-                            Homopolar motor utilizing Laplace force.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <a href="Atelier 4 - Fiche technique.pdf"
-                   data-fr="Atelier 4 - Fiche technique.pdf"
-                   data-en="Atelier 4 - Fiche Technique - English.pdf"
-                   class="dynamic-link"
-                   target="_blank"
-                   style="text-decoration:none; color:inherit;">
-
-                    <div class="card">
-
-                        <span class="badge">
-                            <span class="fr">Atelier 4</span>
-                            <span class="en">Workshop 4</span>
-                        </span>
-
-                        <h3>
-                            <span class="fr">Force Électrostatique</span>
-                            <span class="en">Electrostatic Force</span>
-                        </h3>
-
-                        <p class="fr">
-                            <strong>Triboélectricité :</strong>
-                            Arrachement d'électrons et lévitation électrostatique.
-                        </p>
-
-                        <p class="en">
-                            <strong>Triboelectricity:</strong>
-                            Electron transfer causing electrostatic levitation.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <a href="Atelier 5 - Fiche technique.pdf"
-                   data-fr="Atelier 5 - Fiche technique.pdf"
-                   data-en="Atelier 5 - Fiche Technique - English.pdf"
-                   class="dynamic-link"
-                   target="_blank"
-                   style="text-decoration:none; color:inherit;">
-
-                    <div class="card">
-
-                        <span class="badge">
-                            <span class="fr">Atelier 5</span>
-                            <span class="en">Workshop 5</span>
-                        </span>
-
-                        <h3>
-                            <span class="fr">Téléphone à Lumière</span>
-                            <span class="en">Light Telephone</span>
-                        </h3>
-
-                        <p class="fr">
-                            <strong>Optoélectronique :</strong>
-                            Modulation audio d'une LED haute vitesse (Li-Fi).
-                        </p>
-
-                        <p class="en">
-                            <strong>Optoelectronics:</strong>
-                            Audio modulation of a high-speed LED (Li-Fi).
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <a href="Atelier 6 - Fiche technique.pdf"
-                   data-fr="Atelier 6 - Fiche technique.pdf"
-                   data-en="Atelier 6 - Fiche Technique - English.pdf"
-                   class="dynamic-link"
-                   target="_blank"
-                   style="text-decoration:none; color:inherit;">
-
-                    <div class="card">
-
-                        <span class="badge">
-                            <span class="fr">Atelier 6 · Nouveau</span>
-                            <span class="en">Workshop 6 · New</span>
-                        </span>
-
-                        <h3>
-                            <span class="fr">Filtres & Polarisation</span>
-                            <span class="en">Filters & Polarization</span>
-                        </h3>
-
-                        <p class="fr">
-                            <strong>Biréfringence & Photoélasticité :</strong>
-                            Extinction par filtres croisés à 90°.
-                        </p>
-
-                        <p class="en">
-                            <strong>Birefringence & Photoelasticity:</strong>
-                            Light extinction via 90° crossed polarizers.
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================================
-             MANUELS
-             ===================================================== -->
-
-        <div class="card"
-             style="
-                margin-top:40px;
-                background-color:#f8fafc;
-                border:1px dashed var(--primary-cyan);
-             ">
-
-            <h3 class="fr">
-                ⚙️ Manuels d'installation
-            </h3>
-
-            <h3 class="en">
-                ⚙️ Setup Manuals
-            </h3>
-
-            <p class="fr" style="color:var(--text-muted); font-size:0.95rem;">
-                Guides pas à pas pour les démonstrateurs et l'alignement des équipements.
-            </p>
-
-            <p class="en" style="color:var(--text-muted); font-size:0.95rem;">
-                Step-by-step guides for technical setup and equipment alignment.
-            </p>
-
-            <div class="install-links">
-
-                <a href="Atelier 1.pdf"
-                   data-fr="Atelier 1.pdf"
-                   data-en="Atelier 1 - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Atelier 1</span>
-                    <span class="en">Workshop 1</span>
-                </a>
-
-                <a href="Atelier 2.pdf"
-                   data-fr="Atelier 2.pdf"
-                   data-en="Atelier 2 - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Atelier 2</span>
-                    <span class="en">Workshop 2</span>
-                </a>
-
-                <a href="Atelier 3.pdf"
-                   data-fr="Atelier 3.pdf"
-                   data-en="Atelier 3 - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Atelier 3</span>
-                    <span class="en">Workshop 3</span>
-                </a>
-
-                <a href="Atelier 4.pdf"
-                   data-fr="Atelier 4.pdf"
-                   data-en="Atelier 4 - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Atelier 4</span>
-                    <span class="en">Workshop 4</span>
-                </a>
-
-                <a href="Atelier 5.pdf"
-                   data-fr="Atelier 5.pdf"
-                   data-en="Atelier 5 - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Atelier 5</span>
-                    <span class="en">Workshop 5</span>
-                </a>
-
-                <a href="Atelier 6.pdf"
-                   data-fr="Atelier 6.pdf"
-                   data-en="Atelier 6 - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Atelier 6</span>
-                    <span class="en">Workshop 6</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================================
-             FICHES MATERNELLES
-             ===================================================== -->
-
-        <div class="card"
-             style="
-                margin-top:30px;
-                background-color:#faf5ff;
-                border:1px solid #a855f7;
-             ">
-
-            <span class="badge">
-                Maternelles / Kids
-            </span>
-
-            <h3 class="fr" style="color:#7e22ce;">
-                🧸 Fiches pédagogiques — écoles maternelles
-            </h3>
-
-            <h3 class="en" style="color:#7e22ce;">
-                🧸 Educational Cards — Kindergarten
-            </h3>
-
-            <p class="fr" style="color:#6b21a8; font-size:0.95rem;">
-                Explications vulgarisées, schémas simples et visuels adaptés
-                au très jeune public.
-            </p>
-
-            <p class="en" style="color:#6b21a8; font-size:0.95rem;">
-                Simplified explanations and visual diagrams tailored
-                for young children.
-            </p>
-
-            <div class="install-links" style="margin-top:20px;">
-
-                <a href="Fiche 1 - Maternelle.pdf"
-                   data-fr="Fiche 1 - Maternelle.pdf"
-                   data-en="Fiche 1 - Maternelle - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Fiche 1</span>
-                    <span class="en">Card 1</span>
-                </a>
-
-                <a href="Fiche 2 - Maternelle.pdf"
-                   data-fr="Fiche 2 - Maternelle.pdf"
-                   data-en="Fiche 2 - Maternelle - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Fiche 2</span>
-                    <span class="en">Card 2</span>
-                </a>
-
-                <a href="Fiche 3 - Maternelle.pdf"
-                   data-fr="Fiche 3 - Maternelle.pdf"
-                   data-en="Fiche 3 - Maternelle - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Fiche 3</span>
-                    <span class="en">Card 3</span>
-                </a>
-
-                <a href="Fiche 4 - Maternelle.pdf"
-                   data-fr="Fiche 4 - Maternelle.pdf"
-                   data-en="Fiche 4 - Maternelle - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Fiche 4</span>
-                    <span class="en">Card 4</span>
-                </a>
-
-                <a href="Fiche 5 - Maternelle.pdf"
-                   data-fr="Fiche 5 - Maternelle.pdf"
-                   data-en="Fiche 5 - Maternelle - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Fiche 5</span>
-                    <span class="en">Card 5</span>
-                </a>
-
-                <a href="Fiche 6 - Maternelle.pdf"
-                   data-fr="Fiche 6 - Maternelle.pdf"
-                   data-en="Fiche 6 - Maternelle - English.pdf"
-                   class="install-btn dynamic-link"
-                   target="_blank">
-                    <span class="fr">Fiche 6</span>
-                    <span class="en">Card 6</span>
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ------------------->
-<!-- ONGLET Community -->
-<!-- ------------------->
-<section id="tab-membres" class="tab-content">
-
-<style>
-.community-team {
-    margin: 18px 0 10px 0 !important;
-    padding: 0 !important;
-    width: 100%;
-}
-
-/* Expandable green heading */
-.community-team > summary {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    width: 100% !important;
-    margin: 0 0 12px 0 !important;
-    padding: 0 !important;
-    cursor: pointer;
-    list-style: none !important;
-
-    font-size: 2rem !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
-    color: var(--primary-green) !important;
-}
-
-/* Hide browser default arrow */
-.community-team > summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Green expandable arrow */
-.community-team > summary::before {
-    content: "▶";
-    font-size: 0.8rem;
-    color: var(--primary-green);
-    transition: transform 0.2s ease;
-    flex-shrink: 0;
-}
-
-/* Rotate arrow when open */
-.community-team[open] > summary::before {
-    transform: rotate(90deg);
-}
-
-/* Introduction */
-.team-intro {
-    color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0 0 14px 0 !important;
-}
-
-/* Current team */
-.team-content .grid-team {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    margin-top: 8px !important;
-}
-
-.team-content .member-card {
-    width: 140px !important;
-    padding: 9px 7px !important;
-    border-radius: 8px !important;
-}
-
-.team-content .photo-container {
-    width: 62px !important;
-    height: 62px !important;
-    margin: 0 auto 6px !important;
-}
-
-.team-content .photo {
-    width: 62px !important;
-    height: 62px !important;
-}
-
-.team-content .member-card h3 {
-    font-size: 0.82rem !important;
-    line-height: 1.2 !important;
-    margin: 3px 0 !important;
-}
-
-.team-content .role-badge {
-    font-size: 0.66rem !important;
-    line-height: 1.2 !important;
-    padding: 3px 5px !important;
-    margin: 5px 0 0 0 !important;
-}
-
-/* Former members */
-.past-members {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-top: 4px;
-    padding: 0;
-}
-
-.past-members a {
-    display: inline-block;
-    padding: 5px 9px;
-    border: 1px solid var(--border-color);
-    border-radius: 999px;
-    background: #f8fafc;
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.78rem;
-    line-height: 1.2;
-    transition: all 0.2s ease;
-}
-
-.past-members a:hover {
-    color: var(--primary-green);
-    border-color: var(--primary-green);
-    background: rgba(5, 150, 105, 0.06);
-}
-
-@media (max-width: 600px) {
-
-    .community-team > summary {
-        font-size: 1.7rem !important;
-    }
-
-    .team-content .grid-team {
-        gap: 8px !important;
-    }
-
-    .team-content .member-card {
-        width: 130px !important;
-    }
-}
-</style>
-
-
-<div style="max-width:1100px; margin:15px auto 0 auto;">
-
-    <details class="community-team">
-
-        <summary>
-            <span class="fr">Groupe SurfWAVE</span>
-            <span class="en">SurfWAVE Team</span>
-        </summary>
-
-
-        <div class="team-content">
-
-            <!-- Introduction -->
-            <p class="fr team-intro">
-                En tant que responsable de l'équipe de recherche SurfWAVE, je suis chargée d'animer une équipe au sein de l'<strong>IETR</strong> à l'<strong>INSA Rennes</strong>, en accompagnant les chercheurs, enseignants-chercheurs, ingénieurs et doctorants qui contribuent à nos activités de recherche et de formation. L'équipe travaille autour des <strong>ondes électromagnétiques</strong>, des <strong>surfaces périodiques et quasi-périodiques</strong>, ainsi que de la conception et du contrôle de dispositifs pour des applications <strong>spatiales, radar et télécommunications</strong>.
-            </p>
-
-            <p class="en team-intro">
-                As head of the SurfWAVE research team, I lead a research group within <strong>IETR</strong> at <strong>INSA Rennes</strong>, bringing together researchers, academics, research engineers and PhD students involved in our research and educational activities. The team works on <strong>electromagnetic waves</strong>, <strong>periodic and quasi-periodic surfaces</strong>, and the design and control of devices for <strong>space, radar and telecommunications</strong> applications.
-            </p>
-
-
-            <!-- Current members -->
-            <div class="grid-team">
-
-
-                <!-- Erwan Fourn -->
-                <div class="member-card">
-
-                    <div class="photo-container">
-                        <img src="erwan_fourn.jpg"
-                             alt="Erwan Fourn"
-                             class="photo">
-                    </div>
-
-                    <h3>
-                        <a href="https://www.ietr.fr/erwan-fourn"
-                           target="_blank">
-                            Erwan Fourn
-                        </a>
-                    </h3>
-
-                    <span class="role-badge fr">
-                        Maître de Conférences
-                    </span>
-
-                    <span class="role-badge en">
-                        Associate Professor
-                    </span>
-
-                </div>
-
-
-                <!-- Raphaël Gillard -->
-                <div class="member-card">
-
-                    <div class="photo-container">
-                        <img src="r_gillard.jpg"
-                             alt="Raphaël Gillard"
-                             class="photo">
-                    </div>
-
-                    <h3>
-                        <a href="https://www.ietr.fr/raphael-gillard"
-                           target="_blank">
-                            Raphaël Gillard
-                        </a>
-                    </h3>
-
-                    <span class="role-badge fr">
-                        Professeur
-                    </span>
-
-                    <span class="role-badge en">
-                        Professor
-                    </span>
-
-                </div>
-
-
-                <!-- Renaud Loison -->
-                <div class="member-card">
-
-                    <div class="photo-container">
-                        <img src="renaud_loison.jpg"
-                             alt="Renaud Loison"
-                             class="photo">
-                    </div>
-
-                    <h3>
-                        <a href="https://www.ietr.fr/renaud-loison"
-                           target="_blank">
-                            Renaud Loison
-                        </a>
-                    </h3>
-
-                    <span class="role-badge fr">
-                        Professeur
-                    </span>
-
-                    <span class="role-badge en">
-                        Professor
-                    </span>
-
-                </div>
-
-
-                <!-- Lucas Polo López -->
-                <div class="member-card">
-
-                    <div class="photo-container">
-                        <img src="Lucas.jpg"
-                             alt="Lucas Polo López"
-                             class="photo">
-                    </div>
-
-                    <h3>
-                        <a href="https://www.linkedin.com/in/lucaspoloeng/"
-                           target="_blank">
-                            Lucas Polo López
-                        </a>
-                    </h3>
-
-                    <span class="role-badge fr">
-                        Ingénieur de Recherche · membre associé
-                    </span>
-
-                    <span class="role-badge en">
-                        Research Engineer · associated member
-                    </span>
-
-                </div>
-
-
-                <!-- Jorge Ruiz García -->
-                <div class="member-card">
-
-                    <div class="photo-container">
-                        <img src="jorge_ruiz_garcia.jpg"
-                             alt="Jorge Ruiz García"
-                             class="photo">
-                    </div>
-
-                    <h3>
-                        <a href="https://www.ietr.fr/en/jorge-ruiz-garcia"
-                           target="_blank">
-                            Jorge Ruiz García
-                        </a>
-                    </h3>
-
-                    <span class="role-badge fr">
-                        Enseignant-Chercheur
-                    </span>
-
-                    <span class="role-badge en">
-                        Associate Professor
-                    </span>
-
-                </div>
-
-
-                <!-- Lise Trégloze -->
-                <div class="member-card">
-
-                    <div class="photo-container">
-                        <img src="Lise.jpg"
-                             alt="Lise Trégloze"
-                             class="photo">
-                    </div>
-
-                    <h3>
-                        <a href="https://www.linkedin.com/in/lise-tregloze-171594226/"
-                           target="_blank">
-                            Lise Trégloze
-                        </a>
-                    </h3>
-
-                    <span class="role-badge fr">
-                        Ingénieure pédagogique · Chercheuse CREAD associée
-                    </span>
-
-                    <span class="role-badge en">
-                        Associate Researcher · PhD student at CREAD
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- Former members -->
-
-            <h4 class="fr"
-                style="font-size:1.05rem; margin:22px 0 8px 0; color:var(--text-color);">
-                Anciens membres
-            </h4>
-
-            <h4 class="en"
-                style="font-size:1.05rem; margin:22px 0 8px 0; color:var(--text-color);">
-                Former members
-            </h4>
-
-
-            <div class="past-members">
-
-                <a href="https://www.linkedin.com/in/lisa-berretti/"
-                   target="_blank">
-                    Lisa Berretti
-                </a>
-
-                <a href="https://www.linkedin.com/in/thomas-uguen/"
-                   target="_blank">
-                    Thomas Uguen
-                </a>
-
-                <a href="https://www.linkedin.com/in/carlos-molero-jimenez/"
-                   target="_blank">
-                    Carlos Molero Jiménez
-                </a>
-
-                <a href="https://www.linkedin.com/in/charalampos-stoumpos/"
-                   target="_blank">
-                    Charalampos (Haris) Stoumpos
-                </a>
-
-                <a href="https://www.linkedin.com/in/aurelie-dorle/"
-                   target="_blank">
-                    Aurélie Dorlé
-                </a>
-
-                <a href="https://www.linkedin.com/in/antoine-calleau/"
-                   target="_blank">
-                    Antoine Calleau
-                </a>
-
-                <a href="https://www.linkedin.com/in/diego-bermudez-martin/"
-                   target="_blank">
-                    Diego Bermúdez Martín
-                </a>
-
-                <a href="https://www.linkedin.com/in/samara-gharbieh/"
-                   target="_blank">
-                    Samara Gharbieh
-                </a>
-
-                <a href="https://www.linkedin.com/in/andrea-guarriello/"
-                   target="_blank">
-                    Andrea Guarriello
-                </a>
-
-                <a href="https://www.linkedin.com/in/paul-le-bihan/"
-                   target="_blank">
-                    Paul Le Bihan
-                </a>
-
-                <a href="https://www.linkedin.com/in/rema-ahmid/"
-                   target="_blank">
-                    Rema Ahmid
-                </a>
-
-                <a href="https://www.linkedin.com/in/matthieu-elineau/"
-                   target="_blank">
-                    Matthieu Elineau
-                </a>
-
-            </div>
-
-        </div>
-
-    </details>
-
-<details class="community-team">
-
-    <summary>
-        <span class="fr">
-            Communauté scientifique
-        </span>
-
-        <span class="en">
-            Scientific community
-        </span>
-    </summary>
-
-    <div class="team-content">
-
-        <p class="fr research-text" style="margin:4px 0 8px 0;">
-            <strong>Comités et responsabilités scientifiques :</strong>
-            membre du comité scientifique de l’IETR depuis 2020 ;
-            membre de comités de programme de conférences internationales
-            (EuMW, IMS, ESA Antenna Workshop, EuCAP) ;
-            co-responsable du groupe EurAAP
-            <em>Women in Antennas and Propagation</em> (2020–2024) ;
-            membre du comité <em>Educational Activities</em> de l’IEEE Antennas and Propagation Society (2015–2026).
-        </p>
-
-        <p class="en research-text" style="margin:4px 0 8px 0;">
-            <strong>Scientific committees and responsibilities:</strong>
-            member of the IETR Scientific Committee since 2020;
-            member of technical program committees for international conferences
-            (EuMW, IMS, ESA Antenna Workshop, EuCAP);
-            co-chair of the EurAAP
-            <em>Women in Antennas and Propagation</em> working group (2020–2024);
-            member of the IEEE Antennas and Propagation Society
-            <em>Educational Activities Committee</em> (2015–2026).
-        </p>
-
-        <p class="fr research-text" style="margin:4px 0 8px 0;">
-            <strong>Évaluation et jurys :</strong>
-            membre de comité d’évaluation ANR (2023–2025) ;
-            participation à 6 comités de recrutement de maîtres de conférences,
-            dont une présidence à l’INSA Rennes ;
-            membre de 11 jurys de thèse.
-        </p>
-
-        <p class="en research-text" style="margin:4px 0 8px 0;">
-            <strong>Evaluation and committees:</strong>
-            member of a national ANR research evaluation committee (2023–2025);
-            participation in 6 Associate Professor recruitment committees,
-            including one presidency at INSA Rennes;
-            member of 11 PhD examination committees.
-        </p>
-
-    </div>
-
-</details>
-
-</div>
-
-</section>
-
-<!-- ========================================================== -->
-<!-- ============ STYLE RECHERCHE — ACCORDÉONS =============== -->
-<!-- ========================================================== -->
-
-<style>
-    /* ==================== ACCORDÉONS ==================== */
-
-    .research-axis {
-        margin: 0 0 5px 0 !important;
-        padding: 0 !important;
-        width: 100%;
-    }
-
-    /* Ligne fermée : compacte et alignée à gauche */
-    .research-axis > summary {
-        display: block !important;
-        box-sizing: border-box !important;
-
-        width: 100% !important;
-        min-height: 0 !important;
-        height: auto !important;
-
-        margin: 0 !important;
-        padding: 2px 6px !important;
-
-        text-align: left !important;
-        line-height: 1.15 !important;
-
-        cursor: pointer;
-
-        font-size: 0.95rem !important;
-        font-weight: 600 !important;
-
-        color: var(--text-main) !important;
-
-        list-style: none !important;
-    }
-
-    /* Suppression du triangle natif */
-    .research-axis > summary::marker {
-        display: none !important;
-        content: "" !important;
-    }
-
-    .research-axis > summary::-webkit-details-marker {
-        display: none !important;
-    }
-
-    /* Icône */
-    .research-axis > summary .axis-icon {
-        display: inline-block !important;
-        margin-right: 5px !important;
-        vertical-align: middle !important;
-    }
-
-    /* Texte du titre */
-	.research-axis > summary .fr,
-	.research-axis > summary .en {
-	    text-align: left !important;
-	    margin: 0 !important;
-	    padding: 0 !important;
-}
-
-    /* Petit indicateur d'ouverture */
-    .research-axis > summary::before {
-        content: "›";
-
-        display: inline-block;
-
-        margin-right: 5px;
-
-        font-size: 0.9rem;
-        font-weight: 600;
-        line-height: 1;
-
-        color: var(--text-muted);
-
-        transition: transform 0.15s ease;
-    }
-
-    /* Indicateur lorsque l'axe est ouvert */
-    .research-axis[open] > summary::before {
-        transform: rotate(90deg);
-    }
-
-    /* Contenu de l'accordéon */
-    .research-axis > .axis-content {
-        display: block !important;
-
-        margin: 0 !important;
-        padding: 3px 8px 6px 28px !important;
-
-        text-align: left !important;
-    }
-
-    /* Texte intérieur aligné à gauche */
-    .research-axis > .axis-content p {
-        text-align: left !important;
-    }
-
-
-    /* ==================== TEXTE RECHERCHE ==================== */
-
-    .research-text {
-        color: var(--text-muted);
-        font-size: 1rem;
-        line-height: 1.45;
-    }
-
-    .research-work {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-        line-height: 1.4;
-    }
-
-    .research-link {
-        color: var(--primary-cyan);
-        text-decoration: underline;
-    }
-
-    .axis-subtitle {
-        margin: 8px 0 4px 0;
-        color: var(--text-main);
-        font-size: 0.95rem;
-        font-weight: 600;
-    }
-</style>
-
-<!-- ========================================================== -->
-<!-- ==================== ONGLET RECHERCHE ==================== -->
-<!-- ========================================================== -->
-
-<section id="tab-recherche" class="tab-content" style="padding-top:0; margin-top:0;">
-
-    <!-- ==================== INTRODUCTION ==================== -->
-
-    <div style="max-width:1100px; margin:0 auto; padding-top:2px;">
-
-        <h4 style="margin:4px 0 6px 0; color:var(--primary-green);">
-            <span class="fr">Recherche</span>
-            <span class="en">Research</span>
-        </h4>
-
-        <!-- FR -->
-        <p class="fr research-text" style="margin:0 0 8px 0;">
-            Mes recherches portent sur le <strong>contrôle des ondes électromagnétiques</strong>
-            et la conception d’<strong>antennes et de systèmes RF</strong>, avec un intérêt particulier
-            pour les applications spatiales, le radar et l’observation de la Terre.
-            Je cherche à concevoir des <strong>dispositifs multifonctionnels</strong>, capables
-            d’harmoniser différentes applications au sein d’un même système et de s’adapter au cours
-            du temps à l’évolution des besoins sociétaux.
-            Je m’intéresse ainsi à une conception plus responsable des dispositifs et de leurs ressources,
-            en m’appuyant sur de nouveaux concepts de la physique des ondes et des métamatériaux,
-            ainsi que sur de nouvelles techniques de fabrication qui peuvent aussi contribuer à
-            <strong>démocratiser l’utilisation de ces technologies</strong>.
-        </p>
-
-        <!-- EN -->
-        <p class="en research-text" style="margin:0 0 8px 0;">
-            My research focuses on <strong>electromagnetic wave control</strong> and the design of
-            <strong>antennas and RF systems</strong>, with a particular interest in space, radar and
-            Earth observation applications.
-            I aim to design <strong>multifunctional devices</strong> that can bring different
-            applications together within a single system and adapt over time to changing societal needs.
-            I therefore explore more responsible approaches to the design and use of resources,
-            drawing on new concepts in wave physics and metamaterials, as well as new manufacturing
-            techniques that can also help <strong>democratize the use of these technologies</strong>.
-        </p>
-<p class="fr" style="color:var(--text-muted); font-size:0.95rem; line-height:1.35; margin:4px 0 8px 0;">
-    Une partie de ces travaux est menée avec des partenaires industriels et a donné lieu
-    à plusieurs brevets, notamment autour d’antennes intelligentes, modulables et reprogrammables.
-</p>
-
-<p class="en" style="color:var(--text-muted); font-size:0.95rem; line-height:1.35; margin:4px 0 8px 0;">
-    Part of this work is carried out with industrial partners and has led to several patents,
-    including work on smart, reconfigurable and remotely programmable antennas.
-</p>
-
-    </div>
-
-
-    <!-- ====================================================== -->
-    <!-- ==================== THÉMATIQUE 1 ==================== -->
-    <!-- ====================================================== -->
-
-<div style="max-width:1100px; margin:5 px auto 0 auto;">
-
-    <details class="research-axis">
-
-        <summary>
-            <span class="axis-icon">🌊</span>
-
-            <span class="fr">
-                Contrôle intelligente des ondes
-            </span>
-
-            <span class="en">
-                Intelligent wave control
-            </span>
-        </summary>
-
-        <div class="axis-content">
-
-            <!-- ==================== DESCRIPTION ==================== -->
-
-            <p class="fr research-text" style="margin:8px 0 8px 0;">
-                Je développe des <strong>surfaces capables de contrôler les ondes électromagnétiques</strong>
-                et d’apporter de nouvelles fonctionnalités aux antennes et systèmes RF :
-                contrôle du faisceau, de la polarisation, du filtrage fréquentiel ou encore
-                amélioration des performances de rayonnement. Ces travaux s’appuient sur la
-                physique des structures périodiques et quasi-périodiques et sur les concepts
-                de métamatériaux, avec l’objectif de concevoir des dispositifs
-                multifonctionnels et adaptables. Ces travaux sont menés en collaboration avec
-                <strong>Thales Alenia Space</strong>, le <strong>CNES</strong>,
-                l’<strong>Universidad de Granada</strong> et l’<strong>Universidad de Sevilla</strong>.
-            </p>
-
-            <p class="en research-text" style="margin:8px 0 8px 0;">
-                I develop <strong>surfaces that can control electromagnetic waves</strong>
-                and bring new functionalities to antennas and RF systems, including beam control,
-                polarization manipulation, frequency filtering and improved radiation performance.
-                These studies build on the physics of periodic and quasi-periodic structures
-                and on metamaterial concepts, with the aim of designing multifunctional
-                and adaptable devices. This concepts are developed in collaboration with <strong>Thales Alenia Space</strong>, <strong>CNES</strong>, <strong>Universidad de Granada</strong> and <strong>Universidad de Sevilla</strong>.
-            </p>
-
-
-            <!-- ==================== TRAVAUX SÉLECTIONNÉS ==================== -->
-
-            <p class="fr axis-subtitle">
-                Travaux sélectionnés
-            </p>
-
-            <p class="en axis-subtitle">
-                Selected work
-            </p>
-
-            <!-- 2026 -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2026</strong> —
-                <a href="https://dx.doi.org/10.1109/LAWP.2026.3695346"
-                   target="_blank"
-                   class="research-link">
-                    <em>Wideband Mechanically Tunable Full-Metal 1-Bit Reconfigurable Intelligent Surface in Ku-Band</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2026</strong> —
-                <a href="https://dx.doi.org/10.1109/LAWP.2026.3695346"
-                   target="_blank"
-                   class="research-link">
-                    <em>Wideband Mechanically Tunable Full-Metal 1-Bit Reconfigurable Intelligent Surface in Ku-Band</em>
-                </a>
-            </p>
-
-            <!-- 2024 -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2024</strong> —
-                <a href="https://hal.science/hal-04822647v1/file/Stoumpos%20et%20al_2024_Blazed%203D%20Cells%20with%20Application%20to%20Full-Metal%20Dichroic%20Mirrors.pdf"
-                   target="_blank"
-                   class="research-link">
-                    <em>Blazed 3-D Cells With Application to Full-Metal Dichroic Mirrors</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2024</strong> —
-                <a href="https://hal.science/hal-04822647v1/file/Stoumpos%20et%20al_2024_Blazed%203D%20Cells%20with%20Application%20to%20Full-Metal%20Dichroic%20Mirrors.pdf"
-                   target="_blank"
-                   class="research-link">
-                    <em>Blazed 3-D Cells With Application to Full-Metal Dichroic Mirrors</em>
-                </a>
-            </p>
-
-            <!-- 2020 -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2020</strong> —
-                <a href="https://univ-rennes.hal.science/hal-02871997/document"
-                   target="_blank"
-                   class="research-link">
-                    <em>All-metal 3-D Frequency Selective Surface with Versatile Dual-Band Polarization Conversion</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2020</strong> —
-                <a href="https://univ-rennes.hal.science/hal-02871997/document"
-                   target="_blank"
-                   class="research-link">
-                    <em>All-metal 3-D Frequency Selective Surface with Versatile Dual-Band Polarization Conversion</em>
-                </a>
-            </p>
-
-            <!-- ==================== BREVETS ==================== -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>Brevets</strong> —
-                <a href="https://patents.google.com/patent/CA3078132A1/en"
-                   target="_blank"
-                   class="research-link">
-                    <em>Broadband polarizing screen with one or more radiofrequency polarizing cells</em>
-                </a>
-                ·
-                <a href="https://patents.google.com/patent/CA3223986A1/en"
-                   target="_blank"
-                   class="research-link">
-                    <em>Wide-angle impedance-matching device for radiating-element array antenna</em>
-                </a>
-                ·
-                <a href="https://patents.google.com/patent/CA3196067A1/en"
-                   target="_blank"
-                   class="research-link">
-                    <em>Device for controlling RF electromagnetic beams according to their frequency band</em>
-                </a>
-                ·
-                <a href="https://patents.google.com/patent/EP3547450B1/en"
-                   target="_blank"
-                   class="research-link">
-                    <em>Radiating element with circular polarisation implementing a resonance in a Fabry-Perot cavity</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>Patents</strong> —
-                <a href="https://patents.google.com/patent/CA3078132A1/en"
-                   target="_blank"
-                   class="research-link">
-                    <em>Broadband polarizing screen with one or more radiofrequency polarizing cells</em>
-                </a>
-                ·
-                <a href="https://patents.google.com/patent/CA3223986A1/en"
-                   target="_blank"
-                   class="research-link">
-                    <em>Wide-angle impedance-matching device for radiating-element array antenna</em>
-                </a>
-                ·
-                <a href="https://patents.google.com/patent/CA3196067A1/en"
-                   target="_blank"
-                   class="research-link">
-                    <em>Device for controlling RF electromagnetic beams according to their frequency band</em>
-                </a>
-                ·
-                <a href="https://patents.google.com/patent/EP3547450B1/en"
-                   target="_blank"
-                   class="research-link">
-                    <em>Radiating element with circular polarisation implementing a resonance in a Fabry-Perot cavity</em>
-                </a>
-            </p>
-
-        </div>
-
-    </details>
-
-</div>
-
-    <!-- ====================================================== -->
-    <!-- ==================== THÉMATIQUE 2 ==================== -->
-    <!-- ====================================================== -->
-
-<!-- ==================== THÉMATIQUE 2 ==================== -->
-
-<div style="max-width:1100px; margin:5px auto 0 auto;">
-
-    <details class="research-axis">
-
-        <summary>
-            <span class="axis-icon">🛰️</span>
-
-            <span class="fr">
-                Antennes spatiales &amp; systèmes RF
-            </span>
-
-            <span class="en">
-                Space antennas &amp; RF systems
-            </span>
-        </summary>
-
-        <div class="axis-content">
-
-            <!-- ==================== DESCRIPTION ==================== -->
-
-            <p class="fr research-text" style="margin:8px 0 8px 0;">
-                Je développe des <strong>antennes et systèmes RF pour des charges utiles spatiales
-                flexibles</strong>, capables d’adapter leurs faisceaux et leurs fonctionnalités aux
-                besoins de la mission. Ces travaux portent notamment sur les <strong>réseaux phasés,
-                les lentilles multibeams et les antennes leaky-wave</strong>, avec un intérêt particulier
-                pour les architectures destinées aux <strong>liaisons intersatellites</strong>.
-                Je cherche à atteindre cette flexibilité tout en limitant la complexité des systèmes,
-                la consommation d’énergie et le nombre de circuits électroniques nécessaires, afin de
-                contribuer à <strong>démocratiser l’accès à ces technologies</strong>. Cette approche
-                s’appuie sur de nouveaux concepts de <strong>guides d’onde et d’architectures
-                électromagnétiques à faibles pertes</strong>. Ces travaux sont menés en collaboration avec l’<strong>ESA</strong>, le groupe <strong>Thales</strong> et le partenaire industriel <strong>TeraSi</strong>,
-                ainsi qu’avec les équipes académiques de <strong>CNIT–ELEDIA</strong> à
-                Trento.
-            </p>
-
-            <p class="en research-text" style="margin:8px 0 8px 0;">
-                I develop <strong>antennas and RF systems for flexible space payloads</strong>,
-                capable of adapting their beams and functionalities to mission needs. This work
-                includes <strong>phased arrays, multibeam lenses and leaky-wave antennas</strong>,
-                with a particular interest in architectures for <strong>inter-satellite links</strong>.
-                I aim to achieve this flexibility while limiting system complexity, power consumption
-                and the number of required electronic circuits, thereby contributing to
-                <strong>making these technologies more accessible</strong>. This approach relies on
-                new concepts in <strong>waveguides and low-loss electromagnetic architectures</strong>.  This activities are carried out in collaboration with the <strong>European Space Agency
-                (ESA)</strong>, the <strong>Thales Group</strong> and industrial partner
-                <strong>TeraSi</strong>, as well as <strong>CNIT–ELEDIA</strong>
-                in Trento.
-            </p>
-
-            <!-- ==================== TRAVAUX SÉLECTIONNÉS ==================== -->
-
-            <p class="fr axis-subtitle">
-                Travaux sélectionnés
-            </p>
-
-            <p class="en axis-subtitle">
-                Selected work
-            </p>
-
-            <!-- 2025 -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2025</strong> —
-                <a href="https://doi.org/10.1109/LAWP.2024.3511433"
-                   target="_blank"
-                   class="research-link">
-                    <em>Dual-Polarized Spaceborne Phased Arrays Using Tri-Ridge Evanescent Waveguide Antennas</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2025</strong> —
-                <a href="https://doi.org/10.1109/LAWP.2024.3511433"
-                   target="_blank"
-                   class="research-link">
-                    <em>Dual-Polarized Spaceborne Phased Arrays Using Tri-Ridge Evanescent Waveguide Antennas</em>
-                </a>
-            </p>
-
-            <!-- 2024 -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2024</strong> —
-                <a href="https://doi.org/10.1109/OJAP.2024.3469271"
-                   target="_blank"
-                   class="research-link">
-                    <em>Multibeam Antennas Based on 3D Discrete Lenses With Magnified Field-of-View</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2024</strong> —
-                <a href="https://doi.org/10.1109/OJAP.2024.3469271"
-                   target="_blank"
-                   class="research-link">
-                    <em>Multibeam Antennas Based on 3D Discrete Lenses With Magnified Field-of-View</em>
-                </a>
-            </p>
-
-            <!-- 2024 -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2024</strong> —
-                <a href="https://doi.org/10.1038/s41598-024-71085-z"
-                   target="_blank"
-                   class="research-link">
-                    <em>High Efficiency and Circular Polarization in SATCOM Phased Arrays Using Tri-Ridge Apertures</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2024</strong> —
-                <a href="https://doi.org/10.1038/s41598-024-71085-z"
-                   target="_blank"
-                   class="research-link">
-                    <em>High Efficiency and Circular Polarization in SATCOM Phased Arrays Using Tri-Ridge Apertures</em>
-                </a>
-            </p>
-
-        </div>
-
-    </details>
-
-</div>
-
-<!-- ==================== THÉMATIQUE 3 ==================== -->
-
-<div style="max-width:1100px; margin:5px auto 0 auto;">
-
-    <details class="research-axis">
-
-        <summary>
-            <span class="axis-icon">🌍</span>
-
-            <span class="fr">
-                Observation de la Terre &amp; antennes pour radars contraints
-            </span>
-
-            <span class="en">
-                Earth observation &amp; antennas for constrained radar systems
-            </span>
-        </summary>
-
-        <div class="axis-content">
-
-            <!-- ==================== DESCRIPTION ==================== -->
-
-            <p class="fr research-text" style="margin:8px 0 8px 0;">
-                Je conçois des <strong>antennes spécifiquement adaptées à des scénarios radar
-                fortement contraints</strong>, notamment pour l’observation de la Terre.
-                Dans ces applications, les contraintes de <strong>compacité, de masse,
-                d’intégration et d’autonomie énergétique</strong> sont particulièrement importantes.
-                Mon travail consiste à développer des architectures antennaires capables de répondre
-                à ces contraintes tout en conservant les performances électromagnétiques nécessaires
-                aux instruments. Ces recherches sont menées en interaction étroite avec les équipes
-                qui développent les systèmes radar et les missions d’observation. Ces travaux sont menés en collaboration avec le <strong>CNES</strong>, l’<strong>IFREMER</strong>, l’<strong>ESA</strong>, l’<strong>ONERA</strong> et <strong>Géosciences Rennes</strong>.
-            </p>
-
-            <p class="en research-text" style="margin:8px 0 8px 0;">
-                I design <strong>antennas specifically tailored to highly constrained radar
-                scenarios</strong>, particularly for Earth observation. In these applications,
-                <strong>compactness, mass, integration and energy autonomy</strong> are key constraints.
-                My work focuses on developing antenna architectures that meet these requirements
-                while maintaining the electromagnetic performance required by the instruments.
-                This research is carried out in close interaction with teams developing radar systems
-                and Earth observation missions. We strongly collaborate with <strong>CNES</strong>,
-                <strong>IFREMER</strong>, the <strong>European Space Agency (ESA)</strong>,
-                <strong>ONERA</strong> and <strong>Géosciences Rennes</strong> on this subject.
-            </p>
-
-            <!-- ==================== TRAVAUX SÉLECTIONNÉS ==================== -->
-
-            <p class="fr axis-subtitle">
-                Travaux sélectionnés
-            </p>
-
-            <p class="en axis-subtitle">
-                Selected work
-            </p>
-
-            <!-- 2026 — WATER RADAR ANTENNA -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2026</strong> —
-                <a href="https://doi.org/10.1109/ACCESS.2026.3666568"
-                   target="_blank"
-                   class="research-link">
-                    <em>Dual-Polarized Array of Triangular Leaky-Wave Antennas for Compact Water Radar Instruments</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2026</strong> —
-                <a href="https://doi.org/10.1109/ACCESS.2026.3666568"
-                   target="_blank"
-                   class="research-link">
-                    <em>Dual-Polarized Array of Triangular Leaky-Wave Antennas for Compact Water Radar Instruments</em>
-                </a>
-            </p>
-
-            <!-- 2026 — AIRBORNE RADARS -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2026</strong> —
-                <a href="https://doi.org/10.1049/rsn2.70194"
-                   target="_blank"
-                   class="research-link">
-                    <em> SWALIS, KaRADOC and HOMARDS: Airborne Radars
-                    to Support Satellite Earth Observation Missions. </em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2026</strong> —
-                <a href="https://doi.org/10.1049/rsn2.70194"
-                   target="_blank"
-                   class="research-link">
-                    <em>SWALIS, KaRADOC and HOMARDS: Airborne Radars
-                    to Support Satellite Earth Observation Missions.</em>
-                </a>
-            </p>
-
-            <!-- 2018 — ADDITIVE MANUFACTURING -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2018</strong> —
-                <a href="https://doi.org/10.1109/LAWP.2018.2848723"
-                   target="_blank"
-                   class="research-link">
-                    <em> Modulated Leaky-Wave Antenna for Intersatellite Link Communications</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2018</strong> —
-                <a href="https://doi.org/10.1109/LAWP.2018.2848723"
-                   target="_blank"
-                   class="research-link">
-                    <em> Modulated Leaky-Wave Antenna for Intersatellite Link Communications</em>
-                </a>
-            </p>
-
-        </div>
-
-    </details>
-
-</div>
-
-<!-- ==================== THÉMATIQUE 4 ==================== -->
-
-<div style="max-width:1100px; margin:5px auto 0 auto;">
-
-    <details class="research-axis">
-
-        <summary>
-            <span class="axis-icon">🧊</span>
-
-            <span class="fr">
-                Co-design RF et impression 3D
-            </span>
-
-            <span class="en">
-                Co-design RF &amp; 3D printing
-            </span>
-        </summary>
-
-        <div class="axis-content">
-
-            <!-- ==================== DESCRIPTION ==================== -->
-
-            <p class="fr research-text" style="margin:8px 0 8px 0;">
-                L’<strong>impression 3D</strong> a été pour moi une véritable source d’enthousiasme :
-                elle ouvre un degré de liberté considérable dans la conception des antennes et des
-                composants RF. Je travaille sur le <strong>co-design de l’antenne et de sa fabrication</strong>,
-                en considérant dès le départ les possibilités mais aussi les spécificités du procédé.
-                La fabrication additive est ainsi devenue un <strong>sujet de recherche à part entière</strong>,
-                qui nécessite de croiser l’électromagnétisme avec la mécanique et la thermique pour
-                transformer des géométries nouvelles en dispositifs réellement fabricables et performants.
-            </p>
-
-            <p class="en research-text" style="margin:8px 0 8px 0;">
-                <strong>3D printing</strong> has been a great source of excitement for me:
-                it opens up a remarkable degree of freedom in the design of antennas and RF components.
-                I work on the <strong>co-design of the antenna and its manufacturing process</strong>,
-                considering from the outset both the possibilities and the specificities of the technology.
-                Additive manufacturing has therefore become a <strong>research topic in its own right</strong>,
-                requiring electromagnetics to be combined with mechanical and thermal engineering to
-                turn new geometries into devices that are both manufacturable and high-performing.
-            </p>
-
-            <!-- ==================== COLLABORATIONS ==================== -->
-
-            <p class="fr research-text" style="margin:0 0 10px 0;">
-                Ces travaux sont menés en collaboration avec <strong>SWISSto12</strong>,
-                <strong>CSEM</strong>, l’<strong>Université de Pérouse</strong> et
-                <strong>Tyndall National Institute</strong> à Cork.
-            </p>
-
-            <p class="en research-text" style="margin:0 0 10px 0;">
-                This research is carried out in collaboration with <strong>SWISSto12</strong>,
-                <strong>CSEM</strong>, the <strong>University of Perugia</strong> and
-                <strong>Tyndall National Institute</strong> in Cork.
-            </p>
-
-            <!-- ==================== TRAVAUX SÉLECTIONNÉS ==================== -->
-
-            <p class="fr axis-subtitle">
-                Travaux sélectionnés
-            </p>
-
-            <p class="en axis-subtitle">
-                Selected work
-            </p>
-
-            <!-- 2026 -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2026</strong> —
-                <a href="https://doi.org/10.1109/IMSRFTT43070.2026.11602558"
-                   target="_blank"
-                   class="research-link">
-                    <em>Selective Laser Melting Design-to-Manufacturing Method for Integrated W-Band 3-D-Printed Feeds</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2026</strong> —
-                <a href="https://doi.org/10.1109/IMSRFTT43070.2026.11602558"
-                   target="_blank"
-                   class="research-link">
-                    <em>Selective Laser Melting Design-to-Manufacturing Method for Integrated W-Band 3-D-Printed Feeds</em>
-                </a>
-            </p>
-
-            <!-- 2023 -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2023</strong> —
-                <a href="https://doi.org/10.1109/TAP.2023.3255515"
-                   target="_blank"
-                   class="research-link">
-                    <em>Ridged Meandered Waveguides for 3-D Routing and Phase Delay Control and Its Application to Discrete Lenses</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2023</strong> —
-                <a href="https://doi.org/10.1109/TAP.2023.3255515"
-                   target="_blank"
-                   class="research-link">
-                    <em>Ridged Meandered Waveguides for 3-D Routing and Phase Delay Control and Its Application to Discrete Lenses</em>
-                </a>
-            </p>
-
-            <!-- 2022 -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2022</strong> —
-                <a href="https://doi.org/10.5772/intechopen.106690"
-                   target="_blank"
-                   class="research-link">
-                    <em>Metal 3D-Printing of Waveguide Components and Antennas: Guidelines and New Perspectives</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2022</strong> —
-                <a href="https://doi.org/10.5772/intechopen.106690"
-                   target="_blank"
-                   class="research-link">
-                    <em>Metal 3D-Printing of Waveguide Components and Antennas: Guidelines and New Perspectives</em>
-                </a>
-            </p>
-
-            <!-- 2022 -->
-
-            <p class="fr research-work" style="margin:0 0 4px 0;">
-                <strong>2022</strong> —
-                <a href="https://doi.org/10.1109/LMWC.2022.3187781"
-                   target="_blank"
-                   class="research-link">
-                    <em>Vertically Printable Evanescent Mode Filters</em>
-                </a>
-            </p>
-
-            <p class="en research-work" style="margin:0 0 4px 0;">
-                <strong>2022</strong> —
-                <a href="https://doi.org/10.1109/LMWC.2022.3187781"
-                   target="_blank"
-                   class="research-link">
-                    <em>Vertically Printable Evanescent Mode Filters</em>
-                </a>
-            </p>
-
-        </div>
-
-    </details>
-
-</div>
-<!-- ==================== DISTINCTIONS ==================== -->
-
-<div style="max-width:1100px; margin:18px auto 0 auto;">
-  <div style="max-width:1100px; margin:0 auto; padding-top:2px;">
-
-        <h4 style="margin:12px 0 6px 0; color:var(--primary-green);">
-            <span class="fr">Distinctions</span>
-            <span class="en">Awards &amp; recognitions</span>
-        </h4>
-
-    <!-- 2026 -->
-
-    <p class="fr research-work" style="margin:0 0 4px 0;">
-        <strong>2026</strong> —
-        <a href="https://womeninstem.fr/"
-           target="_blank"
-           class="research-link">
-            <strong>European Women in STEM Award</strong>
-        </a>
-        — Nominée.
-    </p>
-
-    <p class="en research-work" style="margin:0 0 4px 0;">
-        <strong>2026</strong> —
-        <a href="https://womeninstem.fr/"
-           target="_blank"
-           class="research-link">
-            <strong>European Women in STEM Award</strong>
-        </a>
-        — Nominated.
-    </p>
-
-    <!-- 2025 -->
-
-    <p class="fr research-work" style="margin:0 0 4px 0;">
-        <strong>2025</strong> —
-        <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
-           target="_blank"
-           class="research-link">
-            <strong>Prix Numérique – électronique, photonique, IA et cyber</strong>
-        </a>
-        — Trophées Valorisation, Campus Innovation, Université de Rennes.
-    </p>
-
-    <p class="en research-work" style="margin:0 0 4px 0;">
-        <strong>2025</strong> —
-        <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
-           target="_blank"
-           class="research-link">
-            <strong>Innovation Award in Digital Technologies, Electronics, Photonics, AI and Cybersecurity</strong>
-        </a>
-        — Campus Innovation, University of Rennes.
-    </p>
-
-    <!-- 2023 -->
-
-    <p class="fr research-work" style="margin:0 0 4px 0;">
-        <strong>2023</strong> —
-        <a href="https://www.eumwa.org/en/euma/roberto-sorrentino-prize/presentation.html"
-           target="_blank"
-           class="research-link">
-            <strong>Roberto Sorrentino Prize</strong>
-        </a>
-        — <strong>Outstanding Young Professional</strong>, EuMA.
-    </p>
-
-    <p class="en research-work" style="margin:0 0 4px 0;">
-        <strong>2023</strong> —
-        <a href="https://www.eumwa.org/en/euma/roberto-sorrentino-prize/presentation.html"
-           target="_blank"
-           class="research-link">
-            <strong>Roberto Sorrentino Prize</strong>
-        </a>
-        — <strong>Outstanding Young Professional</strong>, EuMA.
-    </p>
-
-    <!-- 2022 -->
-
-    <p class="fr research-work" style="margin:0 0 4px 0;">
-        <strong>2022</strong> —
-        <strong>Best Paper Award</strong>, XXXVIII Spanish Symposium on Microwaves, Málaga, Espagne.
-    </p>
-
-    <p class="en research-work" style="margin:0 0 4px 0;">
-        <strong>2022</strong> —
-        <strong>Best Paper Award</strong>, XXXVIII Spanish Symposium on Microwaves, Málaga, Spain.
-    </p>
-
-    <!-- 2014 -->
-
-    <p class="fr research-work" style="margin:0 0 4px 0;">
-        <strong>2014</strong> —
-        <strong>Prix de la meilleure thèse de doctorat</strong>,
-        Official School of Telecommunication Engineers (COIT), Espagne.
-    </p>
-
-    <p class="en research-work" style="margin:0 0 4px 0;">
-        <strong>2014</strong> —
-        <strong>Best PhD Thesis Award</strong>,
-        Official School of Telecommunication Engineers (COIT), Spain.
-    </p>
-
-    <!-- 2013 -->
-
-    <p class="fr research-work" style="margin:0 0 4px 0;">
-        <strong>2013</strong> —
-        <strong>Prix de la meilleure thèse de doctorat</strong>,
-        Universidad Politécnica de Cartagena (UPCT), Espagne.
-    </p>
-
-    <p class="en research-work" style="margin:0 0 4px 0;">
-        <strong>2013</strong> —
-        <strong>Best PhD Thesis Award</strong>,
-        Universidad Politécnica de Cartagena (UPCT), Spain.
-    </p>
-
-    <p class="fr research-work" style="margin:0 0 4px 0;">
-        <strong>2013</strong> —
-        <strong>Best Paper Award</strong>, 5th IEEE Symposium on Microwave,
-        Antenna, Propagation &amp; EMC Technologies, China.
-    </p>
-
-    <p class="en research-work" style="margin:0 0 4px 0;">
-        <strong>2013</strong> —
-        <strong>Best Paper Award</strong>, 5th IEEE Symposium on Microwave,
-        Antenna, Propagation &amp; EMC Technologies, China.
-    </p>
-
-    <!-- 2012 -->
-
-    <p class="fr research-work" style="margin:0 0 4px 0;">
-        <strong>2012</strong> —
-        <strong>2e place, Best Paper Award</strong>, XXVII Spanish Symposium on Microwaves, Madrid, Espagne.
-    </p>
-
-    <p class="en research-work" style="margin:0 0 4px 0;">
-        <strong>2012</strong> —
-        <strong>2nd place, Best Paper Award</strong>, XXVII Spanish Symposium on Microwaves, Madrid, Spain.
-    </p>
-
-    <p class="fr research-work" style="margin:0 0 4px 0;">
-        <strong>2012</strong> —
-        <strong>Best Paper Award</strong>, 6th European Conference on Antennas and Propagation,
-        Prague, République tchèque.
-    </p>
-
-    <p class="en research-work" style="margin:0 0 4px 0;">
-        <strong>2012</strong> —
-        <strong>Best Paper Award</strong>, 6th European Conference on Antennas and Propagation,
-        Prague, Czech Republic.
-    </p>
-
-</div>
-
-</section>
-
-
-
 
 
     <footer>
