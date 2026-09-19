@@ -101,8 +101,6 @@ body {
    ========================================================= */
 
 header {
-    width: 100%;
-    max-width: 100%;
     text-align: center;
     aspect-ratio: 2390 / 742;
     min-height: 0;
@@ -125,10 +123,11 @@ header::before {
     z-index: 0;
 }
 
-header > * {
+header > *:not(.top-bar) {
     position: relative;
     z-index: 1;
 }
+
 
 
 /* =========================================================
