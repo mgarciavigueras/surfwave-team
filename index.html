@@ -762,36 +762,23 @@ footer a:hover {
 .research-axis {
     margin: 0 0 5px 0 !important;
     padding: 0 !important;
-
     width: 100%;
 }
 
 .research-axis > summary {
     display: block !important;
-
     box-sizing: border-box !important;
-
     width: 100% !important;
-
     min-height: 0 !important;
     height: auto !important;
-
     margin: 0 !important;
-
     padding: 2px 6px !important;
-
     text-align: left !important;
-
     line-height: 1.15 !important;
-
     cursor: pointer;
-
     font-size: 0.95rem !important;
-
     font-weight: 600 !important;
-
     color: var(--text-color) !important;
-
     list-style: none !important;
 }
 
@@ -806,35 +793,25 @@ footer a:hover {
 
 .research-axis > summary .axis-icon {
     display: inline-block !important;
-
     margin-right: 5px !important;
-
     vertical-align: middle !important;
 }
 
 .research-axis > summary .fr,
 .research-axis > summary .en {
     text-align: left !important;
-
     margin: 0 !important;
     padding: 0 !important;
 }
 
 .research-axis > summary::before {
     content: "›";
-
     display: inline-block;
-
     margin-right: 5px;
-
     font-size: 0.9rem;
-
     font-weight: 600;
-
     line-height: 1;
-
     color: var(--text-muted);
-
     transition: transform 0.15s ease;
 }
 
@@ -844,12 +821,8 @@ footer a:hover {
 
 .research-axis > .axis-content {
     display: block !important;
-
     margin: 0 !important;
-
-    padding:
-        3px 8px 6px 28px !important;
-
+    padding: 3px 8px 6px 28px !important;
     text-align: left !important;
 }
 
@@ -859,46 +832,28 @@ footer a:hover {
 
 .research-text {
     color: var(--text-muted);
-
     font-size: 1rem;
-
     line-height: 1.45;
+}
+
+.research-description {
+    margin: 8px 0 8px 0;
 }
 
 .research-work {
     color: var(--text-muted);
-
     font-size: 0.95rem;
-
     line-height: 1.4;
-
     margin: 0 0 4px 0;
 }
 
 .research-link {
     color: var(--primary-cyan);
-
     text-decoration: underline;
 }
 
-.axis-subtitle {
-    margin: 8px 0 4px 0;
-
-    color: var(--text-color);
-
-    font-size: 0.95rem;
-
-    font-weight: 600;
-}
-
-
-/* ---------------------------------------------------------
-   Research - styles formerly written inline in HTML
-   --------------------------------------------------------- */
-
 .research-heading {
     margin: 4px 0 6px 0;
-
     color: var(--primary-green);
 }
 
@@ -908,31 +863,21 @@ footer a:hover {
 
 .research-note {
     color: var(--text-muted);
-
     font-size: 0.95rem;
-
     line-height: 1.35;
-
     margin: 4px 0 8px 0;
 }
 
-
-.publications {
-    line-height: 1.7;
+.axis-subtitle {
+    margin: 8px 0 4px 0;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
-.publications > div {
-    margin-bottom: 10px;
+.research-collaboration {
+    margin: 0 0 10px 0;
 }
-
-.publications a {
-    color: var(--primary-cyan);
-
-    text-decoration: underline;
-
-    margin-left: 4px;
-}
-
 
 /* =========================================================
    17. EDUCATION & OUTREACH
@@ -1798,6 +1743,811 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 </div>
 
 </section>
+
+
+
+<!-- ========================================================== -->
+<!-- ==================== ONGLET RECHERCHE ==================== -->
+<!-- ========================================================== -->
+
+<section id="tab-recherche" class="tab-content">
+
+    <!-- ==================== INTRODUCTION ==================== -->
+
+    <div>
+
+        <h4 class="research-heading">
+            <span class="fr">Recherche</span>
+            <span class="en">Research</span>
+        </h4>
+
+        <!-- FR -->
+        <p class="fr research-text research-intro-text">
+            Mes recherches portent sur le <strong>contrôle des ondes électromagnétiques</strong>
+            et la conception d’<strong>antennes et de systèmes RF</strong>, avec un intérêt particulier
+            pour les applications spatiales, le radar et l’observation de la Terre.
+            Je cherche à concevoir des <strong>dispositifs multifonctionnels</strong>, capables
+            d’harmoniser différentes applications au sein d’un même système et de s’adapter au cours
+            du temps à l’évolution des besoins sociétaux.
+            Je m’intéresse ainsi à une conception plus responsable des dispositifs et de leurs ressources,
+            en m’appuyant sur de nouveaux concepts de la physique des ondes et des métamatériaux,
+            ainsi que sur de nouvelles techniques de fabrication qui peuvent aussi contribuer à
+            <strong>démocratiser l’utilisation de ces technologies</strong>.
+        </p>
+
+        <!-- EN -->
+        <p class="en research-text research-intro-text">
+            My research focuses on <strong>electromagnetic wave control</strong> and the design of
+            <strong>antennas and RF systems</strong>, with a particular interest in space, radar and
+            Earth observation applications.
+            I aim to design <strong>multifunctional devices</strong> that can bring different
+            applications together within a single system and adapt over time to changing societal needs.
+            I therefore explore more responsible approaches to the design and use of resources,
+            drawing on new concepts in wave physics and metamaterials, as well as new manufacturing
+            techniques that can also help <strong>democratize the use of these technologies</strong>.
+        </p>
+
+        <p class="fr research-note">
+            Une partie de ces travaux est menée avec des partenaires industriels et a donné lieu
+            à plusieurs brevets, notamment autour d’antennes intelligentes, modulables et reprogrammables.
+        </p>
+
+        <p class="en research-note">
+            Part of this work is carried out with industrial partners and has led to several patents,
+            including work on smart, reconfigurable and remotely programmable antennas.
+        </p>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- ==================== THÉMATIQUE 1 ==================== -->
+    <!-- ====================================================== -->
+
+    <div>
+
+        <details class="research-axis">
+
+            <summary>
+                <span class="axis-icon">🌊</span>
+
+                <span class="fr">
+                    Contrôle intelligente des ondes
+                </span>
+
+                <span class="en">
+                    Intelligent wave control
+                </span>
+            </summary>
+
+            <div class="axis-content">
+
+                <!-- ==================== DESCRIPTION ==================== -->
+
+                <p class="fr research-text research-description">
+                    Je développe des <strong>surfaces capables de contrôler les ondes électromagnétiques</strong>
+                    et d’apporter de nouvelles fonctionnalités aux antennes et systèmes RF :
+                    contrôle du faisceau, de la polarisation, du filtrage fréquentiel ou encore
+                    amélioration des performances de rayonnement. Ces travaux s’appuient sur la
+                    physique des structures périodiques et quasi-périodiques et sur les concepts
+                    de métamatériaux, avec l’objectif de concevoir des dispositifs
+                    multifonctionnels et adaptables. Ces travaux sont menés en collaboration avec
+                    <strong>Thales Alenia Space</strong>, le <strong>CNES</strong>,
+                    l’<strong>Universidad de Granada</strong> et l’<strong>Universidad de Sevilla</strong>.
+                </p>
+
+                <p class="en research-text research-description">
+                    I develop <strong>surfaces that can control electromagnetic waves</strong>
+                    and bring new functionalities to antennas and RF systems, including beam control,
+                    polarization manipulation, frequency filtering and improved radiation performance.
+                    These studies build on the physics of periodic and quasi-periodic structures
+                    and on metamaterial concepts, with the aim of designing multifunctional
+                    and adaptable devices. This concepts are developed in collaboration with <strong>Thales Alenia Space</strong>, <strong>CNES</strong>, <strong>Universidad de Granada</strong> and <strong>Universidad de Sevilla</strong>.
+                </p>
+
+                <!-- ==================== TRAVAUX SÉLECTIONNÉS ==================== -->
+
+                <p class="fr axis-subtitle">
+                    Travaux sélectionnés
+                </p>
+
+                <p class="en axis-subtitle">
+                    Selected work
+                </p>
+
+                <!-- 2026 -->
+
+                <p class="fr research-work">
+                    <strong>2026</strong> —
+                    <a href="https://dx.doi.org/10.1109/LAWP.2026.3695346"
+                       target="_blank"
+                       class="research-link">
+                        <em>Wideband Mechanically Tunable Full-Metal 1-Bit Reconfigurable Intelligent Surface in Ku-Band</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2026</strong> —
+                    <a href="https://dx.doi.org/10.1109/LAWP.2026.3695346"
+                       target="_blank"
+                       class="research-link">
+                        <em>Wideband Mechanically Tunable Full-Metal 1-Bit Reconfigurable Intelligent Surface in Ku-Band</em>
+                    </a>
+                </p>
+
+                <!-- 2024 -->
+
+                <p class="fr research-work">
+                    <strong>2024</strong> —
+                    <a href="https://hal.science/hal-04822647v1/file/Stoumpos%20et%20al_2024_Blazed%203D%20Cells%20with%20Application%20to%20Full-Metal%20Dichroic%20Mirrors.pdf"
+                       target="_blank"
+                       class="research-link">
+                        <em>Blazed 3-D Cells With Application to Full-Metal Dichroic Mirrors</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2024</strong> —
+                    <a href="https://hal.science/hal-04822647v1/file/Stoumpos%20et%20al_2024_Blazed%203D%20Cells%20with%20Application%20to%20Full-Metal%20Dichroic%20Mirrors.pdf"
+                       target="_blank"
+                       class="research-link">
+                        <em>Blazed 3-D Cells With Application to Full-Metal Dichroic Mirrors</em>
+                    </a>
+                </p>
+
+                <!-- 2020 -->
+
+                <p class="fr research-work">
+                    <strong>2020</strong> —
+                    <a href="https://univ-rennes.hal.science/hal-02871997/document"
+                       target="_blank"
+                       class="research-link">
+                        <em>All-metal 3-D Frequency Selective Surface with Versatile Dual-Band Polarization Conversion</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2020</strong> —
+                    <a href="https://univ-rennes.hal.science/hal-02871997/document"
+                       target="_blank"
+                       class="research-link">
+                        <em>All-metal 3-D Frequency Selective Surface with Versatile Dual-Band Polarization Conversion</em>
+                    </a>
+                </p>
+
+                <!-- ==================== BREVETS ==================== -->
+
+                <p class="fr research-work">
+                    <strong>Brevets</strong> —
+                    <a href="https://patents.google.com/patent/CA3078132A1/en"
+                       target="_blank"
+                       class="research-link">
+                        <em>Broadband polarizing screen with one or more radiofrequency polarizing cells</em>
+                    </a>
+                    ·
+                    <a href="https://patents.google.com/patent/CA3223986A1/en"
+                       target="_blank"
+                       class="research-link">
+                        <em>Wide-angle impedance-matching device for radiating-element array antenna</em>
+                    </a>
+                    ·
+                    <a href="https://patents.google.com/patent/CA3196067A1/en"
+                       target="_blank"
+                       class="research-link">
+                        <em>Device for controlling RF electromagnetic beams according to their frequency band</em>
+                    </a>
+                    ·
+                    <a href="https://patents.google.com/patent/EP3547450B1/en"
+                       target="_blank"
+                       class="research-link">
+                        <em>Radiating element with circular polarisation implementing a resonance in a Fabry-Perot cavity</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>Patents</strong> —
+                    <a href="https://patents.google.com/patent/CA3078132A1/en"
+                       target="_blank"
+                       class="research-link">
+                        <em>Broadband polarizing screen with one or more radiofrequency polarizing cells</em>
+                    </a>
+                    ·
+                    <a href="https://patents.google.com/patent/CA3223986A1/en"
+                       target="_blank"
+                       class="research-link">
+                        <em>Wide-angle impedance-matching device for radiating-element array antenna</em>
+                    </a>
+                    ·
+                    <a href="https://patents.google.com/patent/CA3196067A1/en"
+                       target="_blank"
+                       class="research-link">
+                        <em>Device for controlling RF electromagnetic beams according to their frequency band</em>
+                    </a>
+                    ·
+                    <a href="https://patents.google.com/patent/EP3547450B1/en"
+                       target="_blank"
+                       class="research-link">
+                        <em>Radiating element with circular polarisation implementing a resonance in a Fabry-Perot cavity</em>
+                    </a>
+                </p>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- ==================== THÉMATIQUE 2 ==================== -->
+    <!-- ====================================================== -->
+
+    <div>
+
+        <details class="research-axis">
+
+            <summary>
+                <span class="axis-icon">🛰️</span>
+
+                <span class="fr">
+                    Antennes spatiales &amp; systèmes RF
+                </span>
+
+                <span class="en">
+                    Space antennas &amp; RF systems
+                </span>
+            </summary>
+
+            <div class="axis-content">
+
+                <!-- ==================== DESCRIPTION ==================== -->
+
+                <p class="fr research-text research-description">
+                    Je développe des <strong>antennes et systèmes RF pour des charges utiles spatiales
+                    flexibles</strong>, capables d’adapter leurs faisceaux et leurs fonctionnalités aux
+                    besoins de la mission. Ces travaux portent notamment sur les <strong>réseaux phasés,
+                    les lentilles multibeams et les antennes leaky-wave</strong>, avec un intérêt particulier
+                    pour les architectures destinées aux <strong>liaisons intersatellites</strong>.
+                    Je cherche à atteindre cette flexibilité tout en limitant la complexité des systèmes,
+                    la consommation d’énergie et le nombre de circuits électroniques nécessaires, afin de
+                    contribuer à <strong>démocratiser l’accès à ces technologies</strong>. Cette approche
+                    s’appuie sur de nouveaux concepts de <strong>guides d’onde et d’architectures
+                    électromagnétiques à faibles pertes</strong>. Ces travaux sont menés en collaboration avec l’<strong>ESA</strong>, le groupe <strong>Thales</strong> et le partenaire industriel <strong>TeraSi</strong>,
+                    ainsi qu’avec les équipes académiques de <strong>CNIT–ELEDIA</strong> à
+                    Trento.
+                </p>
+
+                <p class="en research-text research-description">
+                    I develop <strong>antennas and RF systems for flexible space payloads</strong>,
+                    capable of adapting their beams and functionalities to mission needs. This work
+                    includes <strong>phased arrays, multibeam lenses and leaky-wave antennas</strong>,
+                    with a particular interest in architectures for <strong>inter-satellite links</strong>.
+                    I aim to achieve this flexibility while limiting system complexity, power consumption
+                    and the number of required electronic circuits, thereby contributing to
+                    <strong>making these technologies more accessible</strong>. This approach relies on
+                    new concepts in <strong>waveguides and low-loss electromagnetic architectures</strong>.
+                    This activities are carried out in collaboration with the <strong>European Space Agency
+                    (ESA)</strong>, the <strong>Thales Group</strong> and industrial partner
+                    <strong>TeraSi</strong>, as well as <strong>CNIT–ELEDIA</strong>
+                    in Trento.
+                </p>
+
+                <!-- ==================== TRAVAUX SÉLECTIONNÉS ==================== -->
+
+                <p class="fr axis-subtitle">
+                    Travaux sélectionnés
+                </p>
+
+                <p class="en axis-subtitle">
+                    Selected work
+                </p>
+
+                <!-- 2025 -->
+
+                <p class="fr research-work">
+                    <strong>2025</strong> —
+                    <a href="https://doi.org/10.1109/LAWP.2024.3511433"
+                       target="_blank"
+                       class="research-link">
+                        <em>Dual-Polarized Spaceborne Phased Arrays Using Tri-Ridge Evanescent Waveguide Antennas</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2025</strong> —
+                    <a href="https://doi.org/10.1109/LAWP.2024.3511433"
+                       target="_blank"
+                       class="research-link">
+                        <em>Dual-Polarized Spaceborne Phased Arrays Using Tri-Ridge Evanescent Waveguide Antennas</em>
+                    </a>
+                </p>
+
+                <!-- 2024 -->
+
+                <p class="fr research-work">
+                    <strong>2024</strong> —
+                    <a href="https://doi.org/10.1109/OJAP.2024.3469271"
+                       target="_blank"
+                       class="research-link">
+                        <em>Multibeam Antennas Based on 3D Discrete Lenses With Magnified Field-of-View</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2024</strong> —
+                    <a href="https://doi.org/10.1109/OJAP.2024.3469271"
+                       target="_blank"
+                       class="research-link">
+                        <em>Multibeam Antennas Based on 3D Discrete Lenses With Magnified Field-of-View</em>
+                    </a>
+                </p>
+
+                <!-- 2024 -->
+
+                <p class="fr research-work">
+                    <strong>2024</strong> —
+                    <a href="https://doi.org/10.1038/s41598-024-71085-z"
+                       target="_blank"
+                       class="research-link">
+                        <em>High Efficiency and Circular Polarization in SATCOM Phased Arrays Using Tri-Ridge Apertures</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2024</strong> —
+                    <a href="https://doi.org/10.1038/s41598-024-71085-z"
+                       target="_blank"
+                       class="research-link">
+                        <em>High Efficiency and Circular Polarization in SATCOM Phased Arrays Using Tri-Ridge Apertures</em>
+                    </a>
+                </p>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- ==================== THÉMATIQUE 3 ==================== -->
+    <!-- ====================================================== -->
+
+    <div>
+
+        <details class="research-axis">
+
+            <summary>
+                <span class="axis-icon">🌍</span>
+
+                <span class="fr">
+                    Observation de la Terre &amp; antennes pour radars contraints
+                </span>
+
+                <span class="en">
+                    Earth observation &amp; antennas for constrained radar systems
+                </span>
+            </summary>
+
+            <div class="axis-content">
+
+                <!-- ==================== DESCRIPTION ==================== -->
+
+                <p class="fr research-text research-description">
+                    Je conçois des <strong>antennes spécifiquement adaptées à des scénarios radar
+                    fortement contraints</strong>, notamment pour l’observation de la Terre.
+                    Dans ces applications, les contraintes de <strong>compacité, de masse,
+                    d’intégration et d’autonomie énergétique</strong> sont particulièrement importantes.
+                    Mon travail consiste à développer des architectures antennaires capables de répondre
+                    à ces contraintes tout en conservant les performances électromagnétiques nécessaires
+                    aux instruments. Ces recherches sont menées en interaction étroite avec les équipes
+                    qui développent les systèmes radar et les missions d’observation. Ces travaux sont menés en collaboration avec le <strong>CNES</strong>, l’<strong>IFREMER</strong>, l’<strong>ESA</strong>, l’<strong>ONERA</strong> et <strong>Géosciences Rennes</strong>.
+                </p>
+
+                <p class="en research-text research-description">
+                    I design <strong>antennas specifically tailored to highly constrained radar
+                    scenarios</strong>, particularly for Earth observation. In these applications,
+                    <strong>compactness, mass, integration and energy autonomy</strong> are key constraints.
+                    My work focuses on developing antenna architectures that meet these requirements
+                    while maintaining the electromagnetic performance required by the instruments.
+                    This research is carried out in close interaction with teams developing radar systems
+                    and Earth observation missions. We strongly collaborate with <strong>CNES</strong>,
+                    <strong>IFREMER</strong>, the <strong>European Space Agency (ESA)</strong>,
+                    <strong>ONERA</strong> and <strong>Géosciences Rennes</strong> on this subject.
+                </p>
+
+                <!-- ==================== TRAVAUX SÉLECTIONNÉS ==================== -->
+
+                <p class="fr axis-subtitle">
+                    Travaux sélectionnés
+                </p>
+
+                <p class="en axis-subtitle">
+                    Selected work
+                </p>
+
+                <!-- 2026 — WATER RADAR ANTENNA -->
+
+                <p class="fr research-work">
+                    <strong>2026</strong> —
+                    <a href="https://doi.org/10.1109/ACCESS.2026.3666568"
+                       target="_blank"
+                       class="research-link">
+                        <em>Dual-Polarized Array of Triangular Leaky-Wave Antennas for Compact Water Radar Instruments</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2026</strong> —
+                    <a href="https://doi.org/10.1109/ACCESS.2026.3666568"
+                       target="_blank"
+                       class="research-link">
+                        <em>Dual-Polarized Array of Triangular Leaky-Wave Antennas for Compact Water Radar Instruments</em>
+                    </a>
+                </p>
+
+                <!-- 2026 — AIRBORNE RADARS -->
+
+                <p class="fr research-work">
+                    <strong>2026</strong> —
+                    <a href="https://doi.org/10.1049/rsn2.70194"
+                       target="_blank"
+                       class="research-link">
+                        <em> SWALIS, KaRADOC and HOMARDS: Airborne Radars
+                        to Support Satellite Earth Observation Missions. </em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2026</strong> —
+                    <a href="https://doi.org/10.1049/rsn2.70194"
+                       target="_blank"
+                       class="research-link">
+                        <em>SWALIS, KaRADOC and HOMARDS: Airborne Radars
+                        to Support Satellite Earth Observation Missions.</em>
+                    </a>
+                </p>
+
+                <!-- 2018 — ADDITIVE MANUFACTURING -->
+
+                <p class="fr research-work">
+                    <strong>2018</strong> —
+                    <a href="https://doi.org/10.1109/LAWP.2018.2848723"
+                       target="_blank"
+                       class="research-link">
+                        <em> Modulated Leaky-Wave Antenna for Intersatellite Link Communications</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2018</strong> —
+                    <a href="https://doi.org/10.1109/LAWP.2018.2848723"
+                       target="_blank"
+                       class="research-link">
+                        <em> Modulated Leaky-Wave Antenna for Intersatellite Link Communications</em>
+                    </a>
+                </p>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- ==================== THÉMATIQUE 4 ==================== -->
+    <!-- ====================================================== -->
+
+    <div>
+
+        <details class="research-axis">
+
+            <summary>
+                <span class="axis-icon">🧊</span>
+
+                <span class="fr">
+                    Co-design RF et impression 3D
+                </span>
+
+                <span class="en">
+                    Co-design RF &amp; 3D printing
+                </span>
+            </summary>
+
+            <div class="axis-content">
+
+                <!-- ==================== DESCRIPTION ==================== -->
+
+                <p class="fr research-text research-description">
+                    L’<strong>impression 3D</strong> a été pour moi une véritable source d’enthousiasme :
+                    elle ouvre un degré de liberté considérable dans la conception des antennes et des
+                    composants RF. Je travaille sur le <strong>co-design de l’antenne et de sa fabrication</strong>,
+                    en considérant dès le départ les possibilités mais aussi les spécificités du procédé.
+                    La fabrication additive est ainsi devenue un <strong>sujet de recherche à part entière</strong>,
+                    qui nécessite de croiser l’électromagnétisme avec la mécanique et la thermique pour
+                    transformer des géométries nouvelles en dispositifs réellement fabricables et performants.
+                </p>
+
+                <p class="en research-text research-description">
+                    <strong>3D printing</strong> has been a great source of excitement for me:
+                    it opens up a remarkable degree of freedom in the design of antennas and RF components.
+                    I work on the <strong>co-design of the antenna and its manufacturing process</strong>,
+                    considering from the outset both the possibilities and the specificities of the technology.
+                    Additive manufacturing has therefore become a <strong>research topic in its own right</strong>,
+                    requiring electromagnetics to be combined with mechanical and thermal engineering to
+                    turn new geometries into devices that are both manufacturable and high-performing.
+                </p>
+
+                <!-- ==================== COLLABORATIONS ==================== -->
+
+                <p class="fr research-text research-collaboration">
+                    Ces travaux sont menés en collaboration avec <strong>SWISSto12</strong>,
+                    <strong>CSEM</strong>, l’<strong>Université de Pérouse</strong> et
+                    <strong>Tyndall National Institute</strong> à Cork.
+                </p>
+
+                <p class="en research-text research-collaboration">
+                    This research is carried out in collaboration with <strong>SWISSto12</strong>,
+                    <strong>CSEM</strong>, the <strong>University of Perugia</strong> and
+                    <strong>Tyndall National Institute</strong> in Cork.
+                </p>
+
+                <!-- ==================== TRAVAUX SÉLECTIONNÉS ==================== -->
+
+                <p class="fr axis-subtitle">
+                    Travaux sélectionnés
+                </p>
+
+                <p class="en axis-subtitle">
+                    Selected work
+                </p>
+
+                <!-- 2026 -->
+
+                <p class="fr research-work">
+                    <strong>2026</strong> —
+                    <a href="https://doi.org/10.1109/IMSRFTT43070.2026.11602558"
+                       target="_blank"
+                       class="research-link">
+                        <em>Selective Laser Melting Design-to-Manufacturing Method for Integrated W-Band 3-D-Printed Feeds</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2026</strong> —
+                    <a href="https://doi.org/10.1109/IMSRFTT43070.2026.11602558"
+                       target="_blank"
+                       class="research-link">
+                        <em>Selective Laser Melting Design-to-Manufacturing Method for Integrated W-Band 3-D-Printed Feeds</em>
+                    </a>
+                </p>
+
+                <!-- 2023 -->
+
+                <p class="fr research-work">
+                    <strong>2023</strong> —
+                    <a href="https://doi.org/10.1109/TAP.2023.3255515"
+                       target="_blank"
+                       class="research-link">
+                        <em>Ridged Meandered Waveguides for 3-D Routing and Phase Delay Control and Its Application to Discrete Lenses</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2023</strong> —
+                    <a href="https://doi.org/10.1109/TAP.2023.3255515"
+                       target="_blank"
+                       class="research-link">
+                        <em>Ridged Meandered Waveguides for 3-D Routing and Phase Delay Control and Its Application to Discrete Lenses</em>
+                    </a>
+                </p>
+
+                <!-- 2022 -->
+
+                <p class="fr research-work">
+                    <strong>2022</strong> —
+                    <a href="https://doi.org/10.5772/intechopen.106690"
+                       target="_blank"
+                       class="research-link">
+                        <em>Metal 3D-Printing of Waveguide Components and Antennas: Guidelines and New Perspectives</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2022</strong> —
+                    <a href="https://doi.org/10.5772/intechopen.106690"
+                       target="_blank"
+                       class="research-link">
+                        <em>Metal 3D-Printing of Waveguide Components and Antennas: Guidelines and New Perspectives</em>
+                    </a>
+                </p>
+
+                <!-- 2022 -->
+
+                <p class="fr research-work">
+                    <strong>2022</strong> —
+                    <a href="https://doi.org/10.1109/LMWC.2022.3187781"
+                       target="_blank"
+                       class="research-link">
+                        <em>Vertically Printable Evanescent Mode Filters</em>
+                    </a>
+                </p>
+
+                <p class="en research-work">
+                    <strong>2022</strong> —
+                    <a href="https://doi.org/10.1109/LMWC.2022.3187781"
+                       target="_blank"
+                       class="research-link">
+                        <em>Vertically Printable Evanescent Mode Filters</em>
+                    </a>
+                </p>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <!-- ==================== DISTINCTIONS ==================== -->
+
+    <div>
+
+        <h4 class="research-heading">
+            <span class="fr">Distinctions</span>
+            <span class="en">Awards &amp; recognitions</span>
+        </h4>
+
+        <!-- 2026 -->
+
+        <p class="fr research-work">
+            <strong>2026</strong> —
+            <a href="https://womeninstem.fr/"
+               target="_blank"
+               class="research-link">
+                <strong>European Women in STEM Award</strong>
+            </a>
+            — Nominée.
+        </p>
+
+        <p class="en research-work">
+            <strong>2026</strong> —
+            <a href="https://womeninstem.fr/"
+               target="_blank"
+               class="research-link">
+                <strong>European Women in STEM Award</strong>
+            </a>
+            — Nominated.
+        </p>
+
+        <!-- 2025 -->
+
+        <p class="fr research-work">
+            <strong>2025</strong> —
+            <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
+               target="_blank"
+               class="research-link">
+                <strong>Prix Numérique – électronique, photonique, IA et cyber</strong>
+            </a>
+            — Trophées Valorisation, Campus Innovation, Université de Rennes.
+        </p>
+
+        <p class="en research-work">
+            <strong>2025</strong> —
+            <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
+               target="_blank"
+               class="research-link">
+                <strong>Innovation Award in Digital Technologies, Electronics, Photonics, AI and Cybersecurity</strong>
+            </a>
+            — Campus Innovation, University of Rennes.
+        </p>
+
+        <!-- 2023 -->
+
+        <p class="fr research-work">
+            <strong>2023</strong> —
+            <a href="https://www.eumwa.org/en/euma/roberto-sorrentino-prize/presentation.html"
+               target="_blank"
+               class="research-link">
+                <strong>Roberto Sorrentino Prize</strong>
+            </a>
+            — <strong>Outstanding Young Professional</strong>, EuMA.
+        </p>
+
+        <p class="en research-work">
+            <strong>2023</strong> —
+            <a href="https://www.eumwa.org/en/euma/roberto-sorrentino-prize/presentation.html"
+               target="_blank"
+               class="research-link">
+                <strong>Roberto Sorrentino Prize</strong>
+            </a>
+            — <strong>Outstanding Young Professional</strong>, EuMA.
+        </p>
+
+        <!-- 2022 -->
+
+        <p class="fr research-work">
+            <strong>2022</strong> —
+            <strong>Best Paper Award</strong>, XXXVIII Spanish Symposium on Microwaves, Málaga, Espagne.
+        </p>
+
+        <p class="en research-work">
+            <strong>2022</strong> —
+            <strong>Best Paper Award</strong>, XXXVIII Spanish Symposium on Microwaves, Málaga, Spain.
+        </p>
+
+        <!-- 2014 -->
+
+        <p class="fr research-work">
+            <strong>2014</strong> —
+            <strong>Prix de la meilleure thèse de doctorat</strong>,
+            Official School of Telecommunication Engineers (COIT), Espagne.
+        </p>
+
+        <p class="en research-work">
+            <strong>2014</strong> —
+            <strong>Best PhD Thesis Award</strong>,
+            Official School of Telecommunication Engineers (COIT), Spain.
+        </p>
+
+        <!-- 2013 -->
+
+        <p class="fr research-work">
+            <strong>2013</strong> —
+            <strong>Prix de la meilleure thèse de doctorat</strong>,
+            Universidad Politécnica de Cartagena (UPCT), Espagne.
+        </p>
+
+        <p class="en research-work">
+            <strong>2013</strong> —
+            <strong>Best PhD Thesis Award</strong>,
+            Universidad Politécnica de Cartagena (UPCT), Spain.
+        </p>
+
+        <p class="fr research-work">
+            <strong>2013</strong> —
+            <strong>Best Paper Award</strong>, 5th IEEE Symposium on Microwave,
+            Antenna, Propagation &amp; EMC Technologies, China.
+        </p>
+
+        <p class="en research-work">
+            <strong>2013</strong> —
+            <strong>Best Paper Award</strong>, 5th IEEE Symposium on Microwave,
+            Antenna, Propagation &amp; EMC Technologies, China.
+        </p>
+
+        <!-- 2012 -->
+
+        <p class="fr research-work">
+            <strong>2012</strong> —
+            <strong>2e place, Best Paper Award</strong>, XXVII Spanish Symposium on Microwaves, Madrid, Espagne.
+        </p>
+
+        <p class="en research-work">
+            <strong>2012</strong> —
+            <strong>2nd place, Best Paper Award</strong>, XXVII Spanish Symposium on Microwaves, Madrid, Spain.
+        </p>
+
+        <p class="fr research-work">
+            <strong>2012</strong> —
+            <strong>Best Paper Award</strong>, 6th European Conference on Antennas and Propagation,
+            Prague, République tchèque.
+        </p>
+
+        <p class="en research-work">
+            <strong>2012</strong> —
+            <strong>Best Paper Award</strong>, 6th European Conference on Antennas and Propagation,
+            Prague, Czech Republic.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
 
 
     <footer>
