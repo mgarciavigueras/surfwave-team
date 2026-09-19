@@ -1166,39 +1166,195 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         <a href="#tremplin-details"
            class="tremplin-button">
 
+            <style>
+    /* Bouton TREMPLIN */
+    .tremplin-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 76px;
+        box-sizing: border-box;
+        padding: 16px 18px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background: var(--card-bg);
+        color: var(--text-main);
+        text-decoration: none;
+        transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .tremplin-button:hover {
+        border-color: var(--primary-green);
+        transform: translateY(-2px);
+    }
+
+    .tremplin-button-text {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .tremplin-button-title {
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 600;
+        line-height: 1.3;
+        color: var(--text-main);
+    }
+
+    .tremplin-button-arrow {
+        margin-left: 15px;
+        flex-shrink: 0;
+        font-size: 1.25rem;
+        line-height: 1;
+        color: var(--primary-green);
+    }
+
+    /* Contenu TREMPLIN */
+    #tremplin-details {
+        margin: 20px 0 0 0;
+        padding: 18px 20px;
+        border-left: 2px solid var(--primary-green);
+    }
+
+    #tremplin-details h2 {
+        margin: 0 0 12px 0;
+        color: var(--text-main);
+        font-size: 1.2rem;
+    }
+
+    #tremplin-details h3 {
+        margin: 18px 0 6px 0;
+        color: var(--text-main);
+        font-size: 1rem;
+    }
+
+    .summit-photos {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 2px;
+    }
+
+    .summit-photos img {
+        height: 130px;
+        width: auto;
+        display: block;
+        flex: 0 0 auto;
+    }
+</style>
+
+
+<!-- Ligne de deux colonnes -->
+<div style="
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin:18px 0;
+">
+
+    <!-- Colonne 1 -->
+    <div>
+
+        <!-- Bouton -->
+        <a href="#tremplin-details"
+           class="tremplin-button">
+
             <div class="tremplin-button-text">
 
-    <div class="tremplin-button-title">
+                <div class="tremplin-button-title">
 
-        <span class="fr">
-            Innovation pédagogique · Projet TREMPLIN · IRIS-E
-        </span>
+                    <span class="fr">
+                        Innovation pédagogique · Projet TREMPLIN · IRIS-E
+                    </span>
 
-        <span class="en">
-            Educational innovation · TREMPLIN project · IRIS-E
-        </span>
+                    <span class="en">
+                        Educational innovation · TREMPLIN project · IRIS-E
+                    </span>
 
-    </div>
-
-    <div class="tremplin-button-subtitle">
-
-        <span class="fr">
-            2025–2027 · INSA Rennes
-        </span>
-
-        <span class="en">
-            2025–2027 · INSA Rennes
-        </span>
-
-    </div>
-
-</div>
+                </div>
 
             </div>
 
             <span class="tremplin-button-arrow">→</span>
 
         </a>
+
+
+        <!-- Contenu affiché après le clic -->
+        <div id="tremplin-details">
+
+            <h2>
+                <span class="fr">Projet TREMPLIN</span>
+                <span class="en">TREMPLIN Project</span>
+            </h2>
+
+            <p class="fr research-text">
+                TREMPLIN est un projet d’innovation pédagogique porté par
+                <strong>María García Vigueras</strong>, avec
+                <strong>Rozen Texier Picard</strong> et
+                <strong>Clément Mabi</strong> comme co-porteurs,
+                et <strong>Lise Trégloze</strong> comme ingénieure pédagogique.
+                Le projet explore de nouvelles façons de former les ingénieur·es
+                aux transitions socio-environnementales.
+            </p>
+
+            <p class="en research-text">
+                TREMPLIN is an educational innovation project led by
+                <strong>María García Vigueras</strong>, with
+                <strong>Rozen Texier Picard</strong> and
+                <strong>Clément Mabi</strong> as co-leads,
+                and <strong>Lise Trégloze</strong> as pedagogical engineer.
+                The project explores new ways of preparing engineering students
+                for socio-environmental transitions.
+            </p>
+
+
+            <h3>
+                <span class="fr">Higher Education Summit 2026</span>
+                <span class="en">Higher Education Summit 2026</span>
+            </h3>
+
+            <p class="fr research-text">
+                En août 2026, nous avons présenté TREMPLIN au
+                <a href="https://fr.higher-education-summit.com/"
+                   target="_blank"
+                   style="color:var(--primary-cyan); text-decoration:underline;">
+                    Higher Education Summit 2026
+                </a>
+                à Bordeaux, dans une session consacrée à la transformation
+                des formations d’ingénieurs.
+            </p>
+
+            <p class="en research-text">
+                In August 2026, we presented TREMPLIN at the
+                <a href="https://fr.higher-education-summit.com/"
+                   target="_blank"
+                   style="color:var(--primary-cyan); text-decoration:underline;">
+                    Higher Education Summit 2026
+                </a>
+                in Bordeaux, in a session dedicated to transforming
+                engineering education.
+            </p>
+
+
+            <!-- Photos -->
+            <div class="summit-photos">
+
+                <img src="Higher_Education_Summit_1.jpg"
+                     alt="Higher Education Summit 2026">
+
+                <img src="Higher_Education_Summit_2.jpg"
+                     alt="Higher Education Summit 2026">
+
+                <img src="Higher_Education_Summit_3.jpg"
+                     alt="Higher Education Summit 2026">
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -1207,7 +1363,9 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
     <div>
     </div>
 
-</div>            
+</div>
+
+      
             <!-- 1. SECTION RESEARCHERS & ROOSTERS -->
             <div style="margin-bottom: 40px;">
                 <span class="badge" style="background-color: rgba(245, 158, 11, 0.1); color: #d97706; margin-bottom: 5px;">Séminaires / Seminars</span>
