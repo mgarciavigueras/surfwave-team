@@ -726,6 +726,217 @@ main {
     color: #fff;
 }
 
+/* =========================================================
+   14. COMMUNITY
+   ========================================================= */
+
+.community-container {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 15px auto 0 auto;
+
+    box-sizing: border-box;
+}
+
+.community-team {
+    margin: 18px 0 10px 0;
+    padding: 0;
+
+    width: 100%;
+}
+
+/* Expandable green heading */
+.community-team > summary {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin: 0 0 12px 0;
+    padding: 0;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+
+    color: var(--primary-green);
+}
+
+/* Hide browser default arrow */
+.community-team > summary::marker {
+    display: none;
+    content: "";
+}
+
+.community-team > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Green expandable arrow */
+.community-team > summary::before {
+    content: "▶";
+
+    font-size: 0.8rem;
+
+    color: var(--primary-green);
+
+    transition: transform 0.2s ease;
+
+    flex-shrink: 0;
+}
+
+/* Rotate arrow when open */
+.community-team[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+
+/* Community team content */
+
+.community-team .team-content {
+    width: 100%;
+}
+
+
+/* Compact team grid */
+
+.community-team .grid-team {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 8px;
+
+    width: 100%;
+}
+
+
+/* Compact member cards */
+
+.community-team .member-card {
+    width: 140px;
+
+    max-width: 100%;
+
+    padding: 9px 7px;
+
+    border-radius: 8px;
+}
+
+
+/* Compact member photos */
+
+.community-team .photo-container {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 6px;
+}
+
+.community-team .photo {
+    width: 62px;
+    height: 62px;
+}
+
+
+/* Compact member names */
+
+.community-team .member-card h3 {
+    font-size: 0.82rem;
+
+    line-height: 1.2;
+
+    margin: 3px 0;
+}
+
+
+/* Compact member roles */
+
+.community-team .role-badge {
+    font-size: 0.66rem;
+
+    line-height: 1.2;
+
+    padding: 3px 5px;
+
+    margin: 5px 0 0 0;
+}
+
+
+/* Former members */
+
+.past-members {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 4px;
+
+    padding: 0;
+}
+
+.past-members a {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 999px;
+
+    background: #f8fafc;
+
+    color: var(--text-muted);
+
+    text-decoration: none;
+
+    font-size: 0.78rem;
+
+    line-height: 1.2;
+
+    transition: all 0.2s ease;
+}
+
+.past-members a:hover {
+    color: var(--primary-green);
+
+    border-color: var(--primary-green);
+
+    background: rgba(5, 150, 105, 0.06);
+}
+
+
+/* Community-specific responsive adjustment */
+
+@media (max-width: 600px) {
+
+    .community-team > summary {
+        font-size: 1.7rem;
+    }
+
+    .community-team .grid-team {
+        gap: 8px;
+    }
+
+    .community-team .member-card {
+        width: 130px;
+    }
+}
+
 
 /* =========================================================
    14. LANGUAGES
@@ -2546,6 +2757,348 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
                    class="research-link">
                     <em>Vertically Printable Evanescent Mode Filters</em>
                 </a>
+            </p>
+
+        </div>
+
+    </details>
+
+</div>
+
+</section>
+
+<!-- ONGLET Community -->
+<!-- ------------------->
+<section id="tab-membres" class="tab-content">
+
+<div class="community-container">
+
+    <details class="community-team">
+
+        <summary>
+            <span class="fr">Groupe SurfWAVE</span>
+            <span class="en">SurfWAVE Team</span>
+        </summary>
+
+
+        <div class="team-content">
+
+            <!-- Introduction -->
+
+            <p class="fr intro-text">
+                En tant que responsable de l'équipe de recherche SurfWAVE, je suis chargée d'animer une équipe au sein de l'<strong>IETR</strong> à l'<strong>INSA Rennes</strong>, en accompagnant les chercheurs, enseignants-chercheurs, ingénieurs et doctorants qui contribuent à nos activités de recherche et de formation. L'équipe travaille autour des <strong>ondes électromagnétiques</strong>, des <strong>surfaces périodiques et quasi-périodiques</strong>, ainsi que de la conception et du contrôle de dispositifs pour des applications <strong>spatiales, radar et télécommunications</strong>.
+            </p>
+
+            <p class="en intro-text">
+                As head of the SurfWAVE research team, I lead a research group within <strong>IETR</strong> at <strong>INSA Rennes</strong>, bringing together researchers, academics, research engineers and PhD students involved in our research and educational activities. The team works on <strong>electromagnetic waves</strong>, <strong>periodic and quasi-periodic surfaces</strong>, and the design and control of devices for <strong>space, radar and telecommunications</strong> applications.
+            </p>
+
+
+            <!-- Current members -->
+
+            <div class="grid-team">
+
+
+                <!-- Erwan Fourn -->
+
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="erwan_fourn.jpg"
+                             alt="Erwan Fourn"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.ietr.fr/erwan-fourn"
+                           target="_blank">
+                            Erwan Fourn
+                        </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Maître de Conférences
+                    </span>
+
+                    <span class="role-badge en">
+                        Associate Professor
+                    </span>
+
+                </div>
+
+
+                <!-- Raphaël Gillard -->
+
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="r_gillard.jpg"
+                             alt="Raphaël Gillard"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.ietr.fr/raphael-gillard"
+                           target="_blank">
+                            Raphaël Gillard
+                        </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Professeur
+                    </span>
+
+                    <span class="role-badge en">
+                        Professor
+                    </span>
+
+                </div>
+
+
+                <!-- Renaud Loison -->
+
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="renaud_loison.jpg"
+                             alt="Renaud Loison"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.ietr.fr/renaud-loison"
+                           target="_blank">
+                            Renaud Loison
+                        </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Professeur
+                    </span>
+
+                    <span class="role-badge en">
+                        Professor
+                    </span>
+
+                </div>
+
+
+                <!-- Lucas Polo López -->
+
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="Lucas.jpg"
+                             alt="Lucas Polo López"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.linkedin.com/in/lucaspoloeng/"
+                           target="_blank">
+                            Lucas Polo López
+                        </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Ingénieur de Recherche · membre associé
+                    </span>
+
+                    <span class="role-badge en">
+                        Research Engineer · associated member
+                    </span>
+
+                </div>
+
+
+                <!-- Jorge Ruiz García -->
+
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="jorge_ruiz_garcia.jpg"
+                             alt="Jorge Ruiz García"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.ietr.fr/en/jorge-ruiz-garcia"
+                           target="_blank">
+                            Jorge Ruiz García
+                        </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Enseignant-Chercheur
+                    </span>
+
+                    <span class="role-badge en">
+                        Associate Professor
+                    </span>
+
+                </div>
+
+
+                <!-- Lise Trégloze -->
+
+                <div class="member-card">
+
+                    <div class="photo-container">
+                        <img src="Lise.jpg"
+                             alt="Lise Trégloze"
+                             class="photo">
+                    </div>
+
+                    <h3>
+                        <a href="https://www.linkedin.com/in/lise-tregloze-171594226/"
+                           target="_blank">
+                            Lise Trégloze
+                        </a>
+                    </h3>
+
+                    <span class="role-badge fr">
+                        Ingénieure pédagogique · Chercheuse CREAD associée
+                    </span>
+
+                    <span class="role-badge en">
+                        Associate Researcher · PhD student at CREAD
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Former members -->
+
+            <h4 class="fr heading-text">
+                Anciens membres
+            </h4>
+
+            <h4 class="en heading-text">
+                Former members
+            </h4>
+
+
+            <div class="past-members">
+
+                <a href="https://www.linkedin.com/in/lisa-berretti/"
+                   target="_blank">
+                    Lisa Berretti
+                </a>
+
+                <a href="https://www.linkedin.com/in/thomas-uguen/"
+                   target="_blank">
+                    Thomas Uguen
+                </a>
+
+                <a href="https://www.linkedin.com/in/carlos-molero-jimenez/"
+                   target="_blank">
+                    Carlos Molero Jiménez
+                </a>
+
+                <a href="https://www.linkedin.com/in/charalampos-stoumpos/"
+                   target="_blank">
+                    Charalampos (Haris) Stoumpos
+                </a>
+
+                <a href="https://www.linkedin.com/in/aurelie-dorle/"
+                   target="_blank">
+                    Aurélie Dorlé
+                </a>
+
+                <a href="https://www.linkedin.com/in/antoine-calleau/"
+                   target="_blank">
+                    Antoine Calleau
+                </a>
+
+                <a href="https://www.linkedin.com/in/diego-bermudez-martin/"
+                   target="_blank">
+                    Diego Bermúdez Martín
+                </a>
+
+                <a href="https://www.linkedin.com/in/samara-gharbieh/"
+                   target="_blank">
+                    Samara Gharbieh
+                </a>
+
+                <a href="https://www.linkedin.com/in/andrea-guarriello/"
+                   target="_blank">
+                    Andrea Guarriello
+                </a>
+
+                <a href="https://www.linkedin.com/in/paul-le-bihan/"
+                   target="_blank">
+                    Paul Le Bihan
+                </a>
+
+                <a href="https://www.linkedin.com/in/rema-ahmid/"
+                   target="_blank">
+                    Rema Ahmid
+                </a>
+
+                <a href="https://www.linkedin.com/in/matthieu-elineau/"
+                   target="_blank">
+                    Matthieu Elineau
+                </a>
+
+            </div>
+
+        </div>
+
+    </details>
+
+
+    <details class="community-team">
+
+        <summary>
+            <span class="fr">
+                Communauté scientifique
+            </span>
+
+            <span class="en">
+                Scientific community
+            </span>
+        </summary>
+
+
+        <div class="team-content">
+
+            <p class="fr meta-text">
+                <strong>Comités et responsabilités scientifiques :</strong>
+                membre du comité scientifique de l’IETR depuis 2020 ;
+                membre de comités de programme de conférences internationales
+                (EuMW, IMS, ESA Antenna Workshop, EuCAP) ;
+                co-responsable du groupe EurAAP
+                <em>Women in Antennas and Propagation</em> (2020–2024) ;
+                membre du comité <em>Educational Activities</em> de l’IEEE Antennas and Propagation Society (2015–2026).
+            </p>
+
+            <p class="en meta-text">
+                <strong>Scientific committees and responsibilities:</strong>
+                member of the IETR Scientific Committee since 2020;
+                member of technical program committees for international conferences
+                (EuMW, IMS, ESA Antenna Workshop, EuCAP);
+                co-chair of the EurAAP
+                <em>Women in Antennas and Propagation</em> working group (2020–2024);
+                member of the IEEE Antennas and Propagation Society
+                <em>Educational Activities Committee</em> (2015–2026).
+            </p>
+
+            <p class="fr meta-text">
+                <strong>Évaluation et jurys :</strong>
+                membre de comité d’évaluation ANR (2023–2025) ;
+                participation à 6 comités de recrutement de maîtres de conférences,
+                dont une présidence à l’INSA Rennes ;
+                membre de 11 jurys de thèse.
+            </p>
+
+            <p class="en meta-text">
+                <strong>Evaluation and committees:</strong>
+                member of a national ANR research evaluation committee (2023–2025);
+                participation in 6 Associate Professor recruitment committees,
+                including one presidency at INSA Rennes;
+                member of 11 PhD examination committees.
             </p>
 
         </div>
