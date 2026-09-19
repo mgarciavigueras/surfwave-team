@@ -1866,38 +1866,33 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         }
     </script>
 <script>
-function openModal(src) {
-    ...
-}
-
-function switchTab(tabId) {
-    ...
-}
-
-function toggleLang() {
-    ...
-}
-
-/* TEST */
 const r = document.querySelector('header').getBoundingClientRect();
 const f = document.querySelector('footer').getBoundingClientRect();
 
-document.body.insertAdjacentHTML('beforeend', `
-<div style="
-    position:fixed;
-    top:10px;
-    left:10px;
-    z-index:999999;
-    background:white;
-    color:black;
-    padding:12px;
-    border:3px solid red;
-    font:14px Arial;
-">
-    Écran : ${window.innerWidth}px<br>
-    Header : left=${Math.round(r.left)} / width=${Math.round(r.width)} / right=${Math.round(r.right)}<br>
-    Footer : left=${Math.round(f.left)} / width=${Math.round(f.width)} / right=${Math.round(f.right)}
-</div>
+const testBox = document.createElement('div');
+
+testBox.style.cssText = `
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 999999;
+    background: white;
+    color: black;
+    padding: 12px;
+    border: 3px solid red;
+    font: 14px Arial;
+`;
+
+testBox.innerHTML =
+    'Écran : ' + window.innerWidth + ' px<br>' +
+    'Header : left=' + Math.round(r.left) +
+    ' / width=' + Math.round(r.width) +
+    ' / right=' + Math.round(r.right) + '<br>' +
+    'Footer : left=' + Math.round(f.left) +
+    ' / width=' + Math.round(f.width) +
+    ' / right=' + Math.round(f.right);
+
+document.body.appendChild(testBox);
 </script>
 </body>
 </html>
