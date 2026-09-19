@@ -91,8 +91,8 @@ body {
    ========================================================= */
 
 header {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
 
     text-align: center;
@@ -1316,19 +1316,10 @@ code {
 }
 
 
-/* TEST TEMPORAIRE */
-body {
-    outline: 4px solid red !important;
+/* TEST 2 — uniquement pour identifier l'élément qui décale le header */
+header > * {
+    outline: 2px solid red !important;
 }
-
-header {
-    outline: 4px solid blue !important;
-}
-
-footer {
-    outline: 4px solid green !important;
-}
-
 
 </style>
 
