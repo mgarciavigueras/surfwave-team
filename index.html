@@ -12,20 +12,15 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
 
-    <style>
+<!-------------------------------------------------
+<!-------END STYLE---------------------------------
+<!-------------------------------------------------
+
+<style>
 
 /* =========================================================
-   RECHERCHE — ACCORDÉONS
+   1. VARIABLES
    ========================================================= */
-
-.research-axis {
-    margin: 0 0 5px 0 !important;
-    padding: 0 !important;
-    width: 100%;
-}
-
-/* ... reste du bloc ... */
-/* Variables de couleurs - NOUVEAU THEME CLAIR */
 
 :root {
     --bg-color: #f4f6f8;
@@ -37,6 +32,11 @@
     --border-color: #e2e8f0;
     --hover-glow: rgba(2, 132, 199, 0.2);
 }
+
+
+/* =========================================================
+   2. GENERAL
+   ========================================================= */
 
 * {
     margin: 0;
@@ -52,7 +52,9 @@ body {
 }
 
 
-/* En-tête avec image de fond */
+/* =========================================================
+   3. HEADER
+   ========================================================= */
 
 header {
     text-align: center;
@@ -65,9 +67,6 @@ header {
     position: relative;
     transition: all 0.3s ease;
 }
-
-
-/* Voile blanc semi-transparent */
 
 header::before {
     content: '';
@@ -86,7 +85,9 @@ header > * {
 }
 
 
-/* Bouton de langue */
+/* =========================================================
+   4. LANGUAGE BUTTON
+   ========================================================= */
 
 .top-bar {
     position: absolute;
@@ -113,7 +114,9 @@ header > * {
 }
 
 
-/* Maria GARCIA VIGUERAS */
+/* =========================================================
+   5. HEADER TITLE + LOGOS
+   ========================================================= */
 
 h1 {
     font-size: 2.8rem;
@@ -134,8 +137,6 @@ header h1 {
     padding-top: 20px !important;
     margin-top: 0 !important;
 }
-
-/* Nouveaux conteneurs de logos en ligne */
 
 .logos-container {
     display: flex;
@@ -172,7 +173,9 @@ header h1 {
 }
 
 
-/* Onglets de navigation */
+/* =========================================================
+   6. NAVIGATION
+   ========================================================= */
 
 .nav-tabs {
     display: flex;
@@ -205,7 +208,9 @@ header h1 {
 }
 
 
-/* Contenu principal */
+/* =========================================================
+   7. MAIN CONTENT
+   ========================================================= */
 
 main {
     max-width: 1200px;
@@ -237,7 +242,9 @@ main {
 }
 
 
-/* Cartes générales */
+/* =========================================================
+   8. GENERAL CARDS
+   ========================================================= */
 
 .card {
     background-color: var(--card-bg);
@@ -276,7 +283,9 @@ main {
 }
 
 
-/* Scroll Horizontal pour Galerie & Séminaires */
+/* =========================================================
+   9. GALLERY / HORIZONTAL SCROLL
+   ========================================================= */
 
 .horizontal-scroll {
     display: flex;
@@ -336,7 +345,9 @@ main {
 }
 
 
-/* Cartes Équipe */
+/* =========================================================
+   10. TEAM
+   ========================================================= */
 
 .member-card {
     background-color: var(--card-bg);
@@ -411,7 +422,9 @@ main {
 }
 
 
-/* Langues */
+/* =========================================================
+   11. LANGUAGES
+   ========================================================= */
 
 body.lang-en .fr {
     display: none !important;
@@ -422,7 +435,9 @@ body:not(.lang-en) .en {
 }
 
 
-/* Footer */
+/* =========================================================
+   12. FOOTER
+   ========================================================= */
 
 footer {
     text-align: center;
@@ -444,7 +459,128 @@ footer a:hover {
 
 
 /* =========================================================
-   EDUCATION & OUTREACH
+   13. RESEARCH
+   ========================================================= */
+
+.research-axis {
+    margin: 0 0 5px 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
+.research-axis > summary {
+    display: block !important;
+    box-sizing: border-box !important;
+
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 2px 6px !important;
+
+    text-align: left !important;
+    line-height: 1.15 !important;
+
+    cursor: pointer;
+
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+
+    color: var(--text-color) !important;
+
+    list-style: none !important;
+}
+
+.research-axis > summary::marker {
+    display: none !important;
+    content: "" !important;
+}
+
+.research-axis > summary::-webkit-details-marker {
+    display: none !important;
+}
+
+.research-axis > summary .axis-icon {
+    display: inline-block !important;
+    margin-right: 5px !important;
+    vertical-align: middle !important;
+}
+
+.research-axis > summary .fr,
+.research-axis > summary .en {
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.research-axis > summary::before {
+    content: "›";
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text-muted);
+    transition: transform 0.15s ease;
+}
+
+.research-axis[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.research-axis > .axis-content {
+    display: block !important;
+    margin: 0 !important;
+    padding: 3px 8px 6px 28px !important;
+    text-align: left !important;
+}
+
+.research-axis > .axis-content p {
+    text-align: left !important;
+}
+
+.research-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+.research-work {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.research-link {
+    color: var(--primary-cyan);
+    text-decoration: underline;
+}
+
+.axis-subtitle {
+    margin: 8px 0 4px 0;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.publications {
+    line-height: 1.7;
+}
+
+.publications > div {
+    margin-bottom: 10px;
+}
+
+.publications a {
+    color: var(--primary-cyan);
+    text-decoration: underline;
+    margin-left: 4px;
+}
+
+
+/* =========================================================
+   14. EDUCATION & OUTREACH
    ========================================================= */
 
 .education-intro {
@@ -459,25 +595,31 @@ footer a:hover {
     margin: 0 0 10px 0;
 }
 
+.education-section {
+    margin: 0 0 40px 0;
+}
 
-/* ---------------------------------------------------------
-   TREMPLIN
-   --------------------------------------------------------- */
+.education-section-title {
+    margin: 0 0 8px 0;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
 
-/* ---------------------------------------------------------
-   TREMPLIN
-   Même style que les axes thématiques Recherche
-   --------------------------------------------------------- */
+.education-section-text {
+    color: var(--text-muted);
+    margin: 0 0 10px 0;
+}
+
 
 /* =========================================================
-   TREMPLIN
+   15. TREMPLIN
    ========================================================= */
 
 .tremplin-details {
     width: 100%;
     margin-top: 25px;
     background: var(--card-bg);
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.25s ease;
@@ -536,7 +678,7 @@ footer a:hover {
 
 .tremplin-content {
     padding: 5px 22px 22px;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid var(--border-color);
     color: var(--text-muted);
     line-height: 1.6;
 }
@@ -567,30 +709,10 @@ footer a:hover {
     flex: 0 0 auto;
 }
 
-/* ---------------------------------------------------------
-   GENERAL EDUCATION / OUTREACH SECTIONS
-   --------------------------------------------------------- */
 
-.education-section {
-    margin: 0 0 40px 0;
-}
-
-.education-section-title {
-    margin: 0 0 8px 0;
-    font-size: 1.4rem;
-    color: var(--text-color);
-}
-
-.education-section-text {
-    color: var(--text-muted);
-    margin: 0 0 10px 0;
-}
-
-
-
-/* =========================
-   MOBILE
-   ========================= */
+/* =========================================================
+   16. MOBILE
+   ========================================================= */
 
 @media (max-width: 550px) {
 
@@ -601,13 +723,11 @@ footer a:hover {
         background: url('portada-mobile.jpg') center top / 100% auto no-repeat;
     }
 
-    /* Cacher les lignes descriptives sur mobile */
     .subtitle.fr,
     .subtitle.en {
         display: none;
     }
 
-    /* Nom : centré et légèrement plus bas */
     header h1 {
         margin-top: 60px;
         margin-bottom: 2px;
@@ -616,7 +736,6 @@ footer a:hover {
         padding-left: 0;
     }
 
-    /* Bouton FR / EN : en haut à droite */
     header .top-bar {
         position: absolute;
         top: 3px;
@@ -625,12 +744,10 @@ footer a:hover {
         z-index: 5;
     }
 
-    /* Logos */
     .logos-container {
         margin-top: 15px;
     }
 
-    /* Onglets compacts sur mobile : uniquement les icônes */
     .nav-tabs {
         display: flex;
         justify-content: space-around;
@@ -662,10 +779,43 @@ footer a:hover {
         display: inline-block;
         font-size: 1.25rem;
     }
+
+    /* Espacements généraux */
+    header,
+    main,
+    .tab-content,
+    #tab-accueil {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    #tab-accueil > div {
+        padding-top: 15px !important;
+    }
+
+    header,
+    .nav-tabs,
+    .logos-container {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .tab-content p:empty {
+        display: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #tab-accueil p:first-of-type {
+        margin-top: 0 !important;
+    }
 }
 
-    </style>
+</style>
 
+<!-------------------------------------------------
+<!-------END STYLE---------------------------------
+<!-------------------------------------------------
     <!-- Privacy-friendly analytics by Plausible -->
 
     <script async src="https://plausible.io/js/pa-XFtaS9PEgF1K6owR8dSIY.js"></script>
@@ -680,41 +830,6 @@ footer a:hover {
 
         plausible.init()
     </script>
-
-<style>
-    /* Supprime les espacements indésirables en haut */
-    header,
-    main,
-    .tab-content,
-    #tab-accueil {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-    }
-
-    /* Espace contrôlé avant le texte de présentation */
-    #tab-accueil > div {
-        padding-top: 15px !important;
-    }
-
-    header,
-    .nav-tabs,
-    .logos-container {
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-    }
-
-    /* Cache les paragraphes vides qui créent de l'espace */
-    .tab-content p:empty {
-        display: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* Le premier paragraphe commence normalement */
-    #tab-accueil p:first-of-type {
-        margin-top: 0 !important;
-    }
-</style>
 
 </head>
 
