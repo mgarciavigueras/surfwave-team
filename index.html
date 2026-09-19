@@ -553,16 +553,15 @@ footer a:hover {
    Même style que les axes thématiques Recherche
    --------------------------------------------------------- */
 
-.tremplin-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 25px 0 30px 0;
-}
+/* =========================================================
+   TREMPLIN
+   ========================================================= */
 
 .tremplin-details {
+    width: 100%;
+    margin-top: 25px;
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.25s ease;
@@ -584,6 +583,7 @@ footer a:hover {
     list-style: none;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -603,7 +603,7 @@ footer a:hover {
 
 .tremplin-summary::after {
     content: "＋";
-    margin-left: 10px;
+    margin-top: 8px;
     font-size: 1rem;
     color: var(--primary-cyan);
 }
@@ -620,7 +620,7 @@ footer a:hover {
 
 .tremplin-content {
     padding: 5px 22px 22px;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid #e2e8f0;
     color: var(--text-muted);
     line-height: 1.6;
 }
@@ -650,8 +650,6 @@ footer a:hover {
     display: block;
     flex: 0 0 auto;
 }
-
-
 
 /* ---------------------------------------------------------
    GENERAL EDUCATION / OUTREACH SECTIONS
@@ -1279,17 +1277,12 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         <!-- =====================================================
              LIGNE DE DEUX COLONNES
              ===================================================== -->
+<details class="tremplin-details">
 
-        <div class="tremplin-row">
+    <summary class="tremplin-summary">
 
+        <span class="tremplin-title fr">
 
-            <!-- COLONNE 1 : TREMPLIN -->
-
-            <details class="tremplin-details">
-
-                <summary class="tremplin-summary">
-
-                    <span class="tremplin-title">
 
                         <span class="fr">
                             Innovation pédagogique · TREMPLIN
@@ -1375,8 +1368,6 @@ in engineering schools to integrate the socio-environmental transition.
                              alt="Higher Education Summit 2026">
 
                     </div>
-
-                </div>
 
             </details>
 
