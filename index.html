@@ -1866,8 +1866,10 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         }
     </script>
 <script>
-const r = document.querySelector('header').getBoundingClientRect();
-const f = document.querySelector('footer').getBoundingClientRect();
+const h1 = document.querySelector('header h1').getBoundingClientRect();
+const nav = document.querySelector('.nav-tabs').getBoundingClientRect();
+const logos = document.querySelector('.logos-container').getBoundingClientRect();
+const topbar = document.querySelector('.top-bar').getBoundingClientRect();
 
 const testBox = document.createElement('div');
 
@@ -1884,13 +1886,10 @@ testBox.style.cssText = `
 `;
 
 testBox.innerHTML =
-    'Écran : ' + window.innerWidth + ' px<br>' +
-    'Header : left=' + Math.round(r.left) +
-    ' / width=' + Math.round(r.width) +
-    ' / right=' + Math.round(r.right) + '<br>' +
-    'Footer : left=' + Math.round(f.left) +
-    ' / width=' + Math.round(f.width) +
-    ' / right=' + Math.round(f.right);
+    'H1 : left=' + Math.round(h1.left) + ' / width=' + Math.round(h1.width) + '<br>' +
+    'Logos : left=' + Math.round(logos.left) + ' / width=' + Math.round(logos.width) + '<br>' +
+    'Nav : left=' + Math.round(nav.left) + ' / width=' + Math.round(nav.width) + '<br>' +
+    'Bouton : left=' + Math.round(topbar.left) + ' / width=' + Math.round(topbar.width);
 
 document.body.appendChild(testBox);
 </script>
