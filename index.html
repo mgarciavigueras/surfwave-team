@@ -3616,6 +3616,14 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
             <div class="tremplin-content">
 
+                <p class="fr axis-question">
+                    Comment forme-t-on des ingénieurs qui se posent ces questions ?
+                </p>
+
+                <p class="en axis-question">
+                    How do we train engineers who ask these questions?
+                </p>
+
                 <p class="fr intro-text">
                     TREMPLIN est un projet d’innovation pédagogique financé par
                     <a href="https://iris-e.univ-rennes.fr/" target="_blank">IRIS-E</a>
@@ -3669,8 +3677,8 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
                            target="_blank">
                             Higher Education Summit 2026
                         </a>
-                    </strong>:
-                    Nous avons présenté les premiers résultats dans un forum international.
+                    </strong> :
+                    nous avons présenté les premiers résultats dans un forum international.
                 </p>
 
                 <p class="en meta-text">
@@ -3680,23 +3688,31 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
                             Higher Education Summit 2026
                         </a>
                     </strong>:
-                    We presented our first results in an international forum.
+                    we presented our first results in an international forum.
                 </p>
 
 
                 <div class="summit-photos">
 
                     <img src="Higher_Education_Summit_1.jpg"
-                         alt="Higher Education Summit 2026">
+                         alt="Higher Education Summit 2026"
+                         loading="lazy"
+                         onclick="openModal(this.src)">
 
                     <img src="Higher_Education_Summit_1c1.jpg"
-                         alt="Higher Education Summit 2026">
+                         alt="Higher Education Summit 2026"
+                         loading="lazy"
+                         onclick="openModal(this.src)">
 
                     <img src="Higher_Education_Summit_2.jpg"
-                         alt="Higher Education Summit 2026">
+                         alt="Higher Education Summit 2026"
+                         loading="lazy"
+                         onclick="openModal(this.src)">
 
                     <img src="Higher_Education_Summit_3.jpg"
-                         alt="Higher Education Summit 2026">
+                         alt="Higher Education Summit 2026"
+                         loading="lazy"
+                         onclick="openModal(this.src)">
 
                 </div>
 
@@ -3713,21 +3729,26 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
             <span class="badge">
                 <span class="fr">Animation scientifique</span>
-                <span class="en">Scientific community</span>
+                <span class="en">Scientific animation</span>
             </span>
 
             <h2 class="education-section-title">
-                ☕ Researchers & Roosters
+                ☕ Researchers &amp; Roosters
             </h2>
 
             <p class="fr education-section-text">
                 Un cycle de rencontres et de séminaires pour faire vivre
                 les échanges au sein du collectif de recherche.
+                Certains séminaires sortent volontairement de nos thématiques :
+                en janvier 2023, nous avons parlé de créativité, d’optimisme
+                et d’épanouissement au travail.
             </p>
 
             <p class="en education-section-text">
                 A series of meetings and seminars bringing the research
-                community together.
+                community together. Some seminars deliberately step outside
+                our research topics: in January 2023, we talked about creativity,
+                optimism and fulfilment at work.
             </p>
 
             <div class="horizontal-scroll">
@@ -3737,8 +3758,9 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
                    class="fr">
 
                     <img src="img1.jpg"
-                         alt="Researchers & Roosters"
-                         class="scroll-img">
+                         alt="Researchers &amp; Roosters"
+                         class="scroll-img"
+                         loading="lazy">
 
                 </a>
 
@@ -3747,24 +3769,28 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
                    class="en">
 
                     <img src="img1.jpg"
-                         alt="Researchers & Roosters"
-                         class="scroll-img">
+                         alt="Researchers &amp; Roosters"
+                         class="scroll-img"
+                         loading="lazy">
 
                 </a>
 
                 <img src="img4.jpg"
                      alt="Seminar 09/06/2026"
                      class="scroll-img"
+                     loading="lazy"
                      onclick="openModal(this.src)">
 
                 <img src="img3.jpg"
                      alt="Seminar 10/03/2026"
                      class="scroll-img"
+                     loading="lazy"
                      onclick="openModal(this.src)">
 
                 <img src="img2.jpg"
                      alt="Seminar 30/04/2025"
                      class="scroll-img"
+                     loading="lazy"
                      onclick="openModal(this.src)">
 
             </div>
@@ -3789,12 +3815,13 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
             </h2>
 
             <p class="fr education-section-text">
-                Des interventions et ateliers pour faire découvrir les sciences
-                aux plus jeunes.
+                Six ateliers dans des écoles maternelles, pour faire découvrir aux plus jeunes
+                (4 à 6 ans) la lumière et les champs électriques et magnétiques.
             </p>
 
             <p class="en education-section-text">
-                Activities and workshops introducing science to young children.
+                Six workshops in kindergartens, introducing children aged 4 to 6
+                to light and to electric and magnetic fields.
             </p>
 
 
@@ -3833,61 +3860,75 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
                     <img src="image (1).png"
                          class="fr"
                          alt="Atelier Oscar Leroux 1"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (1) - English.png"
                          class="en"
                          alt="Workshop Oscar Leroux 1"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (2).png"
                          class="fr"
                          alt="Atelier Oscar Leroux 2"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (2) - English.png"
                          class="en"
                          alt="Workshop Oscar Leroux 2"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (3).png"
                          alt="Atelier Oscar Leroux 3"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (4).png"
                          alt="Atelier Oscar Leroux 4"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (5).png"
                          alt="Atelier Oscar Leroux 5"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (6).png"
                          alt="Atelier Oscar Leroux 6"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (7).png"
                          alt="Atelier Oscar Leroux 7"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (8).png"
                          alt="Atelier Oscar Leroux 8"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (9).jpg"
                          alt="Atelier Oscar Leroux 9"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (10).jpg"
                          alt="Atelier Oscar Leroux 10"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (11).jpg"
                          alt="Atelier Oscar Leroux 11"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                     <img src="image (12).jpg"
                          alt="Atelier Oscar Leroux 12"
+                         loading="lazy"
                          onclick="openModal(this.src)">
 
                 </div>
@@ -3895,6 +3936,10 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
             </div>
 
         </div>
+
+
+        <!-- =====================================================
+             FICHES PÉDAGOGIQUES
 
 
         <!-- =====================================================
