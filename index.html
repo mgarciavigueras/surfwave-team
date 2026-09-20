@@ -1457,6 +1457,44 @@ footer a:hover {
     }
 }
 
+/* =========================================================
+   NEWS ITEMS (photo + text)
+   ========================================================= */
+
+.news-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin: 8px 0 10px 0;
+}
+
+.news-item img {
+    flex: 0 0 auto;
+    width: 200px;
+    max-width: 35%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.news-item-text {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 550px) {
+
+    .news-item {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .news-item img {
+        width: 100%;
+        max-width: 260px;
+    }
+}
+
+
 
 /* =========================================================
    20. FINAL SAFETY RULES
@@ -1828,7 +1866,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
     <!-- ==================== 2026 ==================== -->
     <!-- ==================== À LIRE EN PREMIER ==================== -->
 
-    <h5 style="margin:0 0 4px 0; color:var(--text-muted);">
+    <h5 style="margin:4px 0 4px 0; color:var(--text-muted);">
         <span class="fr">Pour comprendre d’où je parle</span>
         <span class="en">To understand where I’m coming from</span>
     </h5>
@@ -1890,13 +1928,15 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
     <!-- ==================== HOMARDS ==================== -->
 
-    <div style="margin:10px 0 12px 0;">
+<div class="news-item">
 
-        <img src="ErwanHomard.jpg"
-             alt="HOMARDS airborne radar system"
-             style="display:block; width:100%; max-width:620px; margin:6px auto 7px auto; border-radius:8px;">
+    <img src="ErwanHomard.jpg"
+         alt="HOMARDS airborne radar system"
+         loading="lazy">
 
-        <p class="fr compact-text" style="margin-top:4px;">
+    <div class="news-item-text">
+
+        <p class="fr compact-text">
             📡
             <a href="https://doi.org/10.1109/ACCESS.2026.3666568"
                target="_blank"
@@ -1910,7 +1950,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
             pour l’observation de l’eau.
         </p>
 
-        <p class="en compact-text" style="margin-top:4px;">
+        <p class="en compact-text">
             📡
             <a href="https://doi.org/10.1109/ACCESS.2026.3666568"
                target="_blank"
@@ -1926,7 +1966,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
     </div>
 
-
+</div>
     <!-- ==================== OUTREACH ==================== -->
 
     <p class="fr compact-text">
@@ -1952,34 +1992,6 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
     </p>
 
 
-    <!-- ==================== NEWSPACE ==================== -->
-
-    <p class="fr compact-text">
-        🚀
-        <a href="ArticleSurfWAVEInterface156.pdf"
-           target="_blank"
-           style="color:var(--primary-cyan); text-decoration:underline;">
-            NewSpace
-        </a>
-        — <strong>Article de vulgarisation</strong> dans
-        <em>INTERFACE INSA Alumni</em>, présentant les enjeux du NewSpace
-        et nos activités de recherche dans le domaine des antennes
-        et des applications spatiales.
-    </p>
-
-    <p class="en compact-text">
-        🚀
-        <a href="ArticleSurfWAVEInterface156.pdf"
-           target="_blank"
-           style="color:var(--primary-cyan); text-decoration:underline;">
-            NewSpace
-        </a>
-        — <strong>Outreach article</strong> in
-        <em>INTERFACE INSA Alumni</em>, presenting the challenges of NewSpace
-        and our research activities in antennas and space applications.
-    </p>
-
-
     <!-- ==================== 2025 ==================== -->
 
     <h5 style="margin:10px 0 4px 0; color:var(--text-muted);">
@@ -1989,34 +2001,38 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
     <!-- ==================== TROPHÉE ==================== -->
 
-    <div style="margin:10px 0 12px 0;">
+    <div class="news-item">
 
         <img src="prixValorisation.jpg"
              alt="Maria García Vigueras with members of the SurfWAVE team at INSA Rennes"
-             style="display:block; width:100%; max-width:620px; margin:6px auto 7px auto; border-radius:8px;">
+             loading="lazy">
 
-        <p class="fr compact-text" style="margin-top:4px;">
-            ✨
-            <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
-               target="_blank"
-               style="color:var(--primary-cyan); text-decoration:underline;">
-                Trophées Valorisation 2025
-            </a>
-            — <strong>Lauréate du prix Numérique – électronique, photonique, IA et cyber</strong>,
-            pour des travaux sur des antennes intelligentes, modulables
-            et reprogrammables à distance.
-        </p>
+        <div class="news-item-text">
 
-        <p class="en compact-text" style="margin-top:4px;">
-            ✨
-            <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
-               target="_blank"
-               style="color:var(--primary-cyan); text-decoration:underline;">
-                2025 Innovation Valorization Awards
-            </a>
-            — <strong>Recipient of the Digital – Electronics, Photonics, AI and Cybersecurity Award</strong>,
-            for research on smart, modular and remotely reconfigurable antennas.
-        </p>
+            <p class="fr compact-text">
+                ✨
+                <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
+                   target="_blank"
+                   style="color:var(--primary-cyan); text-decoration:underline;">
+                    Trophées Valorisation 2025
+                </a>
+                — <strong>Lauréate du prix Numérique – électronique, photonique, IA et cyber</strong>,
+                pour des travaux sur des antennes intelligentes, modulables
+                et reprogrammables à distance.
+            </p>
+
+            <p class="en compact-text">
+                ✨
+                <a href="https://campus-innovation.univ-rennes.fr/actualites/trophees-valorisation-2025-maria-garcia-vigueras-laureate-du-prix-numerique-electronique"
+                   target="_blank"
+                   style="color:var(--primary-cyan); text-decoration:underline;">
+                    2025 Innovation Valorization Awards
+                </a>
+                — <strong>Recipient of the Digital – Electronics, Photonics, AI and Cybersecurity Award</strong>,
+                for research on smart, modular and remotely reconfigurable antennas.
+            </p>
+
+        </div>
 
     </div>
 
