@@ -815,46 +815,53 @@ main {
    --------------------------------------------------------- */
 
 .community-container .grid-team {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 8px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+    margin-top: 10px;
     width: 100%;
 }
 
 .community-container .member-card {
-    width: 140px;
-    max-width: 140px;
-    flex: 0 0 140px;
-
-    padding: 7px 5px;
-    border-radius: 7px;
+    width: 100%;
+    max-width: none;
+    padding: 14px 10px;
+    border-radius: 10px;
     box-sizing: border-box;
 }
 
 .community-container .photo-container {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 5px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 8px;
 }
 
 .community-container .photo {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
 }
 
+
 .community-container .member-card h3 {
-    font-size: 0.78rem;
-    line-height: 1.15;
-    margin: 3px 0;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    margin: 4px 0;
 }
 
 .community-container .role-badge {
-    font-size: 0.62rem;
-    line-height: 1.15;
-    padding: 2px 4px;
+    font-size: 0.72rem;
+    line-height: 1.25;
+    padding: 3px 6px;
     margin: 4px 0 0 0;
+}
+
+/* Tablette : 3 colonnes */
+
+@media (max-width: 900px) {
+
+    .community-container .grid-team {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 
@@ -912,6 +919,23 @@ main {
         width: 130px;
         max-width: 130px;
         flex: 0 0 130px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .community-container .grid-team {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .community-container .photo-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .research-axis > .axis-content {
+        padding-left: 10px;
     }
 }
 /* =========================================================
