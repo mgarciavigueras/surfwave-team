@@ -1464,14 +1464,14 @@ footer a:hover {
 .news-item {
     display: flex;
     align-items: flex-start;
-    gap: 14px;
-    margin: 8px 0 10px 0;
+    gap: 16px;
+    margin: 8px 0 12px 0;
 }
 
 .news-item img {
     flex: 0 0 auto;
-    width: 200px;
-    max-width: 35%;
+    width: 300px;
+    max-width: 42%;
     height: auto;
     border-radius: 8px;
 }
@@ -1490,11 +1490,22 @@ footer a:hover {
 
     .news-item img {
         width: 100%;
-        max-width: 260px;
+        max-width: 320px;
     }
 }
 
 
+/* =========================================================
+   RESEARCH AXIS QUESTION
+   ========================================================= */
+
+.axis-question {
+    margin: 6px 0 8px 0;
+    color: var(--primary-cyan);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
 
 /* =========================================================
    20. FINAL SAFETY RULES
@@ -2333,6 +2344,15 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
         <div class="axis-content">
 
+            <!-- QUESTION -->
+
+            <p class="fr axis-question">
+                Peut-on intégrer plusieurs fonctionnalités dans un même dispositif ?
+            </p>
+
+            <p class="en axis-question">
+                Can we integrate multiple functionalities in the same device?
+            </p>
 
             <!-- DESCRIPTION -->
 
@@ -2508,6 +2528,50 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
         <div class="axis-content">
 
+            <!-- QUESTION -->
+
+            <p class="fr axis-question">
+                Si les antennes actives sont l’avenir du spatial, peut-on les rendre accessibles ?
+            </p>
+
+            <p class="en axis-question">
+                If active antennas are the future of space, can we make them accessible?
+            </p>
+
+            <!-- PHOTOS -->
+
+            <div class="news-item">
+                <img src="starlab.jpg"
+                     alt="Mesure d’une antenne active dans la Starlab du laboratoire"
+                     loading="lazy">
+                <div class="news-item-text">
+                    <p class="fr compact-text">
+                        Mesure d’une antenne active dans la Starlab du laboratoire.
+                    </p>
+                    <p class="en compact-text">
+                        Measuring an active antenna in the laboratory’s Starlab.
+                    </p>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <img src="mosaic.jpg"
+                     alt="Présentation d’un prototype d’antenne pour le satellite HummingSat de SWISSto12"
+                     loading="lazy">
+                <div class="news-item-text">
+                    <p class="fr compact-text">
+                        Présentation à des collègues du laboratoire d’un prototype d’antenne
+                        pour le satellite HummingSat de SWISSto12, développé avec l’Université
+                        de Trento dans le cadre d’un projet ESA.
+                    </p>
+                    <p class="en compact-text">
+                        Presenting to colleagues from the laboratory an antenna prototype
+                        for SWISSto12’s HummingSat satellite, developed with the University
+                        of Trento within an ESA project.
+                    </p>
+                </div>
+            </div>
+
             <!-- DESCRIPTION -->
 
             <p class="fr intro-text">
@@ -2633,6 +2697,16 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 
         <div class="axis-content">
 
+            <!-- QUESTION -->
+
+            <p class="fr axis-question">
+                Que peut faire l’ingénierie des télécommunications pour l’observation de l’environnement ?
+            </p>
+
+            <p class="en axis-question">
+                What can telecommunications engineering do for environmental observation?
+            </p>
+
             <!-- DESCRIPTION -->
 
             <p class="fr intro-text">
@@ -2710,7 +2784,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
                 </a>
             </p>
 
-            <!-- 2018 — ADDITIVE MANUFACTURING -->
+            <!-- 2018 — LEAKY-WAVE -->
 
             <p class="fr meta-text">
                 <strong>2018</strong> —
@@ -2752,6 +2826,38 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         </summary>
 
         <div class="axis-content">
+
+            <!-- QUESTION -->
+
+            <p class="fr axis-question">
+                Affronter la peur de la liberté : sortons des solutions canoniques et explorons
+                des formes 3D jamais vues.
+            </p>
+
+            <p class="en axis-question">
+                Facing the fear of freedom: let us leave canonical solutions behind
+                and explore never-before-seen 3D shapes.
+            </p>
+
+            <!-- PHOTO -->
+
+            <div class="news-item">
+                <img src="RemaLisaLaurent.jpg"
+                     alt="Rema Ahmid, Lisa Berretti et Laurent Le Coq dans la chambre anéchoïque"
+                     loading="lazy">
+                <div class="news-item-text">
+                    <p class="fr compact-text">
+                        Mesures en chambre anéchoïque pour le PFE de Rema Ahmid, encadré avec
+                        Lisa Berretti : des réseaux phasés pour le spatial exploitant les géométries 3D
+                        et la fabrication additive.
+                    </p>
+                    <p class="en compact-text">
+                        Anechoic chamber measurements for Rema Ahmid’s master’s thesis, supervised
+                        with Lisa Berretti: phased arrays for space exploiting 3D geometries
+                        and additive manufacturing.
+                    </p>
+                </div>
+            </div>
 
             <!-- DESCRIPTION -->
 
@@ -2886,7 +2992,6 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
 </div>
 
 </section>
-
 <!-- ONGLET Community -->
 <!-- ------------------->
 <section id="tab-membres" class="tab-content">
