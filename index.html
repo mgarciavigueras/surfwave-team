@@ -51,7 +51,7 @@
 
 .compact-text {
     color: var(--text-muted);
-    font-size: 1 rem;
+    font-size: 1rem;
     line-height: 1.1;
     margin: 2px 0 0 0;
 }
@@ -69,6 +69,26 @@
     color: var(--primary-grey);
 }
 
+.guiding-questions {
+    margin: 14px 0 10px 0;
+    padding-left: 14px;
+    border-left: 3px solid var(--primary-green);
+}
+
+.guiding-questions .heading-text {
+    margin: 0 0 6px 0;
+}
+
+.guiding-questions .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.3;
+    margin: 0 0 8px 0;
+}
+
+.guiding-questions .compact-text {
+    line-height: 1.25;
+    margin: 4px 0 0 0;
+}
 
 /* =========================================================
    2. GENERAL
@@ -1642,7 +1662,7 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
     en essayant de rester consciente de ce que nous fabriquons, et pour qui.
 </p>
 
-<p class="fr intro-text">
+<p class="en intro-text">
     I ask questions. How do we design devices that stay useful when society’s needs
     change? How do we keep these technologies from remaining in the hands of a few?
     And how do we train engineers who ask these questions themselves?
@@ -1662,38 +1682,83 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
     avec un investissement fort dans <strong>l’innovation pédagogique et la transmission des sciences</strong>.
 </p>
 
-<p class="en intro-text">
-    I am a <strong>Full Professor</strong> at <a href="https://www.insa-rennes.fr/index.html" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">INSA Rennes</a>,
-    a member of the <strong><a href="https://www.iufrance.fr/" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">Institut Universitaire de France (IUF)</a></strong>
-    and Head of the <strong><a href="https://www.ietr.fr/surfwave" target="_blank" style="color:var(--primary-cyan); text-decoration:underline;">SurfWAVE</a></strong> research team.
-    My work lies at the interface between <strong>fundamental research, technological innovation and space applications</strong>,
-    with a strong commitment to <strong>educational innovation and sharing science</strong>.
-</p>
-<div style="margin:18px 0 6px 0; border-left:3px solid var(--primary-green); padding-left:14px;">
+<!-- ==================== GUIDING QUESTIONS ==================== -->
 
-  <h4 class="fr" style="margin:0 0 8px 0; color:var(--primary-green);">Questions qui me guident</h4>
-  <h4 class="en" style="margin:0 0 8px 0; color:var(--primary-green);">Questions that guide me</h4>
+<div class="guiding-questions">
 
-  <p class="fr compact-text">🌊 <strong>Peut-on faire plus avec moins ?</strong>
-     Concevoir des antennes multifonctionnelles, qui harmonisent plusieurs usages au sein d’un même système plutôt que de multiplier les dispositifs.</p>
-  <p class="fr compact-text">🛰️ <strong>La flexibilité doit-elle coûter si cher ?</strong>
-     Rendre les charges utiles spatiales adaptables en limitant la complexité, l’énergie et l’électronique nécessaires, pour démocratiser l’accès à ces technologies.</p>
-  <p class="fr compact-text">🧊 <strong>Et si la fabrication faisait partie de la conception ?</strong>
-     Penser l’antenne et son procédé ensemble, là où l’impression 3D ouvre une liberté géométrique considérable.</p>
-  <p class="fr compact-text">👩‍🏫 <strong>Comment forme-t-on des ingénieurs qui se posent ces questions ?</strong>
-     C’est l’objet du projet TREMPLIN, et la raison pour laquelle je vais aussi expliquer la lumière à des enfants de quatre ans.</p>
+    <h4 class="heading-text">
+        <span class="fr">Les questions qui guident mon travail</span>
+        <span class="en">The questions that guide my work</span>
+    </h4>
 
-  <p class="en compact-text">🌊 <strong>Can we do more with less?</strong>
-     Designing multifunctional antennas that bring several uses together in one system instead of multiplying devices.</p>
-  <p class="en compact-text">🛰️ <strong>Does flexibility have to be this expensive?</strong>
-     Making space payloads adaptable while limiting complexity, power and electronics, to make these technologies more accessible.</p>
-  <p class="en compact-text">🧊 <strong>What if manufacturing were part of the design?</strong>
-     Conceiving the antenna and its process together, where 3D printing opens up remarkable geometric freedom.</p>
-  <p class="en compact-text">👩‍🏫 <strong>How do we train engineers who ask these questions?</strong>
-     That is what the TREMPLIN project is about, and why I also go and explain light to four-year-olds.</p>
+    <p class="fr intro-text">
+        <strong>Peut-on concevoir une technologie spatiale plus flexible</strong>, capable de s’adapter
+        au cours du temps et d’être reconfigurée à distance, afin d’éviter son obsolescence,
+        le redéploiement de nouveaux systèmes et les débris associés ?
+        Dans chaque cas, mes réponses reposent sur des concepts physiques originaux
+        et sur l’ingénierie des métamatériaux.
+        <a href="ArticleSurfWAVEInterface156.pdf" target="_blank" class="research-link">Lire l’article NewSpace</a>.
+    </p>
+
+    <p class="en intro-text">
+        <strong>Can we build a more flexible space technology</strong>, able to adapt over time
+        and to be reconfigured remotely, so as to avoid its obsolescence, the redeployment of new systems
+        and the debris that comes with it?
+        In each case, my answers rely on original physical concepts and on metamaterial engineering.
+        <a href="ArticleSurfWAVEInterface156.pdf" target="_blank" class="research-link">Read the NewSpace article</a>.
+    </p>
+
+    <p class="fr compact-text">
+        🌊 <strong>Peut-on intégrer plusieurs fonctionnalités dans un même dispositif ?</strong>
+    </p>
+
+    <p class="en compact-text">
+        🌊 <strong>Can we integrate multiple functionalities in the same device?</strong>
+    </p>
+
+    <p class="fr compact-text">
+        🛰️ <strong>Si les antennes actives sont l’avenir du spatial, peut-on les rendre accessibles ?</strong>
+        C’est comme demander que tous les continents puissent avoir une Rolls-Royce.
+    </p>
+
+    <p class="en compact-text">
+        🛰️ <strong>If active antennas are the future of space, can we make them accessible?</strong>
+        It is like asking that every continent be able to own a Rolls-Royce.
+    </p>
+
+    <p class="fr compact-text">
+        🌍 <strong>Que peut faire l’ingénierie des télécommunications pour l’observation de l’environnement ?</strong>
+    </p>
+
+    <p class="en compact-text">
+        🌍 <strong>What can telecommunications engineering do for environmental observation?</strong>
+    </p>
+
+    <p class="fr compact-text">
+        🧊 <strong>Affronter la peur de la liberté.</strong>
+        Il n’y a plus d’excuses pour être plus créatifs : sortons des solutions canoniques et allons
+        vers la 3D, avec des formes jamais vues qui permettent de faire ce qui n’a jamais été fait.
+    </p>
+
+    <p class="en compact-text">
+        🧊 <strong>Facing the fear of freedom.</strong>
+        There are no more excuses not to be more creative: let us leave canonical solutions behind and go 3D,
+        with never-before-seen shapes that make it possible to do what has never been done.
+    </p>
+
+    <p class="fr compact-text">
+        👩‍🏫 <strong>Comment forme-t-on des ingénieurs qui se posent ces questions ?</strong>
+        C’est l’objet du projet TREMPLIN, et la raison pour laquelle j’explique aussi la lumière
+        à des enfants de 4 à 6 ans.
+    </p>
+
+    <p class="en compact-text">
+        👩‍🏫 <strong>How do we train engineers who ask these questions?</strong>
+        That is what the TREMPLIN project is about, and why I also explain light
+        to children aged 4 to 6.
+    </p>
 
 </div>
-
 
     <!-- ==================== UPCOMING ACTIVITIES ==================== -->
 
