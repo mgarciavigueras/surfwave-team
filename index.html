@@ -25,6 +25,7 @@
     --primary-cyan: #0284c7;
     --primary-green: #059669;
     --primary-grey: #6B7280;
+    --primary-violet: #7c3aed;
     --card-bg: #fcfcfc;
     --border-color: #e2e8f0;
     --hover-glow: rgba(2, 132, 199, 0.2);
@@ -414,6 +415,28 @@ main {
     margin-right: auto;
 
     box-sizing: border-box;
+}
+
+/* =========================================================
+   PERSONAL NEWS (Accueil)
+   ========================================================= */
+
+.personal-news {
+    margin: 10px 0 14px 0;
+    padding-left: 14px;
+    border-left: 3px solid var(--primary-violet);
+}
+
+.personal-news .personal-title {
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-violet);
+}
+
+.personal-news .compact-text {
+    line-height: 1.25;
+    margin: 4px 0 0 0;
 }
 
 
@@ -1928,6 +1951,26 @@ fetch("https://api.archives-ouvertes.fr/search/?q=authIdHal_s:maria-garcia-vigue
         of <strong>IEEE Antennas and Propagation Magazine</strong>
         to share a personal reflection on being a researcher,
         the people who shape our journey and the values that give meaning to our work.
+    </p>
+
+    <p class="fr compact-text">
+        🎨
+        <a href="#divulgation"
+           onclick="switchTab('tab-divulgation'); setTimeout(() => document.getElementById('divulgation').open = true, 50);"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            <em>Les vies intenses</em>
+        </a>
+        — Une des neuf chercheuses portraiturées dans cette exposition sur les parcours de femmes scientifiques.
+    </p>
+
+    <p class="en compact-text">
+        🎨
+        <a href="#divulgation"
+           onclick="switchTab('tab-divulgation'); setTimeout(() => document.getElementById('divulgation').open = true, 50);"
+           style="color:var(--primary-cyan); text-decoration:underline;">
+            <em>Les vies intenses</em>
+        </a>
+        — One of the nine researchers portrayed in this exhibition on the paths of women scientists.
     </p>
 
 
